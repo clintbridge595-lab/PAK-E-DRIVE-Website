@@ -1,0 +1,6 @@
+{
+  "name": "PAK E DRIVE - Rent A Car",
+  "description": "Official Chauffeur & Executive Fleet in Karachi, Motorways & All Pakistan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
