@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { openWhatsApp } from '../utils/whatsapp';
-import { ChevronLeft, ChevronRight, Maximize2, X, PhoneCall, Sparkles, Check } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Maximize2, X } from 'lucide-react';
 
 interface ChanganOshanShowcaseProps {
   onOpenBooking?: (vehicleName?: string) => void;
@@ -114,7 +114,7 @@ export const ChanganOshanShowcase: React.FC<ChanganOshanShowcaseProps> = ({ onOp
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
           <div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white uppercase">
-              CHANGAN OSHAN X7 <span className="text-amber-400">FUTURESENSE</span>
+              CHANGAN OSHAN X7 <span style={{ color: '#a2862b' }}>FUTURESENSE</span>
             </h2>
             <p 
               style={{ fontSize: '12px' }}
@@ -156,16 +156,6 @@ export const ChanganOshanShowcase: React.FC<ChanganOshanShowcaseProps> = ({ onOp
 
             {/* Gradient Overlays */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none" />
-
-            {/* Top Badge: Photo angle */}
-            <div className="absolute top-4 left-4 flex items-center gap-2">
-              <span className="bg-amber-400 text-neutral-950 text-[10px] font-black uppercase px-2.5 py-1 rounded shadow">
-                {currentPhoto.angle}
-              </span>
-              <span className="bg-black/60 backdrop-blur-xs text-neutral-300 text-[10px] font-mono px-2 py-1 rounded border border-neutral-700">
-                Photo {activeIndex + 1} of {OSHAN_PHOTOS.length}
-              </span>
-            </div>
 
             {/* Lightbox / Expand Button */}
             <button
@@ -233,27 +223,19 @@ export const ChanganOshanShowcase: React.FC<ChanganOshanShowcaseProps> = ({ onOp
               {/* Key Features List */}
               <div className="mt-5 space-y-2 text-xs text-neutral-300">
                 <div className="flex items-center gap-2">
-                  <div className="w-4 h-4 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
-                    <Check className="w-3 h-3" />
-                  </div>
+                  <span className="text-amber-400 font-bold select-none">•</span>
                   <span>Full Stargaze Panoramic Glass Sunroof</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-4 h-4 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
-                    <Check className="w-3 h-3" />
-                  </div>
+                  <span className="text-amber-400 font-bold select-none">•</span>
                   <span>Heated & Ventilated Luxury Leather Seating</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-4 h-4 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
-                    <Check className="w-3 h-3" />
-                  </div>
+                  <span className="text-amber-400 font-bold select-none">•</span>
                   <span>360° High Definition Parking Camera & Assist</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-4 h-4 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
-                    <Check className="w-3 h-3" />
-                  </div>
+                  <span className="text-amber-400 font-bold select-none">•</span>
                   <span>High-Capacity Rear Digital Air Condition Chiller</span>
                 </div>
               </div>

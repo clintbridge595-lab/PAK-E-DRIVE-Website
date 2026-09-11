@@ -67,29 +67,19 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ onSelectVehicle, onO
             style={{
               fontFamily: 'Georgia, serif',
               fontSize: '41px',
+              height: '112.2917px',
+              width: '665px',
+              color: '#d7cfcf',
             }}
-            className="font-bold text-white tracking-tight leading-[1.12] sm:leading-[1.15]"
+            className="font-bold max-w-full tracking-tight leading-[1.12] sm:leading-[1.15]"
           >
             {currentSlide.title}
           </h1>
 
-          {/* Featured Gold Badge matching screenshot */}
-          <div className="pt-1">
-            <span 
-              style={{
-                color: '#ccbf9e',
-                lineHeight: '19px',
-                fontSize: '11px',
-              }}
-              className="inline-block font-bold tracking-wider uppercase font-mono"
-            >
-              {currentSlide.badge}
-            </span>
-          </div>
-
           {/* Description Paragraph */}
           <p 
-            className="text-neutral-300 text-sm sm:text-base leading-relaxed font-normal max-w-xl"
+            style={{ fontSize: '14px' }}
+            className="text-neutral-300 sm:text-base leading-relaxed font-normal max-w-xl"
           >
             {currentSlide.subtext}
           </p>
@@ -99,7 +89,11 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ onSelectVehicle, onO
             <button
               id="hero-reserve-vehicle-btn"
               onClick={handleReserveClick}
-              className="inline-flex items-center justify-center bg-[#c89b3c] hover:bg-[#d8a83d] active:bg-[#b58b32] text-black font-extrabold text-xs sm:text-sm uppercase tracking-wider px-8 py-3.5 rounded-md shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 cursor-pointer"
+              style={{
+                width: '215.073px',
+                height: '38px',
+              }}
+              className="inline-flex items-center justify-center bg-[#c89b3c] hover:bg-[#d8a83d] active:bg-[#b58b32] text-black font-extrabold text-xs uppercase tracking-wider rounded-md shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 cursor-pointer"
             >
               <span>RESERVE A VEHICLE</span>
             </button>

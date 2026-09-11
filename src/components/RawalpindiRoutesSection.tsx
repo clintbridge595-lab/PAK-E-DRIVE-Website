@@ -150,7 +150,10 @@ export const RawalpindiRoutesSection: React.FC = () => {
                     </div>
 
                     <div className="text-right">
-                      <div className="text-sm font-black text-amber-400 bg-amber-400/10 border border-amber-400/30 px-2.5 py-1 rounded-md font-mono">
+                      <div 
+                        style={{ color: '#f5f6cf' }}
+                        className="text-sm font-black bg-amber-400/10 border border-amber-400/30 px-2.5 py-1 rounded-md font-mono"
+                      >
                         {item.price}
                       </div>
                       <button

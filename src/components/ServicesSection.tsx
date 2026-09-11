@@ -104,8 +104,8 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                   </p>
 
                   {/* Bullet points */}
-                  <div className="space-y-2 mt-4 pt-3 border-t border-neutral-100">
-                    {serv.bullets.slice(0, 3).map((b, i) => (
+                  <div className="space-y-1.5 mt-3 pt-2.5 border-t border-neutral-100">
+                    {serv.bullets.slice(0, 2).map((b, i) => (
                       <div key={i} className="flex items-start gap-2 text-xs text-neutral-700">
                         <span className="text-neutral-400 font-bold select-none">•</span>
                         <span>{b}</span>

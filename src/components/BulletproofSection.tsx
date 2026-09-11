@@ -36,10 +36,13 @@ export const BulletproofSection: React.FC<BulletproofSectionProps> = ({
             style={{ fontSize: '46px', color: '#eddfdf' }}
             className="font-black tracking-tight uppercase mb-3 leading-tight"
           >
-            BULLET PROOF <span className="text-amber-400">B6+</span>
+            BULLET PROOF <span style={{ color: '#9d773d' }}>B6+</span>
           </h2>
 
-          <div className="mt-2 text-xl sm:text-2xl font-bold text-amber-300 tracking-wide uppercase">
+          <div 
+            style={{ color: '#867844' }}
+            className="mt-2 text-xl sm:text-2xl font-bold tracking-wide uppercase"
+          >
             CONTACT TO RENT ARMORED & LUXURY VEHICLES
           </div>
 
@@ -86,9 +89,6 @@ export const BulletproofSection: React.FC<BulletproofSectionProps> = ({
                 />
                 <div className="absolute top-2.5 left-2.5 bg-amber-400 text-neutral-950 text-[10px] font-black uppercase px-2 py-0.5 rounded shadow font-sans">
                   B6+ ARMORED
-                </div>
-                <div className="absolute bottom-2.5 right-2.5 bg-black/80 backdrop-blur-xs text-neutral-300 text-[10px] font-bold px-2 py-0.5 rounded border border-neutral-700 font-sans">
-                  {vehicle.armorLevel || 'B6+ Certified'}
                 </div>
               </div>
 

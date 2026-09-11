@@ -74,7 +74,10 @@ export const Fleet3DShowroom: React.FC<Fleet3DShowroomProps> = ({ onSelectVehicl
               {/* Category Pill & Vehicle Title */}
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
                 <div>
-                  <div className="inline-block bg-amber-400 text-black text-[11px] font-black uppercase px-2.5 py-1 rounded-sm tracking-wider mb-2">
+                  <div 
+                    style={{ backgroundColor: '#d4ba75' }}
+                    className="inline-block text-black text-[11px] font-black uppercase px-2.5 py-1 rounded-sm tracking-wider mb-2"
+                  >
                     {currentVehicle.category}
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
