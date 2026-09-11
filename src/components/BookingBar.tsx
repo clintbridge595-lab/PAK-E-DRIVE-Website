@@ -65,16 +65,16 @@ Kindly confirm availability and share the best quotation.`;
   };
 
   return (
-    <div id="booking-calculator-widget" className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-12">
-      {/* Top Filter Tabs */}
-      <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+    <div id="booking-calculator-widget" className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-12 mb-8 sm:mb-12">
+      {/* Top Filter Tabs: responsive scrollable on mobile */}
+      <div className="flex items-center overflow-x-auto no-scrollbar gap-2 pb-1 sm:pb-0">
         <button
           id="tab-intercity-transfer"
           onClick={() => {
             setActiveTab('intercity');
             setDestination('Hyderabad (M-9 Motorway, 160km)');
           }}
-          className={`font-black px-5 py-2.5 rounded-t-lg tracking-wider text-xs uppercase transition-colors cursor-pointer flex items-center justify-center ${
+          className={`font-black px-4 sm:px-5 py-2.5 rounded-t-lg tracking-wider text-[11px] sm:text-xs uppercase transition-colors cursor-pointer shrink-0 flex items-center justify-center ${
             activeTab === 'intercity'
               ? 'bg-neutral-950 text-white shadow-md'
               : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200'
@@ -89,7 +89,7 @@ Kindly confirm availability and share the best quotation.`;
             setActiveTab('daily');
             setDestination('Karachi Local City (10 Hours Full Chauffeur)');
           }}
-          className={`font-black px-5 py-2.5 rounded-t-lg tracking-wider text-xs uppercase transition-colors cursor-pointer flex items-center justify-center ${
+          className={`font-black px-4 sm:px-5 py-2.5 rounded-t-lg tracking-wider text-[11px] sm:text-xs uppercase transition-colors cursor-pointer shrink-0 flex items-center justify-center ${
             activeTab === 'daily'
               ? 'bg-neutral-950 text-white shadow-md'
               : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200'
@@ -105,7 +105,7 @@ Kindly confirm availability and share the best quotation.`;
             setDestination('Karachi Wedding Banquet / Venue Event');
             setVehicle('Daihatsu Copen (Convertible Barat Wedding Car)');
           }}
-          className={`font-black px-5 py-2.5 rounded-t-lg tracking-wider text-xs uppercase transition-colors cursor-pointer flex items-center justify-center ${
+          className={`font-black px-4 sm:px-5 py-2.5 rounded-t-lg tracking-wider text-[11px] sm:text-xs uppercase transition-colors cursor-pointer shrink-0 flex items-center justify-center ${
             activeTab === 'wedding'
               ? 'bg-neutral-950 text-white shadow-md'
               : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200'
@@ -117,7 +117,7 @@ Kindly confirm availability and share the best quotation.`;
 
       {/* Booking Form Box */}
       <div 
-        className="w-full bg-white rounded-b-xl rounded-tr-xl sm:rounded-tr-none shadow-2xl border border-neutral-200 p-6 sm:p-7 flex flex-col justify-between"
+        className="w-full bg-white rounded-b-xl rounded-tr-xl sm:rounded-tr-none shadow-2xl border border-neutral-200 p-5 sm:p-7 flex flex-col justify-between"
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           

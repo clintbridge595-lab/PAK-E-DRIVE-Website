@@ -48,7 +48,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBooking }) => 
 
           {/* Column 2: Navigation (2 cols) */}
           <div className="lg:col-span-2 space-y-3">
-            <h4 className="text-xs font-mono uppercase tracking-widest text-white font-bold mb-4">
+            <h4 className="text-xs font-sans uppercase tracking-widest text-white font-bold mb-4">
               NAVIGATION
             </h4>
             <ul className="space-y-2 text-xs text-neutral-400 font-semibold">
@@ -87,7 +87,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBooking }) => 
 
           {/* Column 3: Rental Services (3 cols) */}
           <div className="lg:col-span-3 space-y-3">
-            <h4 className="text-xs font-mono uppercase tracking-widest text-white font-bold mb-4">
+            <h4 className="text-xs font-sans uppercase tracking-widest text-white font-bold mb-4">
               RENTAL SERVICES
             </h4>
             <ul className="space-y-2 text-xs text-neutral-400">
@@ -120,7 +120,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBooking }) => 
 
           {/* Column 4: Direct Contact Desk (3 cols) */}
           <div className="lg:col-span-3 space-y-3">
-            <h4 className="text-xs font-mono uppercase tracking-widest text-white font-bold mb-4">
+            <h4 className="text-xs font-sans uppercase tracking-widest text-white font-bold mb-4">
               DIRECT CONTACT DESK
             </h4>
 

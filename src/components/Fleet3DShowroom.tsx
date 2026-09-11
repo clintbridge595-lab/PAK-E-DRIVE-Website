@@ -45,7 +45,7 @@ export const Fleet3DShowroom: React.FC<Fleet3DShowroomProps> = ({ onSelectVehicl
         fontFamily: 'Georgia, serif',
         fontStyle: 'italic',
       }}
-      className="bg-[#0e1013] text-white py-14 sm:py-20 border-y border-neutral-800 relative overflow-hidden"
+      className="bg-[#0e1013] text-white py-12 sm:py-16 lg:py-20 border-y border-neutral-800 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -88,9 +88,9 @@ export const Fleet3DShowroom: React.FC<Fleet3DShowroomProps> = ({ onSelectVehicl
                   </p>
                 </div>
 
-                <div className="text-right hidden sm:block">
-                  <span className="text-xs text-neutral-400 uppercase font-semibold">Chauffeur Service Rate</span>
-                  <div className="text-xl font-extrabold text-amber-400">
+                <div className="mt-2 sm:mt-0 sm:text-right">
+                  <span className="text-[11px] sm:text-xs text-neutral-400 uppercase font-semibold block">Chauffeur Service Rate</span>
+                  <div className="text-lg sm:text-xl font-extrabold text-amber-400 font-sans tracking-tight">
                     {currentVehicle.rates.tenHoursCity}
                   </div>
                 </div>
@@ -137,39 +137,29 @@ export const Fleet3DShowroom: React.FC<Fleet3DShowroomProps> = ({ onSelectVehicl
                 
                 {/* 4 Specs Badges matching video */}
                 <div 
-                  style={{
-                    height: '47.3333px',
-                    width: '617.667px',
-                    maxWidth: '100%',
-                  }}
-                  className="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full lg:w-auto"
+                  className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 w-full lg:w-auto"
                 >
                   <div 
-                    style={{
-                      height: '47.3333px',
-                      width: '137.167px',
-                      maxWidth: '100%',
-                    }}
-                    className="flex items-center justify-center bg-neutral-900 px-3 py-2 rounded-lg border border-neutral-800"
+                    className="flex items-center justify-center bg-neutral-900 px-3 py-2.5 rounded-lg border border-neutral-800 text-center"
                   >
                     <span className="text-xs font-semibold text-neutral-200">
                       {currentVehicle.seats} Passenger Capacity
                     </span>
                   </div>
 
-                  <div className="flex items-center justify-center bg-neutral-900 px-3 py-2 rounded-lg border border-neutral-800">
+                  <div className="flex items-center justify-center bg-neutral-900 px-3 py-2.5 rounded-lg border border-neutral-800 text-center">
                     <span className="text-xs font-semibold text-neutral-200">
                       {currentVehicle.gear} Transmission
                     </span>
                   </div>
 
-                  <div className="flex items-center justify-center bg-neutral-900 px-3 py-2 rounded-lg border border-neutral-800">
+                  <div className="flex items-center justify-center bg-neutral-900 px-3 py-2.5 rounded-lg border border-neutral-800 text-center">
                     <span className="text-xs font-semibold text-neutral-200">
                       {currentVehicle.fuel} Fuel
                     </span>
                   </div>
 
-                  <div className="flex items-center justify-center bg-neutral-900 px-3 py-2 rounded-lg border border-neutral-800">
+                  <div className="flex items-center justify-center bg-neutral-900 px-3 py-2.5 rounded-lg border border-neutral-800 text-center">
                     <span className="text-xs font-semibold text-neutral-200">
                       Chauffeur Included
                     </span>
@@ -177,7 +167,7 @@ export const Fleet3DShowroom: React.FC<Fleet3DShowroomProps> = ({ onSelectVehicl
                 </div>
 
                 {/* 2 Buttons */}
-                <div className="flex items-center gap-3 w-full lg:w-auto justify-end">
+                <div className="flex flex-col sm:flex-row items-center gap-2.5 sm:gap-3 w-full lg:w-auto justify-end">
                   <button
                     id="showroom-whatsapp-btn"
                     onClick={handleWhatsAppInquiry}
@@ -213,7 +203,7 @@ export const Fleet3DShowroom: React.FC<Fleet3DShowroomProps> = ({ onSelectVehicl
         <div className="mt-8">
           <div className="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-neutral-400 mb-3 px-1">
             <span>SCROLL &amp; SELECT ANY VEHICLE (ALL AVAILABLE IN PAKISTAN)</span>
-            <span className="font-mono text-amber-400">{selectedIdx + 1} / {FLEET_VEHICLES.length}</span>
+            <span className="font-sans font-bold text-amber-400">{selectedIdx + 1} / {FLEET_VEHICLES.length}</span>
           </div>
 
           <div className="flex items-center gap-3 overflow-x-auto pb-4 pt-1 scrollbar-thin scrollbar-thumb-neutral-700">

@@ -63,7 +63,8 @@ export default function App() {
           <div className="animate-fadeIn">
             {/* 1. Hero Carousel */}
             <HeroCarousel
-              onOpenBooking={() => handleOpenBooking()}
+              onOpenBooking={(vehicleName) => handleOpenBooking(vehicleName)}
+              onSelectVehicle={(vehicle) => handleOpenBooking(vehicle.name)}
               onExploreFleet={() => handleNavigate('fleet')}
             />
 

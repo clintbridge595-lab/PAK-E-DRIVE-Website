@@ -31,7 +31,7 @@ export const HowToBook: React.FC = () => {
         fontFamily: 'Georgia, serif',
         fontStyle: 'italic',
       }}
-      className="bg-[#121316] text-white py-14 sm:py-20 border-t border-neutral-800"
+      className="bg-[#121316] text-white py-12 sm:py-16 lg:py-20 border-t border-neutral-800"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         

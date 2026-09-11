@@ -95,12 +95,9 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onOpenBooking }) => {
 
               <div 
                 style={{
-                  height: '62.3333px',
-                  width: '652.333px',
-                  maxWidth: 'calc(100% - 2rem)',
                   backgroundColor: '#2f2929',
                 }}
-                className="absolute bottom-4 left-4 right-4 backdrop-blur-md px-4 py-2.5 rounded-xl border border-neutral-800 text-white flex flex-col justify-center overflow-hidden"
+                className="absolute bottom-4 left-4 right-4 backdrop-blur-md px-4 py-2.5 rounded-xl border border-neutral-800 text-white flex flex-col justify-center"
               >
                 <div className="text-xs font-black uppercase tracking-wider text-amber-400">
                   ZERO HIDDEN SURCHARGES

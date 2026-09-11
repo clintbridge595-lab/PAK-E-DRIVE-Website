@@ -45,7 +45,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
         {/* Modal Header */}
         <div className="bg-[#121316] text-white p-5 sm:p-6 flex items-center justify-between">
           <div>
-            <span className="text-[10px] font-mono text-amber-400 uppercase font-bold tracking-wider block">
+            <span className="text-[10px] font-sans text-amber-400 uppercase font-bold tracking-wider block">
               RESERVATION DESK
             </span>
             <h3 className="text-xl font-extrabold text-white">

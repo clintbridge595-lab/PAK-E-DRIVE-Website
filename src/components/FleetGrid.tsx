@@ -191,7 +191,7 @@ export const FleetGrid: React.FC<FleetGridProps> = ({
                   <span className="text-[10px] font-black text-neutral-500 uppercase tracking-wider">
                     {vehicle.isBulletproof ? 'SECURITY RATE' : '10-HOUR CITY RATE'}
                   </span>
-                  <span className="text-xs font-black text-neutral-950 font-mono">
+                  <span className="text-xs sm:text-sm font-extrabold text-neutral-950 font-sans tracking-tight">
                     {vehicle.rates.tenHoursCity}
                   </span>
                 </div>

@@ -104,7 +104,7 @@ export const ChanganOshanShowcase: React.FC<ChanganOshanShowcaseProps> = ({ onOp
         fontFamily: 'Georgia, serif',
         fontStyle: 'italic',
       }}
-      className="py-14 sm:py-20 bg-neutral-950 text-white relative overflow-hidden border-b border-neutral-800"
+      className="py-12 sm:py-16 lg:py-20 bg-neutral-950 text-white relative overflow-hidden border-b border-neutral-800"
     >
       {/* Subtle background glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -125,18 +125,16 @@ export const ChanganOshanShowcase: React.FC<ChanganOshanShowcaseProps> = ({ onOp
           </div>
 
           {/* Action CTAs */}
-          <div className="flex items-center gap-3">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
             <a
               href="tel:+923122119299"
-              style={{ height: '53.333299999999994px' }}
-              className="inline-flex items-center text-xs font-bold text-neutral-300 hover:text-white bg-neutral-900 px-5 rounded-lg border border-neutral-700 transition-colors uppercase font-sans tracking-wider"
+              className="inline-flex items-center justify-center h-11 sm:h-12 text-xs font-bold text-neutral-300 hover:text-white bg-neutral-900 px-5 rounded-lg border border-neutral-700 transition-colors uppercase font-sans tracking-wider"
             >
               <span>Call: 0312 2119299</span>
             </a>
             <button
               onClick={handleWhatsAppBooking}
-              style={{ height: '53.333299999999994px' }}
-              className="inline-flex items-center bg-[#25D366] hover:bg-[#20bd5a] text-white font-black text-xs uppercase px-5 rounded-lg tracking-wider transition-colors cursor-pointer shadow-lg shadow-emerald-500/15 font-sans"
+              className="inline-flex items-center justify-center h-11 sm:h-12 bg-[#25D366] hover:bg-[#20bd5a] text-white font-black text-xs uppercase px-5 rounded-lg tracking-wider transition-colors cursor-pointer shadow-lg shadow-emerald-500/15 font-sans"
             >
               <span>BOOK THIS CAR ON WHATSAPP</span>
             </button>
@@ -212,15 +210,15 @@ export const ChanganOshanShowcase: React.FC<ChanganOshanShowcaseProps> = ({ onOp
               <div className="mt-5 space-y-2.5">
                 <div className="bg-neutral-950 p-3 rounded-xl border border-neutral-800 flex items-center justify-between">
                   <span className="text-xs text-neutral-400 font-medium">10-Hour City Chauffeur</span>
-                  <span className="text-sm font-black text-amber-400 font-mono">Rs. 10,500</span>
+                  <span className="text-sm font-extrabold text-amber-400 tracking-tight font-sans">Rs. 10,500</span>
                 </div>
                 <div className="bg-neutral-950 p-3 rounded-xl border border-neutral-800 flex items-center justify-between">
                   <span className="text-xs text-neutral-400 font-medium">Intercity Highway Travel</span>
-                  <span className="text-sm font-black text-white font-mono">Rs. 58 / km</span>
+                  <span className="text-sm font-extrabold text-white tracking-tight font-sans">Rs. 58 / km</span>
                 </div>
                 <div className="bg-neutral-950 p-3 rounded-xl border border-neutral-800 flex items-center justify-between">
                   <span className="text-xs text-neutral-400 font-medium">Daily VIP / Barat Package</span>
-                  <span className="text-sm font-black text-white font-mono">Rs. 13,500 / Day</span>
+                  <span className="text-sm font-extrabold text-white tracking-tight font-sans">Rs. 13,500 / Day</span>
                 </div>
               </div>
 
@@ -310,7 +308,7 @@ export const ChanganOshanShowcase: React.FC<ChanganOshanShowcaseProps> = ({ onOp
                     <span className="text-[10px] font-bold text-white block truncate leading-tight">
                       {photo.title}
                     </span>
-                    <span className="text-[9px] text-amber-400 font-mono block">
+                    <span className="text-[9px] text-amber-400 font-medium block font-sans">
                       {photo.angle}
                     </span>
                   </div>

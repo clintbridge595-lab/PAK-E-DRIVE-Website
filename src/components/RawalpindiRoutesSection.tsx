@@ -117,10 +117,8 @@ export const RawalpindiRoutesSection: React.FC = () => {
                 }
                 style={{
                   backgroundColor: '#275632',
-                  height: '41px',
-                  maxWidth: '595.333px',
                 }}
-                className="w-full text-white font-black text-xs uppercase rounded-lg tracking-wider transition-colors cursor-pointer text-center block shadow-lg shadow-emerald-500/10 font-sans"
+                className="w-full h-11 text-white font-black text-xs uppercase rounded-lg tracking-wider transition-colors cursor-pointer text-center block shadow-lg shadow-emerald-500/10 font-sans"
               >
                 BOOK THIS VEHICLE ON WHATSAPP
               </button>
@@ -150,7 +148,7 @@ export const RawalpindiRoutesSection: React.FC = () => {
                         {item.destination}
                       </span>
                       {(item.distance || item.time) && (
-                        <span className="text-[10px] text-neutral-400 font-mono block mt-0.5">
+                        <span className="text-[10px] text-neutral-400 font-sans font-medium block mt-0.5">
                           {item.distance} {item.time ? `• ${item.time}` : ''}
                         </span>
                       )}
@@ -159,7 +157,7 @@ export const RawalpindiRoutesSection: React.FC = () => {
                     <div className="text-right">
                       <div 
                         style={{ color: '#f5f6cf' }}
-                        className="text-sm font-black bg-amber-400/10 border border-amber-400/30 px-2.5 py-1 rounded-md font-mono"
+                        className="text-sm font-bold bg-amber-400/10 border border-amber-400/30 px-2.5 py-1 rounded-md font-sans tracking-tight"
                       >
                         {item.price}
                       </div>

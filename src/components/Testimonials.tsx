@@ -10,7 +10,7 @@ export const Testimonials: React.FC = () => {
         fontFamily: 'Georgia, serif',
         fontStyle: 'italic',
       }}
-      className="bg-white py-14 sm:py-20 border-t border-neutral-200"
+      className="bg-white py-12 sm:py-16 lg:py-20 border-t border-neutral-200"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -51,7 +51,7 @@ export const Testimonials: React.FC = () => {
                 <div className="text-[10px] text-neutral-500 mt-0.5 font-medium">
                   {item.location}
                 </div>
-                <div className="text-[9px] font-mono text-amber-600 font-bold uppercase mt-1 truncate">
+                <div className="text-[9px] font-sans text-amber-600 font-bold uppercase mt-1 truncate">
                   {item.vehicle}
                 </div>
               </div>

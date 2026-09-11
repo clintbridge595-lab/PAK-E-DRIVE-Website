@@ -23,7 +23,7 @@ export const GrandCabinHighlight: React.FC<GrandCabinHighlightProps> = ({ onOpen
   };
 
   return (
-    <div id="grand-cabin-highlight-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
+    <div id="grand-cabin-highlight-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
       <div 
         style={{
           backgroundColor: '#1b1717',
@@ -54,12 +54,12 @@ export const GrandCabinHighlight: React.FC<GrandCabinHighlightProps> = ({ onOpen
             </p>
 
             {/* Buttons */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
               <button
                 id="reserve-grand-cabin-btn"
                 onClick={handleReserve}
                 style={{ backgroundColor: '#d5d530' }}
-                className="flex items-center justify-center text-neutral-950 font-black text-xs uppercase px-7 py-3.5 rounded-lg shadow-lg tracking-wider transition-all cursor-pointer font-sans"
+                className="w-full sm:w-auto flex items-center justify-center text-neutral-950 font-black text-xs uppercase px-7 py-3.5 rounded-lg shadow-lg tracking-wider transition-all cursor-pointer font-sans"
               >
                 <span>RESERVE GRAND CABIN</span>
               </button>
@@ -67,7 +67,7 @@ export const GrandCabinHighlight: React.FC<GrandCabinHighlightProps> = ({ onOpen
               <button
                 id="grand-cabin-whatsapp-inquiry-btn"
                 onClick={handleWhatsApp}
-                className="flex items-center justify-center bg-[#25D366] hover:bg-[#20bd5a] text-white font-extrabold text-xs uppercase px-7 py-3.5 rounded-lg shadow-md tracking-wider transition-all cursor-pointer font-sans"
+                className="w-full sm:w-auto flex items-center justify-center bg-[#25D366] hover:bg-[#20bd5a] text-white font-extrabold text-xs uppercase px-7 py-3.5 rounded-lg shadow-md tracking-wider transition-all cursor-pointer font-sans"
               >
                 <span>WHATSAPP INQUIRY</span>
               </button>
@@ -85,10 +85,7 @@ export const GrandCabinHighlight: React.FC<GrandCabinHighlightProps> = ({ onOpen
               />
 
               <div 
-                style={{
-                  height: '65.3229px',
-                }}
-                className="absolute bottom-3 left-3 right-3 bg-black/90 backdrop-blur-md px-3 rounded-lg border border-neutral-800 flex flex-col justify-center"
+                className="absolute bottom-3 left-3 right-3 bg-black/90 backdrop-blur-md px-3.5 py-2.5 rounded-lg border border-neutral-800 flex flex-col justify-center"
               >
                 <div className="text-sm font-extrabold text-white">
                   Toyota HiAce Grand Cabin

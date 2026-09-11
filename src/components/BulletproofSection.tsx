@@ -31,40 +31,40 @@ export const BulletproofSection: React.FC<BulletproofSectionProps> = ({
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="text-center max-w-4xl mx-auto mb-12 sm:mb-16">
+        <div className="text-center max-w-4xl mx-auto mb-10 sm:mb-16">
           <h2
-            style={{ fontSize: '46px', color: '#eddfdf' }}
-            className="font-black tracking-tight uppercase mb-3 leading-tight"
+            style={{ fontSize: 'clamp(28px, 5vw, 46px)', color: '#eddfdf' }}
+            className="font-black tracking-tight uppercase mb-2 sm:mb-3 leading-tight"
           >
             BULLET PROOF <span style={{ color: '#9d773d' }}>B6+</span>
           </h2>
 
           <div 
             style={{ color: '#867844' }}
-            className="mt-2 text-xl sm:text-2xl font-bold tracking-wide uppercase"
+            className="mt-1 sm:mt-2 text-base sm:text-xl lg:text-2xl font-bold tracking-wide uppercase"
           >
             CONTACT TO RENT ARMORED & LUXURY VEHICLES
           </div>
 
           <p
             style={{ fontSize: '12px' }}
-            className="text-neutral-400 mt-3 max-w-2xl mx-auto leading-relaxed"
+            className="text-neutral-400 mt-2 sm:mt-3 max-w-2xl mx-auto leading-relaxed"
           >
             Highest security ballistic armored vehicles in Pakistan for VIP delegations, diplomats, corporate executives, and protocol convoys.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 mt-6">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mt-5 sm:mt-6">
             <a
               href="tel:+923122119299"
               style={{ backgroundColor: '#c09b36' }}
-              className="inline-flex items-center text-black font-black text-xs uppercase px-5 py-2.5 rounded-lg tracking-wider transition-all shadow-lg hover:opacity-90"
+              className="w-full sm:w-auto justify-center inline-flex items-center text-black font-black text-xs uppercase px-5 py-2.5 rounded-lg tracking-wider transition-all shadow-lg hover:opacity-90"
             >
               <span>CALL 0312 2119299</span>
             </a>
             <button
               onClick={() => openWhatsApp('Assalam-o-Alaikum, I am inquiring to rent BULLET PROOF B6+ armored vehicles in Pakistan. Please share rates and details.')}
               style={{ backgroundColor: '#21723d' }}
-              className="inline-flex items-center text-white font-black text-xs uppercase px-5 py-2.5 rounded-lg tracking-wider transition-all shadow-lg hover:opacity-90 cursor-pointer"
+              className="w-full sm:w-auto justify-center inline-flex items-center text-white font-black text-xs uppercase px-5 py-2.5 rounded-lg tracking-wider transition-all shadow-lg hover:opacity-90 cursor-pointer"
             >
               <span>WHATSAPP SECURITY DESK</span>
             </button>
@@ -134,21 +134,20 @@ export const BulletproofSection: React.FC<BulletproofSectionProps> = ({
 
         {/* Security Specifications Guarantee Banner */}
         <div 
-          style={{ height: '79.333px' }}
-          className="mt-12 bg-neutral-900/60 rounded-xl px-5 sm:px-6 border border-neutral-800 flex flex-row items-center justify-between gap-4 overflow-hidden"
+          className="mt-10 sm:mt-12 bg-neutral-900/60 rounded-xl p-5 sm:px-6 border border-neutral-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
         >
           <div>
             <h4 className="text-sm font-bold text-white leading-tight">
               Certified Anti-Ambush & High-Risk Escort Drivers
             </h4>
-            <p className="text-xs text-neutral-400 mt-0.5 truncate max-w-xl">
+            <p className="text-xs text-neutral-400 mt-1 max-w-xl">
               All bulletproof vehicles are piloted by vetted, tactically trained chauffeurs with clean security clearances.
             </p>
           </div>
 
           <button
             onClick={() => onOpenBooking('BULLET PROOF B6+ Vehicle')}
-            className="whitespace-nowrap bg-neutral-100 hover:bg-white text-neutral-950 font-black text-xs uppercase px-5 py-2 rounded-lg tracking-wider transition-all cursor-pointer font-sans shrink-0"
+            className="w-full sm:w-auto whitespace-nowrap bg-neutral-100 hover:bg-white text-neutral-950 font-black text-xs uppercase px-5 py-2.5 rounded-lg tracking-wider transition-all cursor-pointer font-sans shrink-0 text-center"
           >
             REQUEST PROTOCOL QUOTE
           </button>

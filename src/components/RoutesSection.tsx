@@ -142,7 +142,7 @@ export const RoutesSection: React.FC<RoutesSectionProps> = ({
               
               {/* Left Column: Corridor Selector List */}
               <div className="lg:col-span-5 space-y-3">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-neutral-500 font-bold block mb-2 px-1">
+                <span className="text-[10px] font-sans uppercase tracking-widest text-neutral-500 font-bold block mb-2 px-1">
                   SELECT INTERCITY CORRIDOR
                 </span>
 
@@ -168,7 +168,7 @@ export const RoutesSection: React.FC<RoutesSectionProps> = ({
                           SERVICE: Chauffeur Ride
                         </span>
                       </div>
-                      <div className={`text-xs font-mono ${isSelected ? 'text-neutral-300' : 'text-neutral-500'}`}>
+                      <div className={`text-xs font-sans font-medium ${isSelected ? 'text-neutral-300' : 'text-neutral-500'}`}>
                         {route.distance} • {route.duration}
                       </div>
                     </button>
@@ -190,7 +190,7 @@ export const RoutesSection: React.FC<RoutesSectionProps> = ({
                   
                   <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3 text-white">
                     <div>
-                      <span className="text-[10px] font-mono text-amber-400 font-bold uppercase tracking-wider block">
+                      <span className="text-[10px] font-sans text-amber-400 font-bold uppercase tracking-wider block">
                         {selectedRoute.highwayName}
                       </span>
                       <h3 className="text-2xl font-black">{selectedRoute.name}</h3>
@@ -209,7 +209,7 @@ export const RoutesSection: React.FC<RoutesSectionProps> = ({
                 <div className="p-6 sm:p-8 space-y-6">
                   {/* Route Overview */}
                   <div>
-                    <h4 className="text-xs font-mono uppercase tracking-widest text-neutral-900 font-bold mb-2">
+                    <h4 className="text-xs font-sans uppercase tracking-widest text-neutral-900 font-bold mb-2">
                       ROUTE OVERVIEW &amp; HIGHWAY EXPERIENCE
                     </h4>
                     <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
@@ -219,7 +219,7 @@ export const RoutesSection: React.FC<RoutesSectionProps> = ({
 
                   {/* Waypoints */}
                   <div>
-                    <h4 className="text-xs font-mono uppercase tracking-widest text-neutral-900 font-bold mb-2.5">
+                    <h4 className="text-xs font-sans uppercase tracking-widest text-neutral-900 font-bold mb-2.5">
                       KEY HIGHWAY WAYPOINTS &amp; REST STOPS:
                     </h4>
                     <div className="flex flex-wrap items-center gap-2">
@@ -237,7 +237,7 @@ export const RoutesSection: React.FC<RoutesSectionProps> = ({
                   {/* Recommended Vehicles */}
                   <div className="pt-4 border-t border-neutral-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div>
-                      <span className="text-[10px] font-mono uppercase text-neutral-400 font-bold block mb-1">
+                      <span className="text-[10px] font-sans uppercase text-neutral-400 font-bold block mb-1">
                         RECOMMENDED VEHICLES FOR THIS JOURNEY:
                       </span>
                       <div className="text-xs font-bold text-neutral-800">
