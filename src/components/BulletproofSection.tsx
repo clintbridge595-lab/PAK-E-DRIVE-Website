@@ -50,7 +50,7 @@ export const BulletproofSection: React.FC<BulletproofSectionProps> = ({
             style={{ fontSize: '12px' }}
             className="text-neutral-400 mt-3 max-w-2xl mx-auto leading-relaxed"
           >
-            Highest security ballistic armored vehicles in Pakistan for VVIP delegations, diplomats, corporate executives, and protocol convoys. Resistant to 7.62x51mm NATO, AK-47, and underbody DM51 grenades.
+            Highest security ballistic armored vehicles in Pakistan for VIP delegations, diplomats, corporate executives, and protocol convoys.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 mt-6">
@@ -98,23 +98,20 @@ export const BulletproofSection: React.FC<BulletproofSectionProps> = ({
                   <h3 className="text-base sm:text-lg font-black text-white tracking-tight leading-tight">
                     {vehicle.name}
                   </h3>
-                  <p className="text-[11px] text-amber-400/90 mt-1 font-semibold">
+                  <p 
+                    style={{
+                      color: '#c4aa24',
+                      fontFamily: '"Times New Roman", Times, serif',
+                      fontSize: '10px',
+                    }}
+                    className="mt-1 font-semibold"
+                  >
                     {vehicle.subtitle}
                   </p>
-
-                  {/* Clean English Notice */}
-                  <div className="bg-neutral-800/80 rounded-lg p-2.5 text-center border border-neutral-700/50 my-4">
-                    <span className="text-xs text-amber-300 font-bold block">
-                      Contact for B6+ Ballistic Rental
-                    </span>
-                    <span className="text-[10px] text-neutral-400 block mt-0.5">
-                      VIP Protocol & Security Escorts Available
-                    </span>
-                  </div>
                 </div>
 
                 {/* Buttons */}
-                <div className="space-y-2 pt-2 border-t border-neutral-800">
+                <div className="space-y-2 pt-4 border-t border-neutral-800 mt-4">
                   <div className="grid grid-cols-2 gap-2">
                     <button
                       onClick={() => onOpenSpecs(vehicle)}

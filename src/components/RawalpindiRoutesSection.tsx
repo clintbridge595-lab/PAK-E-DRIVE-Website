@@ -27,7 +27,14 @@ export const RawalpindiRoutesSection: React.FC = () => {
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-white">
               Rawalpindi / Islamabad Fixed Intercity Routes
             </h2>
-            <p className="text-neutral-400 text-xs sm:text-sm mt-1">
+            <p 
+              style={{
+                color: '#c4aa24',
+                fontFamily: '"Times New Roman", Times, serif',
+                fontSize: '10px',
+              }}
+              className="mt-1"
+            >
               Guaranteed chauffeur fares from Rawalpindi/Islamabad to major cities and Northern areas.
             </p>
           </div>

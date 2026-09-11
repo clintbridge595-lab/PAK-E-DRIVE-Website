@@ -93,7 +93,14 @@ export const GrandCabinHighlight: React.FC<GrandCabinHighlightProps> = ({ onOpen
                 <div className="text-sm font-extrabold text-white">
                   Toyota HiAce Grand Cabin
                 </div>
-                <div className="text-[11px] text-neutral-400 mt-0.5">
+                <div 
+                  style={{
+                    color: '#c4aa24',
+                    fontFamily: '"Times New Roman", Times, serif',
+                    fontSize: '10px',
+                  }}
+                  className="mt-0.5"
+                >
                   M-9 Highway • Karachi • Hyderabad • Interior Sindh
                 </div>
               </div>

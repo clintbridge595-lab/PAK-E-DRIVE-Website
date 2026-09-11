@@ -175,7 +175,14 @@ export const FleetGrid: React.FC<FleetGridProps> = ({
                 <h3 className="text-lg font-extrabold text-neutral-950 tracking-tight leading-snug">
                   {vehicle.name}
                 </h3>
-                <p className="text-xs text-neutral-500 mt-1 font-normal line-clamp-1">
+                <p 
+                  style={{
+                    color: '#c4aa24',
+                    fontFamily: '"Times New Roman", Times, serif',
+                    fontSize: '10px',
+                  }}
+                  className="mt-1 font-normal line-clamp-1"
+                >
                   {vehicle.subtitle}
                 </p>
 

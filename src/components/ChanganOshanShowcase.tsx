@@ -196,11 +196,15 @@ export const ChanganOshanShowcase: React.FC<ChanganOshanShowcaseProps> = ({ onOp
           {/* Right Specs & Rental Pricing Panel (4 cols on lg) */}
           <div className="lg:col-span-4 p-6 sm:p-8 flex flex-col justify-between bg-neutral-900 border-t lg:border-t-0 lg:border-l border-neutral-800">
             <div>
-              <div className="inline-block bg-amber-400 text-neutral-950 text-[10px] font-black uppercase px-2.5 py-0.5 rounded tracking-wider mb-2">
-                OFFICIAL FLEET SPECIFICATIONS
-              </div>
               <h3 className="text-2xl font-black text-white">Changan Oshan X7</h3>
-              <p className="text-xs text-amber-400 font-bold mt-0.5">
+              <p 
+                style={{
+                  color: '#c4aa24',
+                  fontFamily: '"Times New Roman", Times, serif',
+                  fontSize: '10px',
+                }}
+                className="font-bold mt-0.5"
+              >
                 BlueCore 1.5L TGDI Turbo (185 hp) • 7-Speed Dual Clutch
               </p>
 
