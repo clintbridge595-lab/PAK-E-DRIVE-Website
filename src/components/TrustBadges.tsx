@@ -34,7 +34,7 @@ export const TrustBadges: React.FC = () => {
           let metricColor = '#3b3434';
           if (idx === 0) metricColor = '#433d3d';
           else if (idx === 1) metricColor = '#3f3b3b';
-          else if (idx === 2) metricColor = '#282727';
+          else if (idx === 2) metricColor = '#333030';
           else if (idx === 3) metricColor = '#443f3f';
 
           return (

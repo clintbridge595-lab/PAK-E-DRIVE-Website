@@ -1,0 +1,163 @@
+{
+  "bulletproof_v8_b6.jpg": {
+    "x": 416,
+    "y": 526,
+    "w": 188,
+    "h": 48,
+    "rx": 6
+  },
+  "bulletproof_prado_b6.jpg": {
+    "x": 408,
+    "y": 558,
+    "w": 194,
+    "h": 70,
+    "rx": 6
+  },
+  "bulletproof_revo_b6.jpg": {
+    "x": 410,
+    "y": 590,
+    "w": 218,
+    "h": 64,
+    "rx": 6
+  },
+  "bulletproof_fortuner_b6.jpg": {
+    "x": 440,
+    "y": 580,
+    "w": 228,
+    "h": 52,
+    "rx": 6
+  },
+  "fortuner_legender.jpg": {
+    "x": 384,
+    "y": 584,
+    "w": 256,
+    "h": 56,
+    "rx": 6
+  },
+  "land_cruiser_v8.jpg": {
+    "x": 304,
+    "y": 566,
+    "w": 188,
+    "h": 48,
+    "rx": 6
+  },
+  "toyota_prado.jpg": {
+    "x": 830,
+    "y": 530,
+    "w": 174,
+    "h": 52,
+    "rx": 6
+  },
+  "hilux_revo.jpg": {
+    "x": 740,
+    "y": 710,
+    "w": 154,
+    "h": 44,
+    "rx": 6
+  },
+  "corolla_altis.jpg": {
+    "x": 658,
+    "y": 636,
+    "w": 118,
+    "h": 46,
+    "rx": 5
+  },
+  "toyota_yaris.jpg": {
+    "x": 534,
+    "y": 696,
+    "w": 160,
+    "h": 54,
+    "rx": 6
+  },
+  "honda_civic.jpg": {
+    "x": 410,
+    "y": 598,
+    "w": 104,
+    "h": 28,
+    "rx": 4
+  },
+  "honda_brv.jpg": {
+    "x": 366,
+    "y": 558,
+    "w": 148,
+    "h": 38,
+    "rx": 5
+  },
+  "copen_convertible.jpg": {
+    "x": 1026,
+    "y": 654,
+    "w": 140,
+    "h": 70,
+    "rx": 6
+  },
+  "audi_wedding.jpg": {
+    "x": 1094,
+    "y": 708,
+    "w": 122,
+    "h": 44,
+    "rx": 5
+  },
+  "hiace_grand_cabin.jpg": {
+    "x": 815,
+    "y": 488,
+    "w": 170,
+    "h": 65,
+    "rx": 6
+  },
+  "changan_karvaan.jpg": {
+    "x": 428,
+    "y": 364,
+    "w": 136,
+    "h": 44,
+    "rx": 5
+  },
+  "suzuki_alto.jpg": {
+    "x": 334,
+    "y": 730,
+    "w": 76,
+    "h": 30,
+    "rx": 4
+  },
+  "toyota_noah.jpg": {
+    "x": 192,
+    "y": 598,
+    "w": 196,
+    "h": 48,
+    "rx": 6
+  },
+  "oshan_x7.jpg": {
+    "x": 250,
+    "y": 582,
+    "w": 254,
+    "h": 66,
+    "rx": 6
+  },
+  "oshan_x7_angle.jpg": {
+    "x": 250,
+    "y": 582,
+    "w": 254,
+    "h": 66,
+    "rx": 6
+  },
+  "oshan_x7_front.jpg": {
+    "x": 696,
+    "y": 606,
+    "w": 152,
+    "h": 44,
+    "rx": 5
+  },
+  "oshan_x7_rear.jpg": {
+    "x": 368,
+    "y": 646,
+    "w": 222,
+    "h": 72,
+    "rx": 6
+  },
+  "oshan_x7_side.jpg": {
+    "x": 838,
+    "y": 458,
+    "w": 230,
+    "h": 64,
+    "rx": 6
+  }
+}

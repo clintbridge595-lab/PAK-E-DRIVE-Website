@@ -155,7 +155,7 @@ export const FleetGrid: React.FC<FleetGridProps> = ({
             id={`vehicle-card-${vehicle.id}`}
             className="bg-white rounded-xl border border-neutral-200 shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col overflow-hidden group"
           >
-            {/* Top Image Box with Category Tag */}
+            {/* Top Image Box */}
             <div className="relative h-52 sm:h-56 w-full bg-neutral-900 overflow-hidden">
               <img
                 src={vehicle.image}
@@ -163,10 +163,6 @@ export const FleetGrid: React.FC<FleetGridProps> = ({
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 referrerPolicy="no-referrer"
               />
-              {/* Category Badge matching video (top right) */}
-              <div className="absolute top-3 right-3 bg-amber-400 text-black text-[10px] font-black uppercase px-2.5 py-1 rounded-sm shadow-md tracking-wider">
-                {vehicle.isBulletproof ? 'B6+ BULLETPROOF' : vehicle.category}
-              </div>
             </div>
 
             {/* Content Area */}
@@ -175,16 +171,6 @@ export const FleetGrid: React.FC<FleetGridProps> = ({
                 <h3 className="text-lg font-extrabold text-neutral-950 tracking-tight leading-snug">
                   {vehicle.name}
                 </h3>
-                <p 
-                  style={{
-                    color: '#c4aa24',
-                    fontFamily: '"Times New Roman", Times, serif',
-                    fontSize: '10px',
-                  }}
-                  className="mt-1 font-normal line-clamp-1"
-                >
-                  {vehicle.subtitle}
-                </p>
 
                 {/* 10-Hour Package / Rate Badge */}
                 <div className="flex items-center justify-between bg-neutral-50 px-3 py-2 rounded-lg border border-neutral-200/80 my-3">

@@ -71,28 +71,15 @@ export const Fleet3DShowroom: React.FC<Fleet3DShowroomProps> = ({ onSelectVehicl
                   : 'bg-[#14161a]'
             }`}>
               
-              {/* Category Pill & Vehicle Title */}
+              {/* Vehicle Title */}
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
                 <div>
-                  <div 
-                    style={{ backgroundColor: '#d4ba75' }}
-                    className="inline-block text-black text-[11px] font-black uppercase px-2.5 py-1 rounded-sm tracking-wider mb-2"
-                  >
-                    {currentVehicle.category}
-                  </div>
                   <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
                     {currentVehicle.name}
                   </h3>
                   <p className="text-neutral-400 text-xs sm:text-sm mt-1">
                     {currentVehicle.subtitle}
                   </p>
-                </div>
-
-                <div className="mt-2 sm:mt-0 sm:text-right">
-                  <span className="text-[11px] sm:text-xs text-neutral-400 uppercase font-semibold block">Chauffeur Service Rate</span>
-                  <div className="text-lg sm:text-xl font-extrabold text-amber-400 font-sans tracking-tight">
-                    {currentVehicle.rates.tenHoursCity}
-                  </div>
                 </div>
               </div>
 
@@ -132,40 +119,8 @@ export const Fleet3DShowroom: React.FC<Fleet3DShowroomProps> = ({ onSelectVehicl
                 </button>
               </div>
 
-              {/* Specs and Buttons Row below Preview */}
-              <div className="mt-6 pt-5 border-t border-neutral-800 flex flex-col lg:flex-row items-center justify-between gap-5">
-                
-                {/* 4 Specs Badges matching video */}
-                <div 
-                  className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 w-full lg:w-auto"
-                >
-                  <div 
-                    className="flex items-center justify-center bg-neutral-900 px-3 py-2.5 rounded-lg border border-neutral-800 text-center"
-                  >
-                    <span className="text-xs font-semibold text-neutral-200">
-                      {currentVehicle.seats} Passenger Capacity
-                    </span>
-                  </div>
-
-                  <div className="flex items-center justify-center bg-neutral-900 px-3 py-2.5 rounded-lg border border-neutral-800 text-center">
-                    <span className="text-xs font-semibold text-neutral-200">
-                      {currentVehicle.gear} Transmission
-                    </span>
-                  </div>
-
-                  <div className="flex items-center justify-center bg-neutral-900 px-3 py-2.5 rounded-lg border border-neutral-800 text-center">
-                    <span className="text-xs font-semibold text-neutral-200">
-                      {currentVehicle.fuel} Fuel
-                    </span>
-                  </div>
-
-                  <div className="flex items-center justify-center bg-neutral-900 px-3 py-2.5 rounded-lg border border-neutral-800 text-center">
-                    <span className="text-xs font-semibold text-neutral-200">
-                      Chauffeur Included
-                    </span>
-                  </div>
-                </div>
-
+              {/* Buttons Row below Preview */}
+              <div className="mt-6 pt-5 border-t border-neutral-800 flex flex-col lg:flex-row items-center justify-end gap-5">
                 {/* 2 Buttons */}
                 <div className="flex flex-col sm:flex-row items-center gap-2.5 sm:gap-3 w-full lg:w-auto justify-end">
                   <button
@@ -226,9 +181,6 @@ export const Fleet3DShowroom: React.FC<Fleet3DShowroomProps> = ({ onSelectVehicl
                       className="w-full h-full object-cover"
                       referrerPolicy="no-referrer"
                     />
-                    <span className="absolute top-1 right-1 text-[9px] font-black uppercase px-1.5 py-0.5 rounded-xs bg-black/80 text-amber-400">
-                      {v.category}
-                    </span>
                   </div>
                   <div className="p-2.5">
                     <div className="text-xs font-bold text-white truncate">

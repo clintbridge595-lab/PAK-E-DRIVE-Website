@@ -229,7 +229,7 @@ Kindly confirm availability and share the best quotation.`;
                 VEHICLE PACKAGE (INCLUDES UNIFORMED CHAUFFEUR)
               </div>
               <div className="text-sm font-serif italic text-neutral-900 font-bold">
-                Direct Quote on WhatsApp <span className="text-amber-500 font-sans not-italic text-xs font-semibold ml-2">• Best Rate Guaranteed</span>
+                Direct Quote on WhatsApp
               </div>
             </div>
           </div>

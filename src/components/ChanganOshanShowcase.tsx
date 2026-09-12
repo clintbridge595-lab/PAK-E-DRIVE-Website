@@ -126,15 +126,14 @@ export const ChanganOshanShowcase: React.FC<ChanganOshanShowcaseProps> = ({ onOp
 
           {/* Action CTAs */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
-            <a
-              href="tel:+923122119299"
-              className="inline-flex items-center justify-center h-11 sm:h-12 text-xs font-bold text-neutral-300 hover:text-white bg-neutral-900 px-5 rounded-lg border border-neutral-700 transition-colors uppercase font-sans tracking-wider"
-            >
-              <span>Call: 0312 2119299</span>
-            </a>
             <button
               onClick={handleWhatsAppBooking}
-              className="inline-flex items-center justify-center h-11 sm:h-12 bg-[#25D366] hover:bg-[#20bd5a] text-white font-black text-xs uppercase px-5 rounded-lg tracking-wider transition-colors cursor-pointer shadow-lg shadow-emerald-500/15 font-sans"
+              style={{
+                height: '41px',
+                width: '164.406px',
+                backgroundColor: '#1f8947',
+              }}
+              className="inline-flex items-center justify-center text-white font-black text-xs uppercase px-2 rounded-lg tracking-wider transition-colors cursor-pointer shadow-lg shadow-emerald-500/15 font-sans truncate"
             >
               <span>BOOK THIS CAR ON WHATSAPP</span>
             </button>
@@ -195,16 +194,6 @@ export const ChanganOshanShowcase: React.FC<ChanganOshanShowcaseProps> = ({ onOp
           <div className="lg:col-span-4 p-6 sm:p-8 flex flex-col justify-between bg-neutral-900 border-t lg:border-t-0 lg:border-l border-neutral-800">
             <div>
               <h3 className="text-2xl font-black text-white">Changan Oshan X7</h3>
-              <p 
-                style={{
-                  color: '#c4aa24',
-                  fontFamily: '"Times New Roman", Times, serif',
-                  fontSize: '10px',
-                }}
-                className="font-bold mt-0.5"
-              >
-                BlueCore 1.5L TGDI Turbo (185 hp) • 7-Speed Dual Clutch
-              </p>
 
               {/* Rates Breakdown */}
               <div className="mt-5 space-y-2.5">
@@ -307,9 +296,6 @@ export const ChanganOshanShowcase: React.FC<ChanganOshanShowcaseProps> = ({ onOp
                   <div className="absolute bottom-1.5 left-2 right-2 text-left">
                     <span className="text-[10px] font-bold text-white block truncate leading-tight">
                       {photo.title}
-                    </span>
-                    <span className="text-[9px] text-amber-400 font-medium block font-sans">
-                      {photo.angle}
                     </span>
                   </div>
                 </button>

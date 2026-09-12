@@ -46,13 +46,6 @@ export const BulletproofSection: React.FC<BulletproofSectionProps> = ({
             CONTACT TO RENT ARMORED & LUXURY VEHICLES
           </div>
 
-          <p
-            style={{ fontSize: '12px' }}
-            className="text-neutral-400 mt-2 sm:mt-3 max-w-2xl mx-auto leading-relaxed"
-          >
-            Highest security ballistic armored vehicles in Pakistan for VIP delegations, diplomats, corporate executives, and protocol convoys.
-          </p>
-
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mt-5 sm:mt-6">
             <a
               href="tel:+923122119299"
@@ -87,9 +80,6 @@ export const BulletproofSection: React.FC<BulletproofSectionProps> = ({
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute top-2.5 left-2.5 bg-amber-400 text-neutral-950 text-[10px] font-black uppercase px-2 py-0.5 rounded shadow font-sans">
-                  B6+ ARMORED
-                </div>
               </div>
 
               {/* Card Details */}
@@ -98,16 +88,6 @@ export const BulletproofSection: React.FC<BulletproofSectionProps> = ({
                   <h3 className="text-base sm:text-lg font-black text-white tracking-tight leading-tight">
                     {vehicle.name}
                   </h3>
-                  <p 
-                    style={{
-                      color: '#c4aa24',
-                      fontFamily: '"Times New Roman", Times, serif',
-                      fontSize: '10px',
-                    }}
-                    className="mt-1 font-semibold"
-                  >
-                    {vehicle.subtitle}
-                  </p>
                 </div>
 
                 {/* Buttons */}

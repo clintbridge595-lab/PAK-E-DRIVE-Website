@@ -27,16 +27,6 @@ export const RawalpindiRoutesSection: React.FC = () => {
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-white">
               Rawalpindi / Islamabad Fixed Intercity Routes
             </h2>
-            <p 
-              style={{
-                color: '#c4aa24',
-                fontFamily: '"Times New Roman", Times, serif',
-                fontSize: '10px',
-              }}
-              className="mt-1"
-            >
-              Guaranteed chauffeur fares from Rawalpindi/Islamabad to major cities and Northern areas.
-            </p>
           </div>
 
           <div className="flex items-center gap-3">
@@ -49,35 +39,6 @@ export const RawalpindiRoutesSection: React.FC = () => {
               </span>
             </a>
           </div>
-        </div>
-
-        {/* 3 Vehicle Tabs */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
-          {RAWALPINDI_FIXED_ROUTES.map((group) => {
-            const isSelected = selectedGroupId === group.id;
-            return (
-              <button
-                key={group.id}
-                onClick={() => setSelectedGroupId(group.id)}
-                className={`p-4 rounded-xl text-left border transition-all cursor-pointer flex items-center gap-3.5 ${
-                  isSelected
-                    ? 'bg-amber-400 text-neutral-950 border-amber-400 shadow-lg shadow-amber-400/10 font-black'
-                    : 'bg-neutral-800/80 text-neutral-300 border-neutral-700 hover:bg-neutral-800 hover:text-white'
-                }`}
-              >
-                <img
-                  src={group.image}
-                  alt={group.vehicleName}
-                  className="w-14 h-12 rounded-lg object-cover bg-neutral-950 shrink-0 border border-black/20"
-                />
-                <div className="min-w-0">
-                  <span className={`text-xs block font-bold truncate font-sans ${isSelected ? 'text-neutral-900' : 'text-white'}`}>
-                    {group.vehicleName}
-                  </span>
-                </div>
-              </button>
-            );
-          })}
         </div>
 
         {/* Active Group Details Card */}
@@ -132,9 +93,6 @@ export const RawalpindiRoutesSection: React.FC = () => {
                 <span className="text-xs font-black uppercase tracking-wider text-neutral-400">
                   DESTINATION
                 </span>
-                <span className="text-xs font-black uppercase tracking-wider text-amber-400">
-                  FIXED FARE
-                </span>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -177,11 +135,6 @@ export const RawalpindiRoutesSection: React.FC = () => {
                   </div>
                 ))}
               </div>
-            </div>
-
-            <div className="mt-6 pt-4 border-t border-neutral-800 flex flex-wrap items-center justify-between gap-3 text-xs text-neutral-400 font-sans">
-              <span>* Chauffeur, fuel, and vehicle sanitization included. Motorway tolls as per route.</span>
-              <span style={{ color: '#b3a88d' }} className="font-bold">PAK E DRIVE 24/7 National Chauffeur Service</span>
             </div>
           </div>
         </div>
