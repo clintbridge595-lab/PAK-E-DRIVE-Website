@@ -72,6 +72,21 @@ export default function App() {
     };
   }, []);
 
+  // Force browser tab to immediately refresh favicon and discard old black square cache
+  useEffect(() => {
+    try {
+      const links = document.querySelectorAll<HTMLLinkElement>("link[rel*='icon']");
+      const v = '20260914c';
+      links.forEach((link) => {
+        const url = new URL(link.href, window.location.origin);
+        url.searchParams.set('v', v);
+        link.href = url.toString();
+      });
+    } catch {
+      // ignore
+    }
+  }, []);
+
   const handleNavigate = (page: NavPage) => {
     setCurrentPage(page);
     if (page === 'privacy') {

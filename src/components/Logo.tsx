@@ -1,6 +1,5 @@
 import React from 'react';
-import footerLogoImg from '../assets/images/regenerated_image_1788909322310.png';
-import headerLogoImg from '../assets/images/regenerated_image_1788909330523.png';
+import cleanLogoImg from '../assets/images/pakedrive_logo_clean.png';
 
 interface LogoProps {
   lightMode?: boolean;
@@ -15,20 +14,20 @@ export const Logo: React.FC<LogoProps> = ({
   onClick,
   imageSrc,
 }) => {
-  const emblemSrc = imageSrc || (lightMode ? footerLogoImg : headerLogoImg);
+  const emblemSrc = imageSrc || cleanLogoImg;
 
   return (
     <div 
       id="brand-logo"
       onClick={onClick}
-      className={`flex items-center gap-3 select-none cursor-pointer group ${className}`}
+      className={`flex items-center gap-2.5 sm:gap-3 select-none cursor-pointer group ${className}`}
     >
-      {/* 3D Metallic Emblem Image */}
-      <div className="relative flex items-center justify-center h-12 w-14 sm:h-14 sm:w-16 rounded-lg overflow-hidden bg-neutral-950 border border-neutral-800 shadow-md group-hover:border-amber-400/50 transition-colors">
+      {/* 3D Metallic Emblem Image - Clean Background */}
+      <div className="relative flex items-center justify-center h-11 w-14 sm:h-12 sm:w-16 overflow-hidden">
         <img 
           src={emblemSrc} 
           alt="PAK E DRIVE Logo" 
-          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
+          className="w-full h-full object-contain filter drop-shadow-sm transform group-hover:scale-105 transition-transform duration-300"
           referrerPolicy="no-referrer"
         />
       </div>
