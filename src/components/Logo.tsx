@@ -1,5 +1,5 @@
 import React from 'react';
-import cleanLogoImg from '../assets/images/pakedrive_logo_clean.png';
+import roundLogoImg from '../assets/images/pakedrive_round_logo.png';
 
 interface LogoProps {
   lightMode?: boolean;
@@ -14,7 +14,7 @@ export const Logo: React.FC<LogoProps> = ({
   onClick,
   imageSrc,
 }) => {
-  const emblemSrc = imageSrc || cleanLogoImg;
+  const emblemSrc = imageSrc || roundLogoImg;
 
   return (
     <div 
@@ -22,12 +22,12 @@ export const Logo: React.FC<LogoProps> = ({
       onClick={onClick}
       className={`flex items-center gap-2.5 sm:gap-3 select-none cursor-pointer group ${className}`}
     >
-      {/* 3D Metallic Emblem Image - Clean Background */}
-      <div className="relative flex items-center justify-center h-11 w-14 sm:h-12 sm:w-16 overflow-hidden">
+      {/* 3D Metallic Emblem Badge - Elegant Circular Shape */}
+      <div className="relative flex items-center justify-center h-11 w-11 sm:h-12 sm:w-12 rounded-full overflow-hidden shrink-0 shadow-md ring-1.5 ring-amber-400/40 bg-neutral-950 group-hover:ring-amber-400 transition-all duration-300">
         <img 
           src={emblemSrc} 
           alt="PAK E DRIVE Logo" 
-          className="w-full h-full object-contain filter drop-shadow-sm transform group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-full object-cover rounded-full transform group-hover:scale-110 transition-transform duration-300"
           referrerPolicy="no-referrer"
         />
       </div>
