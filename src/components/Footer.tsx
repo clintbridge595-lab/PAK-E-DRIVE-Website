@@ -138,7 +138,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBooking }) => 
               </div>
 
               <div>
-                <a href="tel:+923152398490" className="text-white font-bold hover:text-amber-400">
+                <a href={`tel:+92${PHONE_DISPATCH.replace(/[^0-9]/g, '')}`} className="text-white font-bold hover:text-amber-400">
                   {PHONE_DISPATCH}
                 </a>
                 <div className="text-[10px] text-neutral-400">Fleet Dispatch Desk</div>

@@ -31,11 +31,11 @@ export const RawalpindiRoutesSection: React.FC = () => {
 
           <div className="flex items-center gap-3">
             <a
-              href="tel:+923122119299"
+              href="tel:+923002512201"
               className="inline-flex items-center bg-neutral-800 px-3.5 py-2 rounded-lg border border-neutral-700 hover:bg-neutral-700 transition-colors"
             >
               <span style={{ fontSize: '8px', color: '#fce5e5' }} className="font-bold tracking-wider uppercase">
-                Call Dispatch: 0312 2119299
+                Call Dispatch: 0300 2512201
               </span>
             </a>
           </div>

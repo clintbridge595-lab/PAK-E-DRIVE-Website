@@ -85,6 +85,7 @@ Kindly confirm availability and share the best quotation.`;
 
         <button
           id="tab-daily-city-chauffeur"
+          style={{ height: '29px', width: '255px' }}
           onClick={() => {
             setActiveTab('daily');
             setDestination('Karachi Local City (10 Hours Full Chauffeur)');
@@ -100,6 +101,7 @@ Kindly confirm availability and share the best quotation.`;
 
         <button
           id="tab-wedding-barat"
+          style={{ height: '30px' }}
           onClick={() => {
             setActiveTab('wedding');
             setDestination('Karachi Wedding Banquet / Venue Event');

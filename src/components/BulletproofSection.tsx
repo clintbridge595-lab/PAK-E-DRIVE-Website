@@ -48,11 +48,11 @@ export const BulletproofSection: React.FC<BulletproofSectionProps> = ({
 
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mt-5 sm:mt-6">
             <a
-              href="tel:+923122119299"
+              href="tel:+923002512201"
               style={{ backgroundColor: '#c09b36' }}
               className="w-full sm:w-auto justify-center inline-flex items-center text-black font-black text-xs uppercase px-5 py-2.5 rounded-lg tracking-wider transition-all shadow-lg hover:opacity-90"
             >
-              <span>CALL 0312 2119299</span>
+              <span>CALL 0300 2512201</span>
             </a>
             <button
               onClick={() => openWhatsApp('Assalam-o-Alaikum, I am inquiring to rent BULLET PROOF B6+ armored vehicles in Pakistan. Please share rates and details.')}
