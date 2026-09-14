@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Logo } from './Logo';
 import { Calendar, Menu, X } from 'lucide-react';
 
-export type NavPage = 'home' | 'about' | 'services' | 'fleet' | 'routes' | 'contact';
+export type NavPage = 'home' | 'about' | 'services' | 'fleet' | 'routes' | 'contact' | 'privacy';
 
 interface NavbarProps {
   currentPage: NavPage;
@@ -95,7 +95,13 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-neutral-200 bg-white px-4 pt-3 pb-6 space-y-2 shadow-lg animate-fadeIn">
+        <div 
+          style={{
+            fontFamily: 'Georgia',
+            fontStyle: 'italic',
+          }}
+          className="lg:hidden border-t border-neutral-200 bg-white px-4 pt-3 pb-6 space-y-2 shadow-lg animate-fadeIn"
+        >
           {navItems.map((item) => (
             <button
               key={item.id}
@@ -115,7 +121,12 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
                 setMobileMenuOpen(false);
                 onOpenBooking();
               }}
-              className="w-full flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-500 text-black font-extrabold text-sm py-3 rounded-lg shadow-xs uppercase tracking-wide"
+              style={{
+                height: '41px',
+                width: '717.667px',
+                backgroundColor: '#d4a018',
+              }}
+              className="max-w-full flex items-center justify-center gap-2 hover:bg-amber-500 text-black font-extrabold text-sm py-3 rounded-lg shadow-xs uppercase tracking-wide"
             >
               <Calendar className="w-4 h-4" />
               <span>BOOK A RENTAL</span>

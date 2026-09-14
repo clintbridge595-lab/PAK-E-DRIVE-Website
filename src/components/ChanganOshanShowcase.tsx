@@ -130,12 +130,20 @@ export const ChanganOshanShowcase: React.FC<ChanganOshanShowcaseProps> = ({ onOp
               onClick={handleWhatsAppBooking}
               style={{
                 height: '41px',
-                width: '164.406px',
+                width: '255.396px',
                 backgroundColor: '#1f8947',
               }}
               className="inline-flex items-center justify-center text-white font-black text-xs uppercase px-2 rounded-lg tracking-wider transition-colors cursor-pointer shadow-lg shadow-emerald-500/15 font-sans truncate"
             >
-              <span>BOOK THIS CAR ON WHATSAPP</span>
+              <span
+                style={{
+                  width: '207.771px',
+                  height: '17px',
+                  display: 'inline-block',
+                }}
+              >
+                BOOK THIS CAR ON WHATSAPP
+              </span>
             </button>
           </div>
         </div>
@@ -199,15 +207,15 @@ export const ChanganOshanShowcase: React.FC<ChanganOshanShowcaseProps> = ({ onOp
               <div className="mt-5 space-y-2.5">
                 <div className="bg-neutral-950 p-3 rounded-xl border border-neutral-800 flex items-center justify-between">
                   <span className="text-xs text-neutral-400 font-medium">10-Hour City Chauffeur</span>
-                  <span className="text-sm font-extrabold text-amber-400 tracking-tight font-sans">Rs. 10,500</span>
+                  <span style={{ color: '#ededed' }} className="text-sm font-extrabold tracking-tight font-sans">Rs. 10,500</span>
                 </div>
                 <div className="bg-neutral-950 p-3 rounded-xl border border-neutral-800 flex items-center justify-between">
                   <span className="text-xs text-neutral-400 font-medium">Intercity Highway Travel</span>
-                  <span className="text-sm font-extrabold text-white tracking-tight font-sans">Rs. 58 / km</span>
+                  <span style={{ color: '#ededed' }} className="text-sm font-extrabold tracking-tight font-sans">Rs. 58 / km</span>
                 </div>
                 <div className="bg-neutral-950 p-3 rounded-xl border border-neutral-800 flex items-center justify-between">
                   <span className="text-xs text-neutral-400 font-medium">Daily VIP / Barat Package</span>
-                  <span className="text-sm font-extrabold text-white tracking-tight font-sans">Rs. 13,500 / Day</span>
+                  <span style={{ color: '#ededed' }} className="text-sm font-extrabold tracking-tight font-sans">Rs. 13,500 / Day</span>
                 </div>
               </div>
 

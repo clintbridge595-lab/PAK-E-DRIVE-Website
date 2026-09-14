@@ -115,7 +115,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                 </div>
 
                 <div className="mt-6 pt-4 border-t border-neutral-100 flex items-center justify-between">
-                  <span className="text-xs font-bold text-amber-600">
+                  <span style={{ color: '#26221d' }} className="text-xs font-bold">
                     {serv.startingPrice}
                   </span>
                   <button

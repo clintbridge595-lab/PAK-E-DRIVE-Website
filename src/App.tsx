@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Navbar, NavPage } from './components/Navbar';
 import { HeroCarousel } from './components/HeroCarousel';
 import { BookingBar } from './components/BookingBar';
@@ -17,19 +17,70 @@ import { CallToAction } from './components/CallToAction';
 import { Footer } from './components/Footer';
 import { AboutUsPage } from './pages/AboutUsPage';
 import { ContactPage } from './pages/ContactPage';
+import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { SpecsModal } from './components/SpecsModal';
 import { BookingModal } from './components/BookingModal';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { Vehicle } from './types';
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<NavPage>('home');
+  const [currentPage, setCurrentPage] = useState<NavPage>(() => {
+    if (typeof window !== 'undefined') {
+      const path = window.location.pathname.toLowerCase().replace(/\/+$/, '');
+      const hash = window.location.hash.toLowerCase();
+      if (path === '/privacy-policy' || path === '/privacy' || hash === '#privacy-policy' || hash === '#privacy') {
+        return 'privacy';
+      }
+      if (path === '/about') return 'about';
+      if (path === '/services') return 'services';
+      if (path === '/fleet') return 'fleet';
+      if (path === '/routes') return 'routes';
+      if (path === '/contact') return 'contact';
+    }
+    return 'home';
+  });
   const [specsVehicle, setSpecsVehicle] = useState<Vehicle | null>(null);
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [preselectedVehicle, setPreselectedVehicle] = useState<string | undefined>(undefined);
 
+  useEffect(() => {
+    const handleLocation = () => {
+      const path = window.location.pathname.toLowerCase().replace(/\/+$/, '');
+      const hash = window.location.hash.toLowerCase();
+      if (path === '/privacy-policy' || path === '/privacy' || hash === '#privacy-policy' || hash === '#privacy') {
+        setCurrentPage('privacy');
+      } else if (path === '/about' || hash === '#about') {
+        setCurrentPage('about');
+      } else if (path === '/services' || hash === '#services') {
+        setCurrentPage('services');
+      } else if (path === '/fleet' || hash === '#fleet') {
+        setCurrentPage('fleet');
+      } else if (path === '/routes' || hash === '#routes') {
+        setCurrentPage('routes');
+      } else if (path === '/contact' || hash === '#contact') {
+        setCurrentPage('contact');
+      } else if (path === '' || path === '/' || hash === '#home') {
+        setCurrentPage('home');
+      }
+    };
+
+    window.addEventListener('popstate', handleLocation);
+    window.addEventListener('hashchange', handleLocation);
+    return () => {
+      window.removeEventListener('popstate', handleLocation);
+      window.removeEventListener('hashchange', handleLocation);
+    };
+  }, []);
+
   const handleNavigate = (page: NavPage) => {
     setCurrentPage(page);
+    if (page === 'privacy') {
+      window.history.pushState(null, '', '/privacy-policy');
+    } else if (page === 'home') {
+      window.history.pushState(null, '', '/');
+    } else {
+      window.history.pushState(null, '', `/${page}`);
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -172,6 +223,13 @@ export default function App() {
 
         {currentPage === 'contact' && (
           <ContactPage />
+        )}
+
+        {currentPage === 'privacy' && (
+          <PrivacyPolicyPage
+            onBackToHome={() => handleNavigate('home')}
+            onOpenBooking={() => handleOpenBooking()}
+          />
         )}
       </main>
 

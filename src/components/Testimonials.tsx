@@ -51,9 +51,6 @@ export const Testimonials: React.FC = () => {
                 <div className="text-[10px] text-neutral-500 mt-0.5 font-medium">
                   {item.location}
                 </div>
-                <div className="text-[9px] font-sans text-amber-600 font-bold uppercase mt-1 truncate">
-                  {item.vehicle}
-                </div>
               </div>
             </div>
           ))}

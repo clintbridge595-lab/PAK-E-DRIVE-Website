@@ -82,6 +82,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBooking }) => 
                   CONTACT &amp; LOCATION
                 </button>
               </li>
+              <li>
+                <button onClick={() => handleNav('privacy')} className="hover:text-amber-400 transition-colors uppercase text-amber-400/90 font-bold">
+                  PRIVACY POLICY
+                </button>
+              </li>
             </ul>
           </div>
 
@@ -168,12 +173,19 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBooking }) => 
         {/* Copyright & Sub-bar */}
         <div 
           style={{
-            height: '63.6667px',
+            minHeight: '63.6667px',
           }}
           className="mt-12 pt-4 border-t border-neutral-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500 font-medium"
         >
-          <div>
-            &copy; 2026 PAK E DRIVE — RENT A CAR. All rights reserved.
+          <div className="flex flex-wrap items-center gap-2">
+            <span>&copy; 2026 PAK E DRIVE — RENT A CAR. All rights reserved.</span>
+            <span>•</span>
+            <button
+              onClick={() => handleNav('privacy')}
+              className="text-amber-400 hover:text-amber-300 underline font-semibold transition-colors cursor-pointer"
+            >
+              Privacy Policy
+            </button>
           </div>
           <div className="flex items-center gap-4 text-neutral-400 text-[11px]">
             <span>Karachi • Hyderabad • Lahore • Islamabad</span>

@@ -158,7 +158,7 @@ export const Fleet3DShowroom: React.FC<Fleet3DShowroomProps> = ({ onSelectVehicl
         <div className="mt-8">
           <div className="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-neutral-400 mb-3 px-1">
             <span>SCROLL &amp; SELECT ANY VEHICLE (ALL AVAILABLE IN PAKISTAN)</span>
-            <span className="font-sans font-bold text-amber-400">{selectedIdx + 1} / {FLEET_VEHICLES.length}</span>
+            <span style={{ color: '#ffffff' }} className="font-sans font-bold">{selectedIdx + 1} / {FLEET_VEHICLES.length}</span>
           </div>
 
           <div className="flex items-center gap-3 overflow-x-auto pb-4 pt-1 scrollbar-thin scrollbar-thumb-neutral-700">

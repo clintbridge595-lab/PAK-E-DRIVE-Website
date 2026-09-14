@@ -68,7 +68,7 @@ export const GrandCabinHighlight: React.FC<GrandCabinHighlightProps> = ({ onOpen
 
             {/* Selectable Intercity Routes from Karachi */}
             <div className="pt-1">
-              <div className="text-[11px] font-bold text-amber-400 uppercase tracking-wider mb-2 font-sans">
+              <div style={{ color: '#d4d1c7' }} className="text-[11px] font-bold uppercase tracking-wider mb-2 font-sans">
                 Select Highway Destination from Karachi:
               </div>
               <div className="flex flex-wrap gap-1.5 font-sans">
@@ -88,18 +88,6 @@ export const GrandCabinHighlight: React.FC<GrandCabinHighlightProps> = ({ onOpen
                     </button>
                   );
                 })}
-              </div>
-
-              {/* Active Route Specs Bar */}
-              <div className="mt-3 p-3 bg-neutral-950/80 rounded-lg border border-neutral-800 flex items-center justify-between text-xs font-sans">
-                <div>
-                  <span className="text-white font-bold block">{selectedRoute.name}</span>
-                  <span className="text-neutral-400 text-[11px]">{selectedRoute.highway}</span>
-                </div>
-                <div className="text-right">
-                  <span className="text-amber-400 font-bold block">{selectedRoute.distance}</span>
-                  <span className="text-neutral-400 text-[11px]">{selectedRoute.duration}</span>
-                </div>
               </div>
             </div>
 

@@ -172,16 +172,6 @@ export const FleetGrid: React.FC<FleetGridProps> = ({
                   {vehicle.name}
                 </h3>
 
-                {/* 10-Hour Package / Rate Badge */}
-                <div className="flex items-center justify-between bg-neutral-50 px-3 py-2 rounded-lg border border-neutral-200/80 my-3">
-                  <span className="text-[10px] font-black text-neutral-500 uppercase tracking-wider">
-                    {vehicle.isBulletproof ? 'SECURITY RATE' : '10-HOUR CITY RATE'}
-                  </span>
-                  <span className="text-xs sm:text-sm font-extrabold text-neutral-950 font-sans tracking-tight">
-                    {vehicle.rates.tenHoursCity}
-                  </span>
-                </div>
-
                 {/* Specs Row */}
                 <div className="grid grid-cols-3 sm:grid-cols-4 gap-2 my-4 py-3 border-y border-neutral-100 text-center">
                   <div className="flex flex-col items-center justify-center">

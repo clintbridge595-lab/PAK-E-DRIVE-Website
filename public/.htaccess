@@ -1,4 +1,4 @@
-# Hostinger Apache / LiteSpeed SPA Routing for parkidrive.store
+# hoster.pk Apache / LiteSpeed SPA Routing for parkedrive.com
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /

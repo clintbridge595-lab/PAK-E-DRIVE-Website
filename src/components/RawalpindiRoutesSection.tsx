@@ -64,12 +64,6 @@ export const RawalpindiRoutesSection: React.FC = () => {
             </div>
 
             <div className="mt-6 space-y-3">
-              <div 
-                style={{ color: '#b9dfd4' }}
-                className="text-xs font-bold"
-              >
-                No Hidden Charges • Fixed Doorstep Fare
-              </div>
               <button
                 onClick={() =>
                   openWhatsApp(
