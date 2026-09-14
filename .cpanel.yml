@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home3/pakedriv/public_html
-    - /bin/cp -R dist/* $DEPLOYPATH
+    - /bin/cp -R * $DEPLOYPATH
