@@ -53,10 +53,10 @@ export const Fleet3DShowroom: React.FC<Fleet3DShowroomProps> = ({ onSelectVehicl
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-8">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white mb-2">
+          <h2 style={{ fontFamily: 'Georgia, serif' }} className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white mb-2">
             Inspect Our Fleet in 3D Showroom
           </h2>
-          <p className="text-neutral-400 text-xs sm:text-sm leading-relaxed">
+          <p className="text-neutral-300 text-xs sm:text-sm leading-relaxed font-sans">
             Rotate vehicle perspectives, test lighting conditions, and inspect specifications for every vehicle in our verified fleet.
           </p>
         </div>
@@ -67,26 +67,26 @@ export const Fleet3DShowroom: React.FC<Fleet3DShowroomProps> = ({ onSelectVehicl
           <div className="relative rounded-2xl p-1 bg-gradient-to-b from-amber-400/90 via-amber-400/50 to-amber-500/20 shadow-2xl">
             <div className={`relative rounded-xl p-5 sm:p-8 transition-colors duration-500 overflow-hidden ${
               lighting === 'day' 
-                ? 'bg-neutral-900/90' 
+                ? 'bg-[#232323]' 
                 : lighting === 'night' 
-                  ? 'bg-black' 
-                  : 'bg-[#14161a]'
+                  ? 'bg-[#18181b]' 
+                  : 'bg-[#232323]'
             }`}>
               
               {/* Vehicle Title */}
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
                 <div>
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                  <h3 style={{ fontFamily: 'Georgia, serif' }} className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
                     {currentVehicle.name}
                   </h3>
-                  <p className="text-neutral-400 text-xs sm:text-sm mt-1">
+                  <p className="text-neutral-300 text-xs sm:text-sm mt-1 font-sans">
                     {currentVehicle.subtitle}
                   </p>
                 </div>
               </div>
 
               {/* Main Image with 3D Lighting and perspective effects */}
-              <div className="relative w-full h-72 sm:h-96 lg:h-[420px] rounded-lg overflow-hidden bg-neutral-950 flex items-center justify-center">
+              <div className="relative w-full h-72 sm:h-96 lg:h-[420px] rounded-lg overflow-hidden bg-[#1c1c1f] flex items-center justify-center">
                 
                 {/* Lighting effects overlay */}
                 {lighting === 'studio' && (

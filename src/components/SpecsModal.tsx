@@ -143,18 +143,18 @@ export const SpecsModal: React.FC<SpecsModalProps> = ({ vehicle, onClose }) => {
           </div>
 
           {/* Transparent Rental Package Rates */}
-          <div className="bg-amber-50/60 border border-amber-200/80 rounded-xl p-4">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-amber-900 mb-2">
+          <div className="bg-[#232323] text-white border border-neutral-700/80 rounded-xl p-4">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-amber-300 mb-2">
               Estimated Package Rates (Includes Licensed Chauffeur)
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
               <div>
-                <span className="text-neutral-500 block">10-Hour City Chauffeur:</span>
-                <strong className="text-sm text-neutral-950 font-extrabold">{vehicle.rates.tenHoursCity}</strong>
+                <span className="text-neutral-300 block">10-Hour City Chauffeur:</span>
+                <strong className="text-sm text-white font-extrabold">{vehicle.rates.tenHoursCity}</strong>
               </div>
               <div>
-                <span className="text-neutral-500 block">Intercity Highway Travel:</span>
-                <strong className="text-sm text-neutral-950 font-extrabold">{vehicle.rates.intercityPerKm}</strong>
+                <span className="text-neutral-300 block">Intercity Highway Travel:</span>
+                <strong className="text-sm text-white font-extrabold">{vehicle.rates.intercityPerKm}</strong>
               </div>
             </div>
           </div>

@@ -31,18 +31,19 @@ export const BulletproofSection: React.FC<BulletproofSectionProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center max-w-4xl mx-auto mb-10 sm:mb-16">
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight uppercase mb-2 sm:mb-3 leading-tight text-neutral-100">
-            Bulletproof <span className="text-amber-400">B6+</span>
+          <h2 style={{ fontFamily: 'Georgia, serif' }} className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight uppercase mb-2 sm:mb-3 leading-tight text-neutral-100">
+            Bulletproof <span className="text-white font-black">B6+</span>
           </h2>
 
-          <div className="mt-1 sm:mt-2 text-sm sm:text-lg lg:text-xl font-bold tracking-wide uppercase text-amber-500/90">
+          <div className="mt-1 sm:mt-2 text-sm sm:text-lg lg:text-xl font-bold tracking-wide uppercase text-neutral-200">
             Contact to Rent Armored & Luxury Vehicles
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mt-5 sm:mt-6">
             <a
               href="tel:+923002512201"
-              className="btn-gold"
+              style={{ backgroundColor: '#aa842b' }}
+              className="inline-flex items-center justify-center text-white hover:opacity-90 font-bold text-xs px-5 py-2.5 rounded-lg transition-colors cursor-pointer shadow-xs"
             >
               <span>Call 0300 2512201</span>
             </a>
@@ -61,10 +62,10 @@ export const BulletproofSection: React.FC<BulletproofSectionProps> = ({
             <div
               key={vehicle.id}
               id={`bulletproof-card-${vehicle.id}`}
-              className="bg-neutral-900/90 rounded-xl border border-neutral-700/80 hover:border-amber-400/60 shadow-xl transition-all duration-300 flex flex-col overflow-hidden group hover:-translate-y-1"
+              className="bg-[#232323] rounded-xl border border-neutral-700/80 hover:border-amber-400/60 shadow-xl transition-all duration-300 flex flex-col overflow-hidden group hover:-translate-y-1"
             >
               {/* Image Box */}
-              <div className="relative h-48 w-full bg-neutral-950 overflow-hidden">
+              <div className="relative h-48 w-full bg-[#1c1c1f] overflow-hidden">
                 <img
                   src={vehicle.image}
                   alt={vehicle.name}
@@ -81,14 +82,14 @@ export const BulletproofSection: React.FC<BulletproofSectionProps> = ({
                   </h3>
 
                   {/* Specs Row */}
-                  <div className="grid grid-cols-3 gap-2 my-3 py-2.5 border-y border-neutral-800 text-center">
+                  <div className="grid grid-cols-3 gap-2 my-3 py-2.5 border-y border-neutral-700/80 bg-[#1c1c1f]/80 rounded-md text-center">
                     <div className="flex flex-col items-center justify-center">
                       <span className="text-xs uppercase font-bold text-neutral-400 mb-0.5">Seats</span>
                       <span className="text-xs font-bold text-white">{vehicle.seats}</span>
                     </div>
                     <div className="flex flex-col items-center justify-center">
                       <span className="text-xs uppercase font-bold text-neutral-400 mb-0.5">Armor</span>
-                      <span className="text-xs font-bold text-amber-400">B6 / B7</span>
+                      <span className="text-xs font-bold text-white">B6 / B7</span>
                     </div>
                     <div className="flex flex-col items-center justify-center">
                       <span className="text-xs uppercase font-bold text-neutral-400 mb-0.5">Gear</span>
@@ -98,11 +99,12 @@ export const BulletproofSection: React.FC<BulletproofSectionProps> = ({
                 </div>
 
                 {/* Buttons */}
-                <div className="pt-2 border-t border-neutral-800">
+                <div className="pt-2 border-t border-neutral-700/80">
                   <div className="grid grid-cols-2 gap-2">
                     <button
                       onClick={() => onOpenSpecs(vehicle)}
-                      className="btn-outline text-xs font-bold py-2 rounded-lg tracking-wide transition-colors cursor-pointer text-center"
+                      style={{ backgroundColor: '#c8c8c8' }}
+                      className="text-neutral-950 hover:bg-white text-xs font-bold py-2 rounded-lg tracking-wide transition-colors cursor-pointer text-center"
                     >
                       Specs
                     </button>

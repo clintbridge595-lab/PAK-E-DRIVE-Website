@@ -100,7 +100,8 @@ export const ChanganOshanShowcase: React.FC<ChanganOshanShowcaseProps> = ({ onOp
   return (
     <section
       id="changan-oshan-exclusive-showcase"
-      className="py-12 sm:py-16 lg:py-20 bg-neutral-950 text-white relative overflow-hidden border-b border-neutral-800"
+      style={{ backgroundColor: '#232323', fontFamily: 'Georgia, serif' }}
+      className="py-12 sm:py-16 lg:py-20 text-white relative overflow-hidden border-b border-neutral-800"
     >
       {/* Subtle background glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -109,11 +110,11 @@ export const ChanganOshanShowcase: React.FC<ChanganOshanShowcaseProps> = ({ onOp
         {/* Top Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
           <div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white">
-              Changan Oshan X7 <span className="text-amber-400">FutureSense</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black italic tracking-tight text-white">
+              Changan Oshan X7 <span style={{ color: '#c09219' }}>FutureSense</span>
             </h2>
             <p 
-              className="text-xs sm:text-sm text-neutral-400 mt-1 max-w-2xl"
+              className="text-xs sm:text-sm text-neutral-300 mt-1 max-w-2xl font-sans"
             >
               Exclusive dedicated gallery showcasing the ultra-sleek Black Changan Oshan X7 (300T BlueCore Turbo). Scroll through all high-resolution exterior and profile angles below.
             </p>
@@ -131,7 +132,7 @@ export const ChanganOshanShowcase: React.FC<ChanganOshanShowcaseProps> = ({ onOp
         </div>
 
         {/* Showcase Grid: Featured Big Viewer & Details Panel */}
-        <div className="bg-neutral-900/90 rounded-2xl border border-neutral-800 overflow-hidden shadow-2xl grid grid-cols-1 lg:grid-cols-12 mb-8">
+        <div className="bg-[#1c1c1f] rounded-2xl border border-neutral-800 overflow-hidden shadow-2xl grid grid-cols-1 lg:grid-cols-12 mb-8">
           {/* Main Visual Frame (8 cols on lg) */}
           <div className="lg:col-span-8 relative bg-black flex items-center justify-center min-h-[340px] sm:min-h-[460px] overflow-hidden group">
             <img
@@ -174,49 +175,49 @@ export const ChanganOshanShowcase: React.FC<ChanganOshanShowcaseProps> = ({ onOp
               <h3 className="text-lg sm:text-xl font-black text-white drop-shadow">
                 {currentPhoto.title}
               </h3>
-              <p className="text-xs text-neutral-300 drop-shadow mt-0.5 max-w-xl">
+              <p className="text-xs text-neutral-300 drop-shadow mt-0.5 max-w-xl font-sans">
                 {currentPhoto.description}
               </p>
             </div>
           </div>
 
           {/* Right Specs & Rental Pricing Panel (4 cols on lg) */}
-          <div className="lg:col-span-4 p-6 sm:p-8 flex flex-col justify-between bg-neutral-900 border-t lg:border-t-0 lg:border-l border-neutral-800">
+          <div className="lg:col-span-4 p-6 sm:p-8 flex flex-col justify-between bg-[#232323] border-t lg:border-t-0 lg:border-l border-neutral-800 font-sans">
             <div>
-              <h3 className="text-2xl font-black text-white">Changan Oshan X7</h3>
+              <h3 style={{ fontFamily: 'Georgia, serif' }} className="text-2xl font-black text-white">Changan Oshan X7</h3>
 
-              {/* Rates Breakdown */}
+              {/* Rates Breakdown - Specs Boxes set to #232323 background and Prices to White */}
               <div className="mt-5 space-y-2.5">
-                <div className="bg-neutral-950 p-3 rounded-xl border border-neutral-800 flex items-center justify-between">
-                  <span className="text-xs text-neutral-400 font-medium">10-Hour City Chauffeur</span>
-                  <span style={{ color: '#ededed' }} className="text-sm font-extrabold tracking-tight font-sans">Rs. 10,500</span>
+                <div className="bg-[#1b1b1e] p-3 rounded-xl border border-neutral-700/80 flex items-center justify-between">
+                  <span className="text-xs text-neutral-300 font-medium">10-Hour City Chauffeur</span>
+                  <span className="text-sm font-extrabold tracking-tight text-white">Rs. 10,500</span>
                 </div>
-                <div className="bg-neutral-950 p-3 rounded-xl border border-neutral-800 flex items-center justify-between">
-                  <span className="text-xs text-neutral-400 font-medium">Intercity Highway Travel</span>
-                  <span style={{ color: '#ededed' }} className="text-sm font-extrabold tracking-tight font-sans">Rs. 58 / km</span>
+                <div className="bg-[#1b1b1e] p-3 rounded-xl border border-neutral-700/80 flex items-center justify-between">
+                  <span className="text-xs text-neutral-300 font-medium">Intercity Highway Travel</span>
+                  <span className="text-sm font-extrabold tracking-tight text-white">Rs. 58 / km</span>
                 </div>
-                <div className="bg-neutral-950 p-3 rounded-xl border border-neutral-800 flex items-center justify-between">
-                  <span className="text-xs text-neutral-400 font-medium">Daily VIP / Barat Package</span>
-                  <span style={{ color: '#ededed' }} className="text-sm font-extrabold tracking-tight font-sans">Rs. 13,500 / Day</span>
+                <div className="bg-[#1b1b1e] p-3 rounded-xl border border-neutral-700/80 flex items-center justify-between">
+                  <span className="text-xs text-neutral-300 font-medium">Daily VIP / Barat Package</span>
+                  <span className="text-sm font-extrabold tracking-tight text-white">Rs. 13,500 / Day</span>
                 </div>
               </div>
 
               {/* Key Features List */}
               <div className="mt-5 space-y-2 text-xs text-neutral-300">
                 <div className="flex items-center gap-2">
-                  <span className="text-amber-400 font-bold select-none">•</span>
+                  <span className="text-white font-bold select-none">•</span>
                   <span>Full Stargaze Panoramic Glass Sunroof</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-amber-400 font-bold select-none">•</span>
+                  <span className="text-white font-bold select-none">•</span>
                   <span>Heated & Ventilated Luxury Leather Seating</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-amber-400 font-bold select-none">•</span>
+                  <span className="text-white font-bold select-none">•</span>
                   <span>360° High Definition Parking Camera & Assist</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-amber-400 font-bold select-none">•</span>
+                  <span className="text-white font-bold select-none">•</span>
                   <span>High-Capacity Rear Digital Air Condition Chiller</span>
                 </div>
               </div>
@@ -225,16 +226,16 @@ export const ChanganOshanShowcase: React.FC<ChanganOshanShowcaseProps> = ({ onOp
             <div className="mt-6 space-y-2.5">
               <button
                 onClick={handleWhatsAppBooking}
-                className="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-black text-xs uppercase py-3 rounded-lg tracking-wider transition-colors cursor-pointer text-center block shadow-lg shadow-emerald-500/10"
+                className="w-full btn-whatsapp py-3 rounded-lg text-xs font-bold transition-colors cursor-pointer text-center block"
               >
-                CONFIRM OSHAN X7 BOOKING ON WHATSAPP
+                Confirm Oshan X7 on WhatsApp
               </button>
               {onOpenBooking && (
                 <button
                   onClick={() => onOpenBooking('Changan Oshan X7 (FutureSense Luxury 7-Seater SUV)')}
-                  className="w-full bg-neutral-800 hover:bg-neutral-700 text-neutral-200 font-black text-xs uppercase py-2.5 rounded-lg tracking-wider transition-colors cursor-pointer text-center block border border-neutral-700"
+                  className="w-full btn-gold py-2.5 rounded-lg text-xs font-bold transition-colors cursor-pointer text-center block"
                 >
-                  SCHEDULE RESERVATION ONLINE
+                  Schedule Reservation Online
                 </button>
               )}
             </div>

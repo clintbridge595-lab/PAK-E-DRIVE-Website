@@ -67,8 +67,8 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
               onClick={onOpenBooking}
               className="btn-gold flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg shadow-xs text-xs font-bold tracking-wide transition-colors cursor-pointer"
             >
-              <Calendar className="w-4 h-4 text-neutral-950" />
-              <span>Book a Rental</span>
+              <Calendar className="w-4 h-4 text-white" />
+              <span style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: '#ffffff' }}>Book a Rental</span>
             </button>
           </div>
 

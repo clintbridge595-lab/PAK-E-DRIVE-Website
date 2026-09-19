@@ -24,7 +24,7 @@
   }
   /* Consistent core button styles */
   .btn-gold {
-    @apply inline-flex items-center justify-center bg-amber-400 hover:bg-amber-300 text-neutral-950 font-bold text-xs px-5 py-2.5 rounded-lg transition-colors cursor-pointer shadow-xs;
+    @apply inline-flex items-center justify-center bg-[#c99a1c] hover:bg-[#aa842b] text-white font-bold text-xs px-5 py-2.5 rounded-lg transition-colors cursor-pointer shadow-xs;
   }
   .btn-whatsapp {
     @apply inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs px-5 py-2.5 rounded-lg transition-colors cursor-pointer shadow-xs;

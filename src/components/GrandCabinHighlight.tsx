@@ -38,14 +38,14 @@ export const GrandCabinHighlight: React.FC<GrandCabinHighlightProps> = ({ onOpen
   return (
     <div id="grand-cabin-highlight-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
       <div 
-        className="bg-neutral-900 text-white rounded-2xl overflow-hidden border border-neutral-800 shadow-xl p-6 sm:p-10 lg:p-12"
+        className="bg-[#232323] text-white rounded-2xl overflow-hidden border border-neutral-700/80 shadow-xl p-6 sm:p-10 lg:p-12"
       >
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Left Text & Route Selection */}
           <div className="lg:col-span-6 space-y-5">
             <div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white leading-tight">
+              <h2 style={{ fontFamily: 'Georgia, serif' }} className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white leading-tight">
                 Karachi Intercity Express &amp; Group Travel
               </h2>
             </div>
@@ -70,8 +70,8 @@ export const GrandCabinHighlight: React.FC<GrandCabinHighlightProps> = ({ onOpen
                       onClick={() => setActiveRouteId(route.id)}
                       className={`text-xs px-3 py-1.5 rounded-md font-semibold transition-colors cursor-pointer ${
                         isCur
-                          ? 'bg-amber-400 text-neutral-950 font-bold shadow-xs'
-                          : 'bg-neutral-800 hover:bg-neutral-700 text-neutral-300 border border-neutral-700'
+                          ? 'bg-[#c99a1c] text-white font-bold shadow-xs'
+                          : 'bg-[#1b1b1e] hover:bg-neutral-700 text-neutral-200 border border-neutral-700'
                       }`}
                     >
                       {route.name.replace('Karachi to ', '')}
@@ -86,7 +86,8 @@ export const GrandCabinHighlight: React.FC<GrandCabinHighlightProps> = ({ onOpen
               <button
                 id="reserve-grand-cabin-btn"
                 onClick={handleReserve}
-                className="w-full sm:w-auto flex items-center justify-center bg-amber-400 hover:bg-amber-300 text-neutral-950 font-bold text-xs uppercase px-7 py-3.5 rounded-lg shadow-sm tracking-wide transition-all cursor-pointer"
+                style={{ backgroundColor: '#c99a1c' }}
+                className="w-full sm:w-auto flex items-center justify-center text-white hover:opacity-90 font-bold text-xs uppercase px-7 py-3.5 rounded-lg shadow-sm tracking-wide transition-all cursor-pointer"
               >
                 <span>Reserve Grand Cabin</span>
               </button>
@@ -94,7 +95,7 @@ export const GrandCabinHighlight: React.FC<GrandCabinHighlightProps> = ({ onOpen
               <button
                 id="grand-cabin-whatsapp-inquiry-btn"
                 onClick={handleWhatsApp}
-                className="w-full sm:w-auto flex items-center justify-center bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs uppercase px-7 py-3.5 rounded-lg shadow-sm tracking-wide transition-all cursor-pointer"
+                className="w-full sm:w-auto flex items-center justify-center btn-whatsapp text-white font-bold text-xs uppercase px-7 py-3.5 rounded-lg shadow-sm tracking-wide transition-all cursor-pointer"
               >
                 <span>WhatsApp Inquiry</span>
               </button>
@@ -103,7 +104,7 @@ export const GrandCabinHighlight: React.FC<GrandCabinHighlightProps> = ({ onOpen
 
           {/* Right Image Container */}
           <div className="lg:col-span-6 relative">
-            <div className="relative rounded-xl overflow-hidden border border-neutral-700/80 shadow-2xl bg-neutral-950">
+            <div className="relative rounded-xl overflow-hidden border border-neutral-700/80 shadow-2xl bg-[#1c1c1f]">
               <img
                 src="/cars/hiace_grand_cabin.jpg"
                 alt="Toyota HiAce Grand Cabin"

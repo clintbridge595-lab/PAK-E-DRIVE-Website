@@ -17,23 +17,24 @@ export const RawalpindiRoutesSection: React.FC = () => {
   return (
     <section
       id="rawalpindi-fixed-routes-section"
-      className="py-12 sm:py-16 bg-neutral-900 text-white border-y border-neutral-800"
+      style={{ backgroundColor: '#524949', fontFamily: 'Georgia, serif' }}
+      className="py-12 sm:py-16 text-white border-y border-neutral-700 italic"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
           <div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-white">
+            <h2 style={{ fontFamily: 'Georgia, serif', fontSize: '30px', color: '#ffeded' }} className="font-black tracking-tight">
               Rawalpindi / Islamabad Fixed Intercity Routes
             </h2>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 not-italic font-sans">
             <a
               href="tel:+923002512201"
-              className="inline-flex items-center bg-neutral-800 px-4 py-2 rounded-lg border border-neutral-700 hover:bg-neutral-700 transition-colors"
+              className="inline-flex items-center bg-black/40 px-4 py-2 rounded-lg border border-white/20 hover:bg-black/60 transition-colors"
             >
-              <span className="text-xs font-bold text-neutral-100 tracking-wide">
+              <span className="text-xs font-bold text-white tracking-wide">
                 Call Dispatch: 0300 2512201
               </span>
             </a>
@@ -41,18 +42,18 @@ export const RawalpindiRoutesSection: React.FC = () => {
         </div>
 
         {/* Active Group Details Card */}
-        <div className="bg-neutral-950 rounded-2xl border border-neutral-800 overflow-hidden shadow-2xl grid grid-cols-1 lg:grid-cols-12">
+        <div className="bg-[#232323] rounded-2xl border border-neutral-700/80 overflow-hidden shadow-2xl grid grid-cols-1 lg:grid-cols-12 not-italic">
           {/* Left Column: Vehicle Visual & Highlights */}
-          <div className="lg:col-span-4 p-6 sm:p-8 border-b lg:border-b-0 lg:border-r border-neutral-800 flex flex-col justify-start gap-4 bg-gradient-to-b from-neutral-900 to-neutral-950">
+          <div className="lg:col-span-4 p-6 sm:p-8 border-b lg:border-b-0 lg:border-r border-neutral-700/80 flex flex-col justify-start gap-4 bg-[#1c1c1f]">
             <div>
-              <h3 className="text-xl sm:text-2xl font-black text-white leading-tight">
+              <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '25px' }} className="font-black text-white leading-tight">
                 {currentGroup.vehicleName}
               </h3>
-              <p className="text-xs text-neutral-400 mt-2 font-normal leading-relaxed">
+              <p className="text-xs text-neutral-300 mt-2 font-normal font-sans leading-relaxed">
                 Clean interior, seasoned highway chauffeur, high-output AC chillers, and fully serviced for smooth intercity cruising.
               </p>
 
-              <div className="mt-4 rounded-xl overflow-hidden border border-neutral-800 bg-neutral-900">
+              <div className="mt-4 rounded-xl overflow-hidden border border-neutral-700 bg-black/40">
                 <img
                   src={currentGroup.image}
                   alt={currentGroup.vehicleName}
@@ -62,7 +63,7 @@ export const RawalpindiRoutesSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="pt-2">
+            <div className="pt-2 font-sans">
               <button
                 onClick={() =>
                   openWhatsApp(
@@ -77,10 +78,10 @@ export const RawalpindiRoutesSection: React.FC = () => {
           </div>
 
           {/* Right Column: Destination Rate Cards */}
-          <div className="lg:col-span-8 p-6 sm:p-8 bg-neutral-900/60 flex flex-col justify-between">
+          <div className="lg:col-span-8 p-6 sm:p-8 bg-[#232323] flex flex-col justify-between font-sans">
             <div>
-              <div className="flex items-center justify-between pb-3 border-b border-neutral-800 mb-4 font-sans">
-                <span className="text-xs font-bold uppercase tracking-wider text-neutral-400">
+              <div className="flex items-center justify-between pb-3 border-b border-neutral-700/80 mb-4 font-sans">
+                <span className="text-xs font-bold uppercase tracking-wider text-neutral-300">
                   Destination &amp; Fixed Rates
                 </span>
               </div>
@@ -89,21 +90,22 @@ export const RawalpindiRoutesSection: React.FC = () => {
                 {currentGroup.rates.map((item, idx) => (
                   <div
                     key={idx}
-                    className="bg-neutral-900 p-4 rounded-xl border border-neutral-800 hover:border-amber-400/50 transition-colors flex items-center justify-between group"
+                    className="bg-[#1c1c1f] p-4 rounded-xl border border-neutral-700/80 hover:border-amber-400/50 transition-colors flex items-center justify-between group"
                   >
                     <div className="pr-2">
                       <span className="font-extrabold text-sm text-white block leading-tight">
                         {item.destination}
                       </span>
                       {(item.distance || item.time) && (
-                        <span className="text-xs text-neutral-400 font-medium block mt-1">
+                        <span className="text-xs text-neutral-300 font-medium block mt-1">
                           {item.distance} {item.time ? `• ${item.time}` : ''}
                         </span>
                       )}
                     </div>
 
                     <div className="text-right flex flex-col items-end gap-2 shrink-0">
-                      <span className="text-sm font-extrabold text-amber-400 tracking-tight">
+                      {/* Price color set to white as requested */}
+                      <span style={{ color: '#ffffff' }} className="text-sm font-extrabold text-white tracking-tight">
                         {item.price}
                       </span>
                       <button
@@ -114,7 +116,8 @@ export const RawalpindiRoutesSection: React.FC = () => {
                             item.price
                           )
                         }
-                        className="btn-gold text-xs font-bold px-3.5 py-2 rounded-lg cursor-pointer transition-colors shadow-2xs"
+                        style={{ backgroundColor: '#cba542' }}
+                        className="text-white hover:opacity-90 text-xs font-bold px-3.5 py-2 rounded-lg cursor-pointer transition-colors shadow-2xs"
                       >
                         Book Now
                       </button>

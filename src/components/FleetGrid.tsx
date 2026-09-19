@@ -74,10 +74,10 @@ export const FleetGrid: React.FC<FleetGridProps> = ({
       {/* Header Area */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
         <div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-neutral-950">
+          <h2 style={{ fontFamily: 'Georgia, serif' }} className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-neutral-950">
             {showSearchAndSort ? 'Our Premium Vehicle Collection & Rates' : 'Our Verified Fleet & Transparent Rates'}
           </h2>
-          <p className="text-neutral-500 text-xs sm:text-sm mt-1.5 max-w-2xl font-normal">
+          <p className="text-neutral-500 text-xs sm:text-sm mt-1.5 max-w-2xl font-normal font-sans">
             {showSearchAndSort
               ? 'Every vehicle in our showroom is 100% genuine, maintained to showroom standards, and piloted by courteous, background-verified chauffeurs. Transparent rates with zero unexpected surcharges.'
               : 'Fixed 10-Hour & Daily packages including our licensed, verified chauffeurs.'}
