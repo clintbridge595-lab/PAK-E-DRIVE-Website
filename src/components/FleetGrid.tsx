@@ -87,9 +87,10 @@ export const FleetGrid: React.FC<FleetGridProps> = ({
         {onViewAllFleet && (
           <button
             onClick={onViewAllFleet}
-            className="text-xs font-bold text-amber-600 hover:text-amber-700 tracking-wide transition-colors self-start md:self-auto cursor-pointer"
+            className="inline-flex items-center gap-1.5 text-xs font-bold text-neutral-800 bg-neutral-100 hover:bg-neutral-200 border border-neutral-300 px-4 py-2 rounded-lg transition-colors self-start md:self-auto cursor-pointer"
           >
             <span>View Full Fleet Showroom</span>
+            <span className="text-amber-600 font-bold">&rarr;</span>
           </button>
         )}
       </div>
@@ -133,11 +134,11 @@ export const FleetGrid: React.FC<FleetGridProps> = ({
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="text-xs font-bold uppercase tracking-wider bg-neutral-50 border border-neutral-300 rounded-lg px-3 py-2 text-neutral-800 cursor-pointer focus:outline-hidden"
+              className="text-xs font-bold tracking-wide bg-neutral-50 border border-neutral-300 rounded-lg px-3 py-2 text-neutral-800 cursor-pointer focus:outline-hidden"
             >
-              <option value="featured">FEATURED ORDER</option>
-              <option value="seats">SEAT CAPACITY (HIGH TO LOW)</option>
-              <option value="name">VEHICLE NAME (A-Z)</option>
+              <option value="featured">Featured Order</option>
+              <option value="seats">Seat Capacity (High to Low)</option>
+              <option value="name">Vehicle Name (A-Z)</option>
             </select>
           </div>
         )}
@@ -164,36 +165,36 @@ export const FleetGrid: React.FC<FleetGridProps> = ({
             {/* Content Area */}
             <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
               <div>
-                <h3 className="text-lg font-extrabold text-neutral-950 tracking-tight leading-snug">
+                <h3 className="text-lg font-extrabold text-neutral-950 tracking-tight leading-snug min-h-[3rem] flex items-center">
                   {vehicle.name}
                 </h3>
 
                 {/* Specs Row */}
                 <div className="grid grid-cols-3 sm:grid-cols-4 gap-2 my-4 py-3 border-y border-neutral-100 text-center">
                   <div className="flex flex-col items-center justify-center">
-                    <span className="text-[10px] uppercase font-bold text-neutral-400 mb-0.5">SEATS</span>
-                    <div className="text-xs font-bold text-neutral-800">
+                    <span className="text-xs uppercase font-bold text-neutral-600 mb-0.5">Seats</span>
+                    <div className="text-xs font-bold text-neutral-900">
                       <span>{vehicle.seats}</span>
                     </div>
                   </div>
 
                   <div className="flex flex-col items-center justify-center">
-                    <span className="text-[10px] uppercase font-bold text-neutral-400 mb-0.5">GEAR</span>
-                    <div className="text-xs font-bold text-neutral-800">
+                    <span className="text-xs uppercase font-bold text-neutral-600 mb-0.5">Gear</span>
+                    <div className="text-xs font-bold text-neutral-900">
                       <span>{vehicle.gear}</span>
                     </div>
                   </div>
 
                   <div className="flex flex-col items-center justify-center">
-                    <span className="text-[10px] uppercase font-bold text-neutral-400 mb-0.5">FUEL</span>
-                    <div className="text-xs font-bold text-neutral-800">
+                    <span className="text-xs uppercase font-bold text-neutral-600 mb-0.5">Fuel</span>
+                    <div className="text-xs font-bold text-neutral-900">
                       <span>{vehicle.fuel}</span>
                     </div>
                   </div>
 
                   <div className="flex flex-col items-center justify-center">
-                    <span className="text-[10px] uppercase font-bold text-neutral-400 mb-0.5">BAGS</span>
-                    <div className="text-xs font-bold text-neutral-800">
+                    <span className="text-xs uppercase font-bold text-neutral-600 mb-0.5">Bags</span>
+                    <div className="text-xs font-bold text-neutral-900">
                       <span>{vehicle.bags}</span>
                     </div>
                   </div>
@@ -214,9 +215,12 @@ export const FleetGrid: React.FC<FleetGridProps> = ({
 
               {/* Service & Action Buttons */}
               <div className="pt-2 border-t border-neutral-100">
-                <div className="flex items-center justify-between text-xs mb-3">
-                  <span className="text-xs font-semibold text-neutral-500">Service</span>
-                  <span className="font-bold text-emerald-600">Available For Rental</span>
+                <div className="flex items-center gap-2 text-xs mb-3">
+                  <span className="font-semibold text-neutral-500">Service:</span>
+                  <span className="inline-flex items-center gap-1.5 font-bold text-emerald-600">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+                    Available for Rental
+                  </span>
                 </div>
 
                 <div className="grid grid-cols-2 gap-2.5">
@@ -231,7 +235,7 @@ export const FleetGrid: React.FC<FleetGridProps> = ({
                   <button
                     id={`whatsapp-btn-${vehicle.id}`}
                     onClick={() => handleWhatsAppBooking(vehicle)}
-                    className="w-full flex items-center justify-center bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs py-2.5 rounded-lg transition-colors cursor-pointer shadow-xs"
+                    className="w-full flex items-center justify-center btn-whatsapp text-xs py-2.5 rounded-lg transition-colors cursor-pointer shadow-xs"
                   >
                     <span>WhatsApp</span>
                   </button>

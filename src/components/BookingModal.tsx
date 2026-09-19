@@ -45,8 +45,8 @@ export const BookingModal: React.FC<BookingModalProps> = ({
         {/* Modal Header */}
         <div className="bg-[#121316] text-white p-5 sm:p-6 flex items-center justify-between">
           <div>
-            <span className="text-[10px] font-sans text-amber-400 uppercase font-bold tracking-wider block">
-              RESERVATION DESK
+            <span className="text-xs text-amber-400 font-bold uppercase tracking-wider block">
+              Reservation Desk
             </span>
             <h3 className="text-xl font-extrabold text-white">
               Reserve Your Chauffeur Driven Vehicle
@@ -54,6 +54,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
           </div>
           <button
             onClick={onClose}
+            aria-label="Close booking modal"
             className="w-8 h-8 rounded-full bg-neutral-800 hover:bg-neutral-700 text-white flex items-center justify-center cursor-pointer transition-colors"
           >
             <X className="w-5 h-5" />
@@ -63,7 +64,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
         {/* Modal Form */}
         <form onSubmit={handleSubmit} className="p-5 sm:p-6 space-y-4">
           <div>
-            <label className="block text-[11px] font-bold text-neutral-700 uppercase mb-1">
+            <label className="block text-xs font-semibold text-neutral-700 mb-1">
               Select Vehicle
             </label>
             <div className="relative">
@@ -84,7 +85,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-[11px] font-bold text-neutral-700 uppercase mb-1">
+              <label className="block text-xs font-semibold text-neutral-700 mb-1">
                 Pickup Location
               </label>
               <div className="relative">
@@ -101,7 +102,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
             </div>
 
             <div>
-              <label className="block text-[11px] font-bold text-neutral-700 uppercase mb-1">
+              <label className="block text-xs font-semibold text-neutral-700 mb-1">
                 Destination / Drop-off
               </label>
               <div className="relative">
@@ -120,7 +121,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-[11px] font-bold text-neutral-700 uppercase mb-1">
+              <label className="block text-xs font-semibold text-neutral-700 mb-1">
                 Pickup Date
               </label>
               <div className="relative">
@@ -136,7 +137,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
             </div>
 
             <div>
-              <label className="block text-[11px] font-bold text-neutral-700 uppercase mb-1">
+              <label className="block text-xs font-semibold text-neutral-700 mb-1">
                 Pickup Time
               </label>
               <div className="relative">
@@ -155,7 +156,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-[11px] font-bold text-neutral-700 uppercase mb-1">
+              <label className="block text-xs font-semibold text-neutral-700 mb-1">
                 Your Name *
               </label>
               <input
@@ -169,7 +170,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
             </div>
 
             <div>
-              <label className="block text-[11px] font-bold text-neutral-700 uppercase mb-1">
+              <label className="block text-xs font-semibold text-neutral-700 mb-1">
                 Phone Number *
               </label>
               <div className="relative">
@@ -189,7 +190,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
           <div className="pt-2">
             <button
               type="submit"
-              className="w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs uppercase py-3.5 rounded-lg shadow-sm tracking-wide transition-colors cursor-pointer"
+              className="w-full flex items-center justify-center gap-2 btn-whatsapp font-bold text-xs py-3.5 rounded-lg shadow-sm tracking-wide transition-colors cursor-pointer"
             >
               <Send className="w-4 h-4" />
               <span>Send Booking Details via WhatsApp</span>

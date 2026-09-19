@@ -76,23 +76,39 @@ export const BulletproofSection: React.FC<BulletproofSectionProps> = ({
               {/* Card Details */}
               <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-base sm:text-lg font-black text-white tracking-tight leading-tight">
+                  <h3 className="text-base sm:text-lg font-black text-white tracking-tight leading-tight min-h-[2.5rem] flex items-center">
                     {vehicle.name}
                   </h3>
+
+                  {/* Specs Row */}
+                  <div className="grid grid-cols-3 gap-2 my-3 py-2.5 border-y border-neutral-800 text-center">
+                    <div className="flex flex-col items-center justify-center">
+                      <span className="text-xs uppercase font-bold text-neutral-400 mb-0.5">Seats</span>
+                      <span className="text-xs font-bold text-white">{vehicle.seats}</span>
+                    </div>
+                    <div className="flex flex-col items-center justify-center">
+                      <span className="text-xs uppercase font-bold text-neutral-400 mb-0.5">Armor</span>
+                      <span className="text-xs font-bold text-amber-400">B6 / B7</span>
+                    </div>
+                    <div className="flex flex-col items-center justify-center">
+                      <span className="text-xs uppercase font-bold text-neutral-400 mb-0.5">Gear</span>
+                      <span className="text-xs font-bold text-white">{vehicle.gear}</span>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Buttons */}
-                <div className="space-y-2 pt-4 border-t border-neutral-800 mt-4">
+                <div className="pt-2 border-t border-neutral-800">
                   <div className="grid grid-cols-2 gap-2">
                     <button
                       onClick={() => onOpenSpecs(vehicle)}
-                      className="bg-neutral-800 hover:bg-neutral-700 text-neutral-200 border border-neutral-600 text-xs font-bold py-2 rounded-lg tracking-wide transition-colors cursor-pointer text-center"
+                      className="btn-outline text-xs font-bold py-2 rounded-lg tracking-wide transition-colors cursor-pointer text-center"
                     >
                       Specs
                     </button>
                     <button
                       onClick={() => handleWhatsAppInquiry(vehicle)}
-                      className="flex items-center justify-center bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-bold py-2 rounded-lg tracking-wide transition-colors cursor-pointer"
+                      className="btn-whatsapp text-white text-xs font-bold py-2 rounded-lg tracking-wide transition-colors cursor-pointer text-center"
                     >
                       <span>Book B6+</span>
                     </button>

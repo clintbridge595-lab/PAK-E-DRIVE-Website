@@ -1,6 +1,6 @@
 {
   "name": "PAK E DRIVE - Rent A Car",
-  "description": "Official Chauffeur & Executive Fleet in Karachi, Motorways & All Pakistan.",
+  "description": "Official Chauffeur & Executive Fleet in Karachi, Rawalpindi, Islamabad & All Pakistan. Luxury SUVs, bulletproof B6+ vehicles, and wedding car rentals.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

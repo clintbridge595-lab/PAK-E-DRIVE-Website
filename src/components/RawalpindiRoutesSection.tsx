@@ -43,7 +43,7 @@ export const RawalpindiRoutesSection: React.FC = () => {
         {/* Active Group Details Card */}
         <div className="bg-neutral-950 rounded-2xl border border-neutral-800 overflow-hidden shadow-2xl grid grid-cols-1 lg:grid-cols-12">
           {/* Left Column: Vehicle Visual & Highlights */}
-          <div className="lg:col-span-4 p-6 sm:p-8 border-b lg:border-b-0 lg:border-r border-neutral-800 flex flex-col justify-between bg-gradient-to-b from-neutral-900 to-neutral-950">
+          <div className="lg:col-span-4 p-6 sm:p-8 border-b lg:border-b-0 lg:border-r border-neutral-800 flex flex-col justify-start gap-4 bg-gradient-to-b from-neutral-900 to-neutral-950">
             <div>
               <h3 className="text-xl sm:text-2xl font-black text-white leading-tight">
                 {currentGroup.vehicleName}
@@ -52,7 +52,7 @@ export const RawalpindiRoutesSection: React.FC = () => {
                 Clean interior, seasoned highway chauffeur, high-output AC chillers, and fully serviced for smooth intercity cruising.
               </p>
 
-              <div className="mt-5 rounded-xl overflow-hidden border border-neutral-800 bg-neutral-900">
+              <div className="mt-4 rounded-xl overflow-hidden border border-neutral-800 bg-neutral-900">
                 <img
                   src={currentGroup.image}
                   alt={currentGroup.vehicleName}
@@ -62,19 +62,16 @@ export const RawalpindiRoutesSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="mt-6 space-y-3">
+            <div className="pt-2">
               <button
                 onClick={() =>
                   openWhatsApp(
                     `Assalam-o-Alaikum PAK E DRIVE, I would like to book ${currentGroup.vehicleName} from Rawalpindi. Please share driver and booking confirmation.`
                   )
                 }
-                style={{
-                  backgroundColor: '#275632',
-                }}
-                className="w-full h-11 text-white font-black text-xs uppercase rounded-lg tracking-wider transition-colors cursor-pointer text-center block shadow-lg shadow-emerald-500/10 font-sans"
+                className="w-full btn-whatsapp h-11 text-xs font-bold tracking-wide transition-colors cursor-pointer text-center flex items-center justify-center gap-2"
               >
-                BOOK THIS VEHICLE ON WHATSAPP
+                <span>Book Vehicle on WhatsApp</span>
               </button>
             </div>
           </div>
@@ -83,8 +80,8 @@ export const RawalpindiRoutesSection: React.FC = () => {
           <div className="lg:col-span-8 p-6 sm:p-8 bg-neutral-900/60 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between pb-3 border-b border-neutral-800 mb-4 font-sans">
-                <span className="text-xs font-black uppercase tracking-wider text-neutral-400">
-                  DESTINATION
+                <span className="text-xs font-bold uppercase tracking-wider text-neutral-400">
+                  Destination &amp; Fixed Rates
                 </span>
               </div>
 
@@ -92,23 +89,23 @@ export const RawalpindiRoutesSection: React.FC = () => {
                 {currentGroup.rates.map((item, idx) => (
                   <div
                     key={idx}
-                    className="bg-neutral-900 p-3.5 rounded-xl border border-neutral-800 hover:border-amber-400/50 transition-colors flex items-center justify-between group"
+                    className="bg-neutral-900 p-4 rounded-xl border border-neutral-800 hover:border-amber-400/50 transition-colors flex items-center justify-between group"
                   >
-                    <div>
+                    <div className="pr-2">
                       <span className="font-extrabold text-sm text-white block leading-tight">
                         {item.destination}
                       </span>
                       {(item.distance || item.time) && (
-                        <span className="text-[10px] text-neutral-400 font-sans font-medium block mt-0.5">
+                        <span className="text-xs text-neutral-400 font-medium block mt-1">
                           {item.distance} {item.time ? `• ${item.time}` : ''}
                         </span>
                       )}
                     </div>
 
-                    <div className="text-right flex flex-col items-end gap-1.5">
-                      <div className="text-xs font-bold text-amber-300 bg-amber-400/10 border border-amber-400/30 px-2.5 py-1 rounded-md tracking-tight">
+                    <div className="text-right flex flex-col items-end gap-2 shrink-0">
+                      <span className="text-sm font-extrabold text-amber-400 tracking-tight">
                         {item.price}
-                      </div>
+                      </span>
                       <button
                         onClick={() =>
                           handleBookFixedRate(
@@ -117,7 +114,7 @@ export const RawalpindiRoutesSection: React.FC = () => {
                             item.price
                           )
                         }
-                        className="bg-amber-400 hover:bg-amber-300 text-neutral-950 text-xs font-bold px-3 py-1.5 rounded-md transition-colors cursor-pointer shadow-xs"
+                        className="btn-gold text-xs font-bold px-3.5 py-2 rounded-lg cursor-pointer transition-colors shadow-2xs"
                       >
                         Book Now
                       </button>

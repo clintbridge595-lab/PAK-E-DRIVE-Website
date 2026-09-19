@@ -62,9 +62,10 @@ export const RoutesSection: React.FC<RoutesSectionProps> = ({
             {onViewAllRoutes && (
               <button
                 onClick={onViewAllRoutes}
-                className="text-xs font-bold text-amber-600 hover:text-amber-700 tracking-wide transition-colors self-start md:self-auto cursor-pointer"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-neutral-800 bg-neutral-100 hover:bg-neutral-200 border border-neutral-300 px-4 py-2 rounded-lg transition-colors self-start md:self-auto cursor-pointer"
               >
                 <span>View All Routes</span>
+                <span className="text-amber-600 font-bold">&rarr;</span>
               </button>
             )}
           </div>
@@ -91,9 +92,9 @@ export const RoutesSection: React.FC<RoutesSectionProps> = ({
                   <div className="absolute bottom-3 right-3">
                     <button
                       onClick={() => handleBookRoute(route)}
-                      className="bg-black/90 hover:bg-black text-white text-[10px] font-black uppercase tracking-wider px-3 py-1.5 rounded-md border border-neutral-700 cursor-pointer font-sans"
+                      className="bg-neutral-950/90 hover:bg-neutral-950 text-white text-xs font-bold tracking-wide px-3 py-1.5 rounded-md border border-neutral-700 cursor-pointer shadow-sm"
                     >
-                      QUOTE ON WHATSAPP
+                      Quote on WhatsApp
                     </button>
                   </div>
                 </div>
@@ -104,7 +105,7 @@ export const RoutesSection: React.FC<RoutesSectionProps> = ({
                     <h3 className="text-lg font-extrabold text-neutral-900 tracking-tight">
                       {route.name}
                     </h3>
-                    <div className="text-xs font-mono font-bold text-neutral-500 mt-0.5">
+                    <div className="text-xs font-bold text-neutral-500 mt-0.5">
                       {route.distance} • {route.duration}
                     </div>
                     <p className="text-xs text-neutral-600 mt-2.5 line-clamp-3 leading-relaxed">
@@ -134,8 +135,8 @@ export const RoutesSection: React.FC<RoutesSectionProps> = ({
               
               {/* Left Column: Corridor Selector List */}
               <div className="lg:col-span-5 space-y-3">
-                <span className="text-[10px] font-sans uppercase tracking-widest text-neutral-500 font-bold block mb-2 px-1">
-                  SELECT INTERCITY CORRIDOR
+                <span className="text-xs font-bold uppercase tracking-wider text-neutral-500 block mb-2 px-1">
+                  Select Intercity Corridor
                 </span>
 
                 {INTERCITY_ROUTES.map((route) => {
@@ -154,13 +155,13 @@ export const RoutesSection: React.FC<RoutesSectionProps> = ({
                         <div className="text-sm font-extrabold tracking-tight">
                           {route.name}
                         </div>
-                        <span className={`text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-sm ${
-                          isSelected ? 'bg-amber-400 text-black' : 'bg-emerald-50 text-emerald-700'
+                        <span className={`text-xs font-bold px-2 py-0.5 rounded-sm ${
+                          isSelected ? 'bg-amber-400 text-neutral-950' : 'bg-emerald-50 text-emerald-700'
                         }`}>
-                          SERVICE: Chauffeur Ride
+                          Chauffeur Ride
                         </span>
                       </div>
-                      <div className={`text-xs font-sans font-medium ${isSelected ? 'text-neutral-300' : 'text-neutral-500'}`}>
+                      <div className={`text-xs font-medium ${isSelected ? 'text-neutral-300' : 'text-neutral-500'}`}>
                         {route.distance} • {route.duration}
                       </div>
                     </button>
@@ -182,7 +183,7 @@ export const RoutesSection: React.FC<RoutesSectionProps> = ({
                   
                   <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3 text-white">
                     <div>
-                      <span className="text-[10px] font-sans text-amber-400 font-bold uppercase tracking-wider block">
+                      <span className="text-xs text-amber-400 font-bold uppercase tracking-wider block">
                         {selectedRoute.highwayName}
                       </span>
                       <h3 className="text-2xl font-black">{selectedRoute.name}</h3>
@@ -190,9 +191,9 @@ export const RoutesSection: React.FC<RoutesSectionProps> = ({
 
                     <button
                       onClick={() => handleBookRoute(selectedRoute)}
-                      className="bg-black/90 hover:bg-black text-white text-[11px] font-black uppercase tracking-wider px-3.5 py-2 rounded-lg border border-neutral-700 cursor-pointer shrink-0"
+                      className="bg-neutral-950/90 hover:bg-neutral-950 text-white text-xs font-bold tracking-wide px-4 py-2 rounded-lg border border-neutral-700 cursor-pointer shrink-0 shadow-sm"
                     >
-                      QUOTE ON WHATSAPP
+                      Quote on WhatsApp
                     </button>
                   </div>
                 </div>
@@ -201,8 +202,8 @@ export const RoutesSection: React.FC<RoutesSectionProps> = ({
                 <div className="p-6 sm:p-8 space-y-6">
                   {/* Route Overview */}
                   <div>
-                    <h4 className="text-xs font-sans uppercase tracking-widest text-neutral-900 font-bold mb-2">
-                      ROUTE OVERVIEW &amp; HIGHWAY EXPERIENCE
+                    <h4 className="text-xs uppercase tracking-wider text-neutral-900 font-bold mb-2">
+                      Route Overview &amp; Highway Experience
                     </h4>
                     <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
                       {selectedRoute.overview}
@@ -211,8 +212,8 @@ export const RoutesSection: React.FC<RoutesSectionProps> = ({
 
                   {/* Waypoints */}
                   <div>
-                    <h4 className="text-xs font-sans uppercase tracking-widest text-neutral-900 font-bold mb-2.5">
-                      KEY HIGHWAY WAYPOINTS &amp; REST STOPS:
+                    <h4 className="text-xs uppercase tracking-wider text-neutral-900 font-bold mb-2.5">
+                      Key Highway Waypoints &amp; Rest Stops
                     </h4>
                     <div className="flex flex-wrap items-center gap-2">
                       {selectedRoute.waypoints.map((wp, idx) => (
@@ -229,8 +230,8 @@ export const RoutesSection: React.FC<RoutesSectionProps> = ({
                   {/* Recommended Vehicles */}
                   <div className="pt-4 border-t border-neutral-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div>
-                      <span className="text-[10px] font-sans uppercase text-neutral-400 font-bold block mb-1">
-                        RECOMMENDED VEHICLES FOR THIS JOURNEY:
+                      <span className="text-xs uppercase text-neutral-500 font-bold block mb-1">
+                        Recommended Vehicles For This Journey
                       </span>
                       <div className="text-xs font-bold text-neutral-800">
                         {selectedRoute.recommendedVehicles}
@@ -239,9 +240,9 @@ export const RoutesSection: React.FC<RoutesSectionProps> = ({
 
                     <button
                       onClick={() => handleBookRoute(selectedRoute)}
-                      className="shrink-0 flex items-center justify-center bg-[#25D366] hover:bg-[#20bd5a] text-white font-extrabold text-xs uppercase px-6 py-3 rounded-lg shadow-sm tracking-wider cursor-pointer transition-colors"
+                      className="shrink-0 btn-whatsapp font-bold text-xs px-6 py-3 rounded-lg shadow-sm tracking-wide cursor-pointer transition-colors"
                     >
-                      <span>RESERVE ROUTE VIA WHATSAPP</span>
+                      <span>Reserve Route via WhatsApp</span>
                     </button>
                   </div>
                 </div>
@@ -249,7 +250,7 @@ export const RoutesSection: React.FC<RoutesSectionProps> = ({
 
             </div>
 
-            {/* Bottom Section matching video (00:34 - 00:37): Engineered for Long-Distance Pakistani Roads */}
+            {/* Bottom Section: Engineered for Long-Distance Pakistani Roads */}
             <div className="mt-16 pt-12 border-t border-neutral-200">
               <div className="text-center max-w-3xl mx-auto mb-10">
                 <h3 className="text-2xl sm:text-3xl font-extrabold text-neutral-950">
@@ -262,8 +263,8 @@ export const RoutesSection: React.FC<RoutesSectionProps> = ({
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
                 <div className="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
-                  <div className="text-[10px] font-bold text-amber-600 uppercase tracking-wider mb-2">
-                    SAFETY COMPLIANCE
+                  <div className="text-xs font-bold text-amber-600 uppercase tracking-wider mb-2">
+                    Safety Compliance
                   </div>
                   <h4 className="text-base font-extrabold text-neutral-900 mb-2">
                     Motorway Police (NH&amp;MP) Compliant
@@ -274,8 +275,8 @@ export const RoutesSection: React.FC<RoutesSectionProps> = ({
                 </div>
 
                 <div className="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
-                  <div className="text-[10px] font-bold text-amber-600 uppercase tracking-wider mb-2">
-                    ALERT CHAUFFEURS
+                  <div className="text-xs font-bold text-amber-600 uppercase tracking-wider mb-2">
+                    Alert Chauffeurs
                   </div>
                   <h4 className="text-base font-extrabold text-neutral-900 mb-2">
                     Dual Driver Protocol on 10+ Hour Trips
@@ -286,8 +287,8 @@ export const RoutesSection: React.FC<RoutesSectionProps> = ({
                 </div>
 
                 <div className="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
-                  <div className="text-[10px] font-bold text-amber-600 uppercase tracking-wider mb-2">
-                    ALPINE ROUTING
+                  <div className="text-xs font-bold text-amber-600 uppercase tracking-wider mb-2">
+                    Alpine Routing
                   </div>
                   <h4 className="text-base font-extrabold text-neutral-900 mb-2">
                     Mountain Expedition Specialists

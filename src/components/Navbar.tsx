@@ -65,7 +65,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
             <button
               id="header-book-rental-btn"
               onClick={onOpenBooking}
-              className="flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-300 text-neutral-950 font-bold px-5 py-2.5 rounded-lg shadow-xs text-xs tracking-wide transition-colors cursor-pointer"
+              className="btn-gold flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg shadow-xs text-xs font-bold tracking-wide transition-colors cursor-pointer"
             >
               <Calendar className="w-4 h-4 text-neutral-950" />
               <span>Book a Rental</span>
@@ -76,7 +76,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
           <div className="flex lg:hidden items-center gap-2">
             <button
               onClick={onOpenBooking}
-              className="bg-amber-400 text-neutral-950 text-xs font-bold px-3 py-2 rounded-md sm:hidden"
+              className="btn-gold text-xs font-bold px-3 py-2 rounded-md sm:hidden"
             >
               Book
             </button>
@@ -116,7 +116,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
                 setMobileMenuOpen(false);
                 onOpenBooking();
               }}
-              className="w-full flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-300 text-neutral-950 font-bold text-sm py-3 rounded-lg shadow-xs tracking-wide transition-colors"
+              className="btn-gold w-full flex items-center justify-center gap-2 text-sm font-bold py-3 rounded-lg shadow-xs tracking-wide transition-colors"
             >
               <Calendar className="w-4 h-4" />
               <span>Book a Rental</span>

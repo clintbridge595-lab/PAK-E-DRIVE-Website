@@ -91,14 +91,14 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({
             {currentSlide.subtext}
           </p>
 
-          {/* Reserve Button in Accessible Title Case */}
+          {/* Primary CTA in Accessible Title Case */}
           <div className="pt-3 sm:pt-4">
             <button
               id="hero-reserve-vehicle-btn"
               onClick={handleReserveClick}
-              className="inline-flex items-center justify-center px-7 h-11 sm:h-12 bg-[#c89b3c] hover:bg-[#d8a83d] active:bg-[#b58b32] text-neutral-950 font-bold text-sm tracking-wide rounded-md shadow-2xl transition-all duration-200 cursor-pointer transform hover:-translate-y-0.5"
+              className="btn-gold inline-flex items-center justify-center px-7 h-11 sm:h-12 text-sm font-bold tracking-wide rounded-lg shadow-2xl transition-all duration-200 cursor-pointer transform hover:-translate-y-0.5"
             >
-              <span>Reserve a Vehicle</span>
+              <span>Book a Rental</span>
             </button>
           </div>
 

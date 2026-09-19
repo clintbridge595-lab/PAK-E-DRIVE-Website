@@ -44,7 +44,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBooking }) => 
 
           {/* Column 2: Navigation (2 cols) */}
           <div className="lg:col-span-2 space-y-3">
-            <h3 className="text-xs tracking-wider text-white font-bold mb-4 uppercase">
+            <h3 className="text-sm tracking-wide text-white font-bold mb-4">
               Navigation
             </h3>
             <ul className="space-y-2 text-xs text-neutral-400 font-semibold">
@@ -88,7 +88,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBooking }) => 
 
           {/* Column 3: Rental Services (3 cols) */}
           <div className="lg:col-span-3 space-y-3">
-            <h3 className="text-xs tracking-wider text-white font-bold mb-4 uppercase">
+            <h3 className="text-sm tracking-wide text-white font-bold mb-4">
               Rental Services
             </h3>
             <ul className="space-y-2 text-xs text-neutral-400">
@@ -121,7 +121,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBooking }) => 
 
           {/* Column 4: Direct Contact Desk (3 cols) */}
           <div className="lg:col-span-3 space-y-3">
-            <h3 className="text-xs tracking-wider text-white font-bold mb-4 uppercase">
+            <h3 className="text-sm tracking-wide text-white font-bold mb-4">
               Direct Contact Desk
             </h3>
 
@@ -151,7 +151,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBooking }) => 
               <button
                 id="footer-quick-inquiry-btn"
                 onClick={onOpenBooking}
-                className="w-full sm:w-auto inline-flex items-center justify-center text-amber-400 bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 font-bold text-xs px-5 py-2.5 rounded-lg tracking-wide transition-colors cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center btn-outline text-xs px-5 py-2.5 rounded-lg tracking-wide transition-colors cursor-pointer"
               >
                 <span>Quick Inquiry / Quote</span>
               </button>
@@ -161,14 +161,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBooking }) => 
         </div>
 
         {/* Copyright & Sub-bar */}
-        <div 
-          style={{
-            minHeight: '63.6667px',
-          }}
-          className="mt-12 pt-4 border-t border-neutral-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500 font-medium"
-        >
+        <div className="mt-12 pt-4 border-t border-neutral-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-400 font-medium">
           <div className="flex flex-wrap items-center gap-2">
-            <span>&copy; 2026 PAK E DRIVE — RENT A CAR. All rights reserved.</span>
+            <span>&copy; 2026 PAK E DRIVE — Rent A Car. All rights reserved.</span>
             <span>•</span>
             <button
               onClick={() => handleNav('privacy')}
@@ -177,10 +172,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBooking }) => 
               Privacy Policy
             </button>
           </div>
-          <div className="flex items-center gap-4 text-neutral-400 text-[11px]">
+          <div className="flex items-center gap-4 text-neutral-400 text-xs">
             <span>Karachi • Hyderabad • Lahore • Islamabad</span>
             <span>•</span>
-            <span className="text-amber-500 font-bold">Chauffeur Luxury Rentals</span>
+            <span className="text-amber-400 font-bold">Chauffeur Luxury Rentals</span>
           </div>
         </div>
       </div>

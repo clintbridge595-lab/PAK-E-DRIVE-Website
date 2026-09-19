@@ -67,53 +67,52 @@ Kindly confirm availability and share the best quotation.`;
   return (
     <div id="booking-calculator-widget" className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-12 mb-8 sm:mb-12">
       {/* Top Filter Tabs: responsive scrollable on mobile */}
-      <div className="flex items-center overflow-x-auto no-scrollbar gap-2 pb-1 sm:pb-0">
+      {/* Top Filter Tabs: unified heights, consistent border treatment, seamless connection */}
+      <div className="flex items-center overflow-x-auto no-scrollbar gap-1.5 sm:gap-2 relative z-10">
         <button
           id="tab-intercity-transfer"
           onClick={() => {
             setActiveTab('intercity');
             setDestination('Hyderabad (M-9 Motorway, 160km)');
           }}
-          className={`font-black px-4 sm:px-5 py-2.5 rounded-t-lg tracking-wider text-[11px] sm:text-xs uppercase transition-colors cursor-pointer shrink-0 flex items-center justify-center ${
+          className={`font-bold px-4 sm:px-5 h-11 rounded-t-xl tracking-wide text-xs transition-all cursor-pointer shrink-0 flex items-center justify-center border ${
             activeTab === 'intercity'
-              ? 'bg-neutral-950 text-white shadow-md'
-              : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200'
+              ? 'bg-white text-neutral-950 border-neutral-200 border-b-white -mb-px shadow-xs z-10'
+              : 'bg-neutral-100 hover:bg-neutral-200/80 text-neutral-600 border-transparent'
           }`}
         >
-          INTERCITY HIGHWAY TRANSFER
+          Intercity Highway Transfer
         </button>
 
         <button
           id="tab-daily-city-chauffeur"
-          style={{ height: '29px', width: '255px' }}
           onClick={() => {
             setActiveTab('daily');
             setDestination('Karachi Local City (10 Hours Full Chauffeur)');
           }}
-          className={`font-black px-4 sm:px-5 py-2.5 rounded-t-lg tracking-wider text-[11px] sm:text-xs uppercase transition-colors cursor-pointer shrink-0 flex items-center justify-center ${
+          className={`font-bold px-4 sm:px-5 h-11 rounded-t-xl tracking-wide text-xs transition-all cursor-pointer shrink-0 flex items-center justify-center border ${
             activeTab === 'daily'
-              ? 'bg-neutral-950 text-white shadow-md'
-              : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200'
+              ? 'bg-white text-neutral-950 border-neutral-200 border-b-white -mb-px shadow-xs z-10'
+              : 'bg-neutral-100 hover:bg-neutral-200/80 text-neutral-600 border-transparent'
           }`}
         >
-          DAILY CITY CHAUFFEUR (10 HRS)
+          Daily City Chauffeur (10 Hrs)
         </button>
 
         <button
           id="tab-wedding-barat"
-          style={{ height: '30px' }}
           onClick={() => {
             setActiveTab('wedding');
             setDestination('Karachi Wedding Banquet / Venue Event');
             setVehicle('Daihatsu Copen (Convertible Barat Wedding Car)');
           }}
-          className={`font-black px-4 sm:px-5 py-2.5 rounded-t-lg tracking-wider text-[11px] sm:text-xs uppercase transition-colors cursor-pointer shrink-0 flex items-center justify-center ${
+          className={`font-bold px-4 sm:px-5 h-11 rounded-t-xl tracking-wide text-xs transition-all cursor-pointer shrink-0 flex items-center justify-center border ${
             activeTab === 'wedding'
-              ? 'bg-neutral-950 text-white shadow-md'
-              : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200'
+              ? 'bg-white text-neutral-950 border-neutral-200 border-b-white -mb-px shadow-xs z-10'
+              : 'bg-neutral-100 hover:bg-neutral-200/80 text-neutral-600 border-transparent'
           }`}
         >
-          WEDDING & VIP BARAT PROTOCOL
+          Wedding &amp; VIP Barat Protocol
         </button>
       </div>
 
@@ -125,8 +124,8 @@ Kindly confirm availability and share the best quotation.`;
           
           {/* Pickup Point */}
           <div>
-            <label className="block text-[11px] font-black uppercase tracking-wider text-neutral-600 mb-2">
-              PICKUP POINT
+            <label className="block text-xs font-bold uppercase tracking-wider text-neutral-600 mb-2">
+              Pickup Point
             </label>
             <div className="relative">
               <select
@@ -150,8 +149,8 @@ Kindly confirm availability and share the best quotation.`;
 
           {/* Destination City */}
           <div>
-            <label className="block text-[11px] font-black uppercase tracking-wider text-neutral-600 mb-2">
-              DESTINATION CITY
+            <label className="block text-xs font-bold uppercase tracking-wider text-neutral-600 mb-2">
+              Destination City
             </label>
             <div className="relative">
               <select
@@ -190,8 +189,8 @@ Kindly confirm availability and share the best quotation.`;
 
           {/* Travel Date */}
           <div>
-            <label className="block text-[11px] font-black uppercase tracking-wider text-neutral-600 mb-2">
-              TRAVEL DATE
+            <label className="block text-xs font-bold uppercase tracking-wider text-neutral-600 mb-2">
+              Travel Date
             </label>
             <input
               id="travel-date-input"
@@ -204,8 +203,8 @@ Kindly confirm availability and share the best quotation.`;
 
           {/* Vehicle Selection */}
           <div>
-            <label className="block text-[11px] font-black uppercase tracking-wider text-neutral-600 mb-2">
-              VEHICLE SELECTION
+            <label className="block text-xs font-bold uppercase tracking-wider text-neutral-600 mb-2">
+              Vehicle Selection
             </label>
             <select
               id="vehicle-select"
@@ -227,7 +226,7 @@ Kindly confirm availability and share the best quotation.`;
         <div className="mt-6 pt-5 border-t border-neutral-200 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <div>
-              <div className="text-xs font-bold uppercase tracking-wider text-neutral-500">
+              <div className="text-xs font-semibold uppercase tracking-wider text-neutral-500">
                 Vehicle Package (Includes Uniformed Chauffeur)
               </div>
               <div className="text-sm text-neutral-900 font-bold mt-0.5">
@@ -239,13 +238,13 @@ Kindly confirm availability and share the best quotation.`;
           <button
             id="confirm-on-whatsapp-btn"
             onClick={handleConfirmWhatsApp}
-            className="w-full sm:w-auto flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-300 active:bg-amber-500 text-neutral-950 font-bold text-xs uppercase px-7 py-3.5 rounded-lg shadow-sm tracking-wide transition-all cursor-pointer"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 btn-gold px-6 py-3 text-xs font-bold tracking-wide transition-all cursor-pointer"
           >
             {/* WhatsApp SVG Icon */}
             <svg className="w-4 h-4 fill-current text-neutral-950" viewBox="0 0 24 24">
               <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
             </svg>
-            <span>Confirm on WhatsApp ({selectedShortName})</span>
+            <span>Confirm Booking via WhatsApp</span>
           </button>
         </div>
       </div>
