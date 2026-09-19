@@ -29,10 +29,6 @@ export const RoutesSection: React.FC<RoutesSectionProps> = ({
       {/* If full page: Hero Banner matching video (00:20 - 00:22 of video 2) */}
       {isFullPage && (
         <div 
-          style={{
-            fontFamily: 'Georgia, serif',
-            fontStyle: 'italic',
-          }}
           className="bg-[#121316] text-white py-14 sm:py-20 border-b border-neutral-800"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
@@ -48,10 +44,6 @@ export const RoutesSection: React.FC<RoutesSectionProps> = ({
 
       {/* Main Container */}
       <div 
-        style={{
-          fontFamily: 'Georgia, serif',
-          fontStyle: 'italic',
-        }}
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16"
       >
         
@@ -70,9 +62,9 @@ export const RoutesSection: React.FC<RoutesSectionProps> = ({
             {onViewAllRoutes && (
               <button
                 onClick={onViewAllRoutes}
-                className="text-xs font-black uppercase text-amber-600 hover:text-amber-700 tracking-wider transition-colors self-start md:self-auto cursor-pointer"
+                className="text-xs font-bold text-amber-600 hover:text-amber-700 tracking-wide transition-colors self-start md:self-auto cursor-pointer"
               >
-                <span>VIEW ALL PAKISTANI ROUTES</span>
+                <span>View All Routes</span>
               </button>
             )}
           </div>
@@ -121,14 +113,14 @@ export const RoutesSection: React.FC<RoutesSectionProps> = ({
                   </div>
 
                   <div className="pt-4 mt-4 border-t border-neutral-100 flex items-center justify-between">
-                    <span className="text-[11px] text-neutral-500 font-medium truncate max-w-[60%]">
+                    <span className="text-xs text-neutral-500 font-medium truncate max-w-[60%]">
                       {route.recommendedVehicles.split('•')[0]}
                     </span>
                     <button
                       onClick={() => handleBookRoute(route)}
-                      className="text-xs font-black uppercase text-amber-600 hover:text-amber-700 tracking-wider cursor-pointer"
+                      className="text-xs font-bold text-amber-600 hover:text-amber-700 tracking-wide cursor-pointer"
                     >
-                      <span>BOOK ROUTE</span>
+                      <span>Book Route</span>
                     </button>
                   </div>
                 </div>

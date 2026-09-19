@@ -100,10 +100,6 @@ export const ChanganOshanShowcase: React.FC<ChanganOshanShowcaseProps> = ({ onOp
   return (
     <section
       id="changan-oshan-exclusive-showcase"
-      style={{
-        fontFamily: 'Georgia, serif',
-        fontStyle: 'italic',
-      }}
       className="py-12 sm:py-16 lg:py-20 bg-neutral-950 text-white relative overflow-hidden border-b border-neutral-800"
     >
       {/* Subtle background glow */}
@@ -113,12 +109,11 @@ export const ChanganOshanShowcase: React.FC<ChanganOshanShowcaseProps> = ({ onOp
         {/* Top Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
           <div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white uppercase">
-              CHANGAN OSHAN X7 <span style={{ color: '#a2862b' }}>FUTURESENSE</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white">
+              Changan Oshan X7 <span className="text-amber-400">FutureSense</span>
             </h2>
             <p 
-              style={{ fontSize: '12px' }}
-              className="text-neutral-400 mt-1 max-w-2xl"
+              className="text-xs sm:text-sm text-neutral-400 mt-1 max-w-2xl"
             >
               Exclusive dedicated gallery showcasing the ultra-sleek Black Changan Oshan X7 (300T BlueCore Turbo). Scroll through all high-resolution exterior and profile angles below.
             </p>
@@ -128,22 +123,9 @@ export const ChanganOshanShowcase: React.FC<ChanganOshanShowcaseProps> = ({ onOp
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
             <button
               onClick={handleWhatsAppBooking}
-              style={{
-                height: '41px',
-                width: '255.396px',
-                backgroundColor: '#1f8947',
-              }}
-              className="inline-flex items-center justify-center text-white font-black text-xs uppercase px-2 rounded-lg tracking-wider transition-colors cursor-pointer shadow-lg shadow-emerald-500/15 font-sans truncate"
+              className="btn-whatsapp py-3 px-6 text-xs sm:text-sm font-bold tracking-wide"
             >
-              <span
-                style={{
-                  width: '207.771px',
-                  height: '17px',
-                  display: 'inline-block',
-                }}
-              >
-                BOOK THIS CAR ON WHATSAPP
-              </span>
+              <span>Book This Car on WhatsApp</span>
             </button>
           </div>
         </div>
@@ -288,10 +270,10 @@ export const ChanganOshanShowcase: React.FC<ChanganOshanShowcaseProps> = ({ onOp
                     setIsAutoPlaying(false);
                     setActiveIndex(index);
                   }}
-                  className={`relative shrink-0 w-36 sm:w-48 h-24 sm:h-28 rounded-xl overflow-hidden border-2 transition-all cursor-pointer snap-start ${
+                  className={`relative shrink-0 w-44 sm:w-52 h-28 sm:h-32 rounded-xl overflow-hidden border-2 transition-all cursor-pointer snap-start ${
                     isSelected
-                      ? 'border-amber-400 scale-[1.03] shadow-lg shadow-amber-400/20'
-                      : 'border-neutral-800 hover:border-neutral-600 opacity-70 hover:opacity-100'
+                      ? 'border-amber-400 scale-[1.02] shadow-lg shadow-amber-400/20'
+                      : 'border-neutral-800 hover:border-neutral-600 opacity-80 hover:opacity-100'
                   }`}
                 >
                   <img
@@ -300,9 +282,9 @@ export const ChanganOshanShowcase: React.FC<ChanganOshanShowcaseProps> = ({ onOp
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                  <div className="absolute bottom-1.5 left-2 right-2 text-left">
-                    <span className="text-[10px] font-bold text-white block truncate leading-tight">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
+                  <div className="absolute bottom-2 left-2.5 right-2.5 text-left">
+                    <span className="text-xs font-bold text-white block leading-tight">
                       {photo.title}
                     </span>
                   </div>

@@ -189,12 +189,12 @@ export const BookingModal: React.FC<BookingModalProps> = ({
           <div className="pt-2">
             <button
               type="submit"
-              className="w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-black text-xs uppercase py-3.5 rounded-lg shadow-sm tracking-wider transition-colors cursor-pointer"
+              className="w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs uppercase py-3.5 rounded-lg shadow-sm tracking-wide transition-colors cursor-pointer"
             >
               <Send className="w-4 h-4" />
-              <span>SEND BOOKING DETAILS VIA WHATSAPP</span>
+              <span>Send Booking Details via WhatsApp</span>
             </button>
-            <p className="text-[10px] text-neutral-400 text-center mt-2 font-medium">
+            <p className="text-xs text-neutral-500 text-center mt-2 font-normal">
               We never charge advance fees before verifying driver and car dispatch.
             </p>
           </div>

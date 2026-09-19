@@ -21,13 +21,13 @@ export const FleetGrid: React.FC<FleetGridProps> = ({
   const [sortBy, setSortBy] = useState('featured');
 
   const categories = [
-    { id: 'ALL', label: showSearchAndSort ? 'ALL CARS' : 'ALL VEHICLES' },
-    { id: 'BULLETPROOF', label: 'BULLET PROOF B6+' },
-    { id: 'SEDAN', label: 'SEDANS' },
-    { id: 'SUV', label: 'SUVS' },
-    { id: 'LUXURY', label: 'LUXURY' },
-    { id: 'VANS', label: 'VANS' },
-    { id: 'WEDDING', label: 'WEDDING' },
+    { id: 'ALL', label: showSearchAndSort ? 'All Cars' : 'All Vehicles' },
+    { id: 'BULLETPROOF', label: 'Bulletproof B6+' },
+    { id: 'SEDAN', label: 'Sedans' },
+    { id: 'SUV', label: 'SUVs' },
+    { id: 'LUXURY', label: 'Luxury' },
+    { id: 'VANS', label: 'Vans' },
+    { id: 'WEDDING', label: 'Wedding' },
   ];
 
   const filteredVehicles = useMemo(() => {
@@ -69,10 +69,6 @@ export const FleetGrid: React.FC<FleetGridProps> = ({
   return (
     <section 
       id="fleet-rates-grid-section" 
-      style={{
-        fontFamily: 'Georgia, serif',
-        fontStyle: 'italic',
-      }}
       className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16"
     >
       {/* Header Area */}
@@ -91,9 +87,9 @@ export const FleetGrid: React.FC<FleetGridProps> = ({
         {onViewAllFleet && (
           <button
             onClick={onViewAllFleet}
-            className="text-xs font-black uppercase text-amber-600 hover:text-amber-700 tracking-wider transition-colors self-start md:self-auto cursor-pointer"
+            className="text-xs font-bold text-amber-600 hover:text-amber-700 tracking-wide transition-colors self-start md:self-auto cursor-pointer"
           >
-            <span>VIEW FULL FLEET SHOWROOM</span>
+            <span>View Full Fleet Showroom</span>
           </button>
         )}
       </div>
@@ -109,7 +105,7 @@ export const FleetGrid: React.FC<FleetGridProps> = ({
                 key={cat.id}
                 id={`filter-tab-${cat.id.toLowerCase()}`}
                 onClick={() => setSelectedCategory(cat.id)}
-                className={`text-xs font-black px-4 py-2.5 rounded-full tracking-wider uppercase transition-colors cursor-pointer ${
+                className={`text-xs font-bold px-4 py-2 rounded-full tracking-normal transition-colors cursor-pointer ${
                   isActive
                     ? 'bg-neutral-950 text-white shadow-xs'
                     : 'bg-neutral-100 hover:bg-neutral-200 text-neutral-700'
@@ -219,25 +215,25 @@ export const FleetGrid: React.FC<FleetGridProps> = ({
               {/* Service & Action Buttons */}
               <div className="pt-2 border-t border-neutral-100">
                 <div className="flex items-center justify-between text-xs mb-3">
-                  <span className="text-[11px] font-bold text-neutral-400 uppercase">SERVICE</span>
-                  <span className="font-extrabold text-emerald-600">Available For Rental</span>
+                  <span className="text-xs font-semibold text-neutral-500">Service</span>
+                  <span className="font-bold text-emerald-600">Available For Rental</span>
                 </div>
 
                 <div className="grid grid-cols-2 gap-2.5">
                   <button
                     id={`specs-btn-${vehicle.id}`}
                     onClick={() => onOpenSpecs(vehicle)}
-                    className="w-full bg-white hover:bg-neutral-50 text-neutral-900 border border-neutral-300 font-black text-xs uppercase py-2.5 rounded-lg tracking-wider transition-colors cursor-pointer text-center"
+                    className="w-full bg-white hover:bg-neutral-100 text-neutral-900 border border-neutral-300 font-bold text-xs py-2.5 rounded-lg transition-colors cursor-pointer text-center"
                   >
-                    SPECS
+                    Specs
                   </button>
 
                   <button
                     id={`whatsapp-btn-${vehicle.id}`}
                     onClick={() => handleWhatsAppBooking(vehicle)}
-                    className="w-full flex items-center justify-center bg-[#25D366] hover:bg-[#20bd5a] text-white font-black text-xs uppercase py-2.5 rounded-lg tracking-wider transition-colors cursor-pointer shadow-xs"
+                    className="w-full flex items-center justify-center bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs py-2.5 rounded-lg transition-colors cursor-pointer shadow-xs"
                   >
-                    <span>WHATSAPP</span>
+                    <span>WhatsApp</span>
                   </button>
                 </div>
               </div>

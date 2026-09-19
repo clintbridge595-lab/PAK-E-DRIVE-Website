@@ -23,11 +23,11 @@ export const Logo: React.FC<LogoProps> = ({
       className={`flex items-center gap-2.5 sm:gap-3 select-none cursor-pointer group ${className}`}
     >
       {/* 3D Metallic Emblem Badge - Elegant Circular Shape */}
-      <div className="relative flex items-center justify-center h-11 w-11 sm:h-12 sm:w-12 rounded-full overflow-hidden shrink-0 shadow-md ring-1.5 ring-amber-400/40 bg-neutral-950 group-hover:ring-amber-400 transition-all duration-300">
+      <div className="relative flex items-center justify-center h-11 w-11 sm:h-12 sm:w-12 rounded-full overflow-hidden shrink-0 shadow-md ring-2 ring-amber-400/60 bg-neutral-950 group-hover:ring-amber-400 transition-all duration-300 aspect-square">
         <img 
           src={emblemSrc} 
           alt="PAK E DRIVE Logo" 
-          className="w-full h-full object-cover rounded-full transform group-hover:scale-110 transition-transform duration-300"
+          className="w-full h-full object-cover rounded-full block transform group-hover:scale-105 transition-transform duration-300"
           referrerPolicy="no-referrer"
         />
       </div>

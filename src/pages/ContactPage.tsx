@@ -26,17 +26,11 @@ export const ContactPage: React.FC = () => {
     <div id="contact-page-wrapper" className="animate-fadeIn">
       {/* Top Banner */}
       <div 
-        style={{
-          fontFamily: 'Georgia, serif',
-          fontStyle: 'italic',
-          backgroundColor: '#2c2c2f',
-        }}
-        className="text-white py-14 sm:py-20 border-b border-neutral-800"
+        className="bg-neutral-900 text-white py-14 sm:py-20 border-b border-neutral-800"
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
           <h1 
-            style={{ color: '#e0dede' }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight"
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight"
           >
             Contact &amp; Reserve With PAK E DRIVE
           </h1>
@@ -48,10 +42,6 @@ export const ContactPage: React.FC = () => {
 
       {/* Main Content Grid */}
       <div 
-        style={{
-          fontFamily: 'Georgia, serif',
-          fontStyle: 'italic',
-        }}
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20"
       >
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
@@ -126,8 +116,7 @@ export const ContactPage: React.FC = () => {
           <div className="lg:col-span-7">
             <div className="bg-white p-6 sm:p-8 lg:p-10 rounded-2xl border border-neutral-200 shadow-md">
               <h3 
-                style={{ fontSize: '26px' }}
-                className="font-black text-neutral-950 mb-2"
+                className="text-2xl font-black text-neutral-950 mb-2"
               >
                 Send a Direct Booking Inquiry
               </h3>
@@ -265,16 +254,9 @@ export const ContactPage: React.FC = () => {
                   <div className="pt-2">
                     <button
                       type="submit"
-                      style={{
-                        fontFamily: 'Verdana, sans-serif',
-                        fontSize: '13px',
-                        backgroundColor: '#2ba155',
-                        width: '439.333px',
-                        maxWidth: '100%',
-                      }}
-                      className="flex items-center justify-center text-white font-black uppercase py-3.5 px-4 rounded-lg shadow-sm tracking-wider transition-colors cursor-pointer"
+                      className="w-full sm:w-auto flex items-center justify-center bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs uppercase py-3.5 px-8 rounded-lg shadow-sm tracking-wide transition-colors cursor-pointer"
                     >
-                      <span>TRANSMIT VIA WHATSAPP (INSTANT RESPONSE)</span>
+                      <span>Send Booking Request via WhatsApp</span>
                     </button>
                   </div>
                 </form>

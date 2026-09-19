@@ -81,14 +81,8 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({
       <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="max-w-xl sm:max-w-2xl text-left space-y-3 sm:space-y-4">
 
-          {/* Headline in Georgia serif */}
-          <h1 
-            style={{
-              fontFamily: 'Georgia, serif',
-              color: '#f3f4f6',
-            }}
-            className="text-2xl sm:text-4xl md:text-5xl lg:text-[46px] font-bold tracking-tight leading-[1.18] sm:leading-[1.14] drop-shadow-lg"
-          >
+          {/* Headline in cohesive display typeface */}
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-neutral-100 tracking-tight leading-[1.18] sm:leading-[1.14] drop-shadow-lg">
             {currentSlide.title}
           </h1>
 
@@ -97,14 +91,14 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({
             {currentSlide.subtext}
           </p>
 
-          {/* Classic Yellow Reserve Button */}
+          {/* Reserve Button in Accessible Title Case */}
           <div className="pt-3 sm:pt-4">
             <button
               id="hero-reserve-vehicle-btn"
               onClick={handleReserveClick}
-              className="inline-flex items-center justify-center px-7 h-11 sm:h-12 bg-[#c89b3c] hover:bg-[#d8a83d] active:bg-[#b58b32] text-black font-extrabold text-xs uppercase tracking-wider rounded-md shadow-2xl transition-all duration-200 cursor-pointer transform hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center px-7 h-11 sm:h-12 bg-[#c89b3c] hover:bg-[#d8a83d] active:bg-[#b58b32] text-neutral-950 font-bold text-sm tracking-wide rounded-md shadow-2xl transition-all duration-200 cursor-pointer transform hover:-translate-y-0.5"
             >
-              <span>RESERVE A VEHICLE</span>
+              <span>Reserve a Vehicle</span>
             </button>
           </div>
 

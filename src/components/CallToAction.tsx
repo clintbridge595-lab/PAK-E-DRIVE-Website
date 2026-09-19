@@ -9,10 +9,6 @@ export const CallToAction: React.FC<CallToActionProps> = ({ onOpenBooking }) => 
   return (
     <section 
       id="cta-banner-section" 
-      style={{
-        fontFamily: 'Georgia, serif',
-        fontStyle: 'italic',
-      }}
       className="bg-[#121316] text-white py-12 sm:py-16 lg:py-20 border-t border-neutral-800"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,8 +17,7 @@ export const CallToAction: React.FC<CallToActionProps> = ({ onOpenBooking }) => 
             Rent A Car with a Professional Chauffeur Today
           </h2>
           <p 
-            style={{ fontSize: '12px' }}
-            className="text-neutral-300 mt-3 leading-relaxed max-w-2xl font-normal"
+            className="text-neutral-300 mt-3 text-xs sm:text-sm leading-relaxed max-w-2xl font-normal"
           >
             Serving Karachi, Hyderabad, Thatta, Lahore, Islamabad, and all destinations in Pakistan. Speak with our fleet manager on WhatsApp or call our hotlines directly.
           </p>
@@ -31,17 +26,17 @@ export const CallToAction: React.FC<CallToActionProps> = ({ onOpenBooking }) => 
             <button
               id="cta-whatsapp-btn"
               onClick={() => openWhatsApp('Assalam-o-Alaikum, I am ready to book a chauffeur rental vehicle with PAK E DRIVE.')}
-              className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-black text-xs uppercase px-7 py-3.5 rounded-lg shadow-md tracking-wider transition-colors cursor-pointer w-full sm:w-auto"
+              className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs uppercase px-7 py-3.5 rounded-lg shadow-md tracking-wide transition-colors cursor-pointer w-full sm:w-auto"
             >
-              <span>CHAT ON WHATSAPP ({WHATSAPP_DISPLAY})</span>
+              <span>Chat on WhatsApp ({WHATSAPP_DISPLAY})</span>
             </button>
 
             <button
               id="cta-booking-calc-btn"
               onClick={onOpenBooking}
-              className="flex items-center justify-center bg-white hover:bg-neutral-100 text-neutral-900 font-black text-xs uppercase px-6 py-3.5 rounded-lg shadow-sm tracking-wider transition-colors cursor-pointer w-full sm:w-auto"
+              className="flex items-center justify-center bg-white hover:bg-neutral-100 text-neutral-900 font-bold text-xs uppercase px-6 py-3.5 rounded-lg shadow-xs tracking-wide transition-colors cursor-pointer w-full sm:w-auto"
             >
-              <span>OPEN BOOKING CALCULATOR</span>
+              <span>Open Booking Calculator</span>
             </button>
           </div>
         </div>

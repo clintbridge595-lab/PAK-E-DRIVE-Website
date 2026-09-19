@@ -23,7 +23,6 @@ export const BulletproofSection: React.FC<BulletproofSectionProps> = ({
   return (
     <section
       id="bulletproof-b6-section"
-      style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}
       className="bg-gradient-to-b from-[#111215] via-[#1a1b20] to-[#111215] text-white py-14 sm:py-20 border-y border-neutral-800 relative overflow-hidden"
     >
       {/* Background Tactical Grid Pattern */}
@@ -32,34 +31,26 @@ export const BulletproofSection: React.FC<BulletproofSectionProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center max-w-4xl mx-auto mb-10 sm:mb-16">
-          <h2
-            style={{ fontSize: 'clamp(28px, 5vw, 46px)', color: '#eddfdf' }}
-            className="font-black tracking-tight uppercase mb-2 sm:mb-3 leading-tight"
-          >
-            BULLET PROOF <span style={{ color: '#9d773d' }}>B6+</span>
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight uppercase mb-2 sm:mb-3 leading-tight text-neutral-100">
+            Bulletproof <span className="text-amber-400">B6+</span>
           </h2>
 
-          <div 
-            style={{ color: '#867844' }}
-            className="mt-1 sm:mt-2 text-base sm:text-xl lg:text-2xl font-bold tracking-wide uppercase"
-          >
-            CONTACT TO RENT ARMORED & LUXURY VEHICLES
+          <div className="mt-1 sm:mt-2 text-sm sm:text-lg lg:text-xl font-bold tracking-wide uppercase text-amber-500/90">
+            Contact to Rent Armored & Luxury Vehicles
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mt-5 sm:mt-6">
             <a
               href="tel:+923002512201"
-              style={{ backgroundColor: '#c09b36' }}
-              className="w-full sm:w-auto justify-center inline-flex items-center text-black font-black text-xs uppercase px-5 py-2.5 rounded-lg tracking-wider transition-all shadow-lg hover:opacity-90"
+              className="btn-gold"
             >
-              <span>CALL 0300 2512201</span>
+              <span>Call 0300 2512201</span>
             </a>
             <button
-              onClick={() => openWhatsApp('Assalam-o-Alaikum, I am inquiring to rent BULLET PROOF B6+ armored vehicles in Pakistan. Please share rates and details.')}
-              style={{ backgroundColor: '#21723d' }}
-              className="w-full sm:w-auto justify-center inline-flex items-center text-white font-black text-xs uppercase px-5 py-2.5 rounded-lg tracking-wider transition-all shadow-lg hover:opacity-90 cursor-pointer"
+              onClick={() => openWhatsApp('Assalam-o-Alaikum, I am inquiring to rent Bulletproof B6+ armored vehicles in Pakistan. Please share rates and details.')}
+              className="btn-whatsapp"
             >
-              <span>WHATSAPP SECURITY DESK</span>
+              <span>WhatsApp Security Desk</span>
             </button>
           </div>
         </div>
@@ -95,15 +86,15 @@ export const BulletproofSection: React.FC<BulletproofSectionProps> = ({
                   <div className="grid grid-cols-2 gap-2">
                     <button
                       onClick={() => onOpenSpecs(vehicle)}
-                      className="bg-neutral-800 hover:bg-neutral-700 text-neutral-200 border border-neutral-600 text-[11px] font-black uppercase py-2 rounded-lg tracking-wider transition-colors cursor-pointer text-center"
+                      className="bg-neutral-800 hover:bg-neutral-700 text-neutral-200 border border-neutral-600 text-xs font-bold py-2 rounded-lg tracking-wide transition-colors cursor-pointer text-center"
                     >
-                      BALLISTIC SPECS
+                      Specs
                     </button>
                     <button
                       onClick={() => handleWhatsAppInquiry(vehicle)}
-                      className="flex items-center justify-center bg-[#25D366] hover:bg-[#20bd5a] text-white text-[11px] font-black uppercase py-2 rounded-lg tracking-wider transition-colors cursor-pointer"
+                      className="flex items-center justify-center bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-bold py-2 rounded-lg tracking-wide transition-colors cursor-pointer"
                     >
-                      <span>BOOK B6+</span>
+                      <span>Book B6+</span>
                     </button>
                   </div>
                 </div>
@@ -126,10 +117,10 @@ export const BulletproofSection: React.FC<BulletproofSectionProps> = ({
           </div>
 
           <button
-            onClick={() => onOpenBooking('BULLET PROOF B6+ Vehicle')}
-            className="w-full sm:w-auto whitespace-nowrap bg-neutral-100 hover:bg-white text-neutral-950 font-black text-xs uppercase px-5 py-2.5 rounded-lg tracking-wider transition-all cursor-pointer font-sans shrink-0 text-center"
+            onClick={() => onOpenBooking('Bulletproof B6+ Vehicle')}
+            className="w-full sm:w-auto whitespace-nowrap bg-neutral-100 hover:bg-white text-neutral-950 font-bold text-xs px-5 py-2.5 rounded-lg tracking-wide transition-all cursor-pointer shrink-0 text-center"
           >
-            REQUEST PROTOCOL QUOTE
+            Request Protocol Quote
           </button>
         </div>
       </div>

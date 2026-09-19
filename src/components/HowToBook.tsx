@@ -4,22 +4,22 @@ export const HowToBook: React.FC = () => {
   const steps = [
     {
       num: '01',
-      title: 'CHOOSE VEHICLE',
+      title: 'Choose Vehicle',
       desc: 'Select from our fleet of sedans, luxury SUVs, Grand Cabins, or decorated wedding cars.',
     },
     {
       num: '02',
-      title: 'SHARE ITINERARY',
+      title: 'Share Itinerary',
       desc: 'Pick your date, pickup area in Karachi (DHA, Airport, Korangi), and destination.',
     },
     {
       num: '03',
-      title: 'INSTANT QUOTE',
+      title: 'Instant Quote',
       desc: 'Receive transparent rate confirmation within 5 minutes via WhatsApp or direct phone.',
     },
     {
       num: '04',
-      title: 'CHAUFFEUR ARRIVES',
+      title: 'Chauffeur Arrives',
       desc: 'Your sanitized, AC-equipped vehicle arrives promptly with a polite, licensed driver.',
     },
   ];
@@ -27,10 +27,6 @@ export const HowToBook: React.FC = () => {
   return (
     <section 
       id="how-to-book-section" 
-      style={{
-        fontFamily: 'Georgia, serif',
-        fontStyle: 'italic',
-      }}
       className="bg-[#121316] text-white py-12 sm:py-16 lg:py-20 border-t border-neutral-800"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -51,7 +47,7 @@ export const HowToBook: React.FC = () => {
               id={`booking-step-${s.num}`}
               className="bg-neutral-900/80 border border-neutral-800 p-6 rounded-xl relative group hover:border-amber-400/50 transition-colors"
             >
-              <h3 className="text-sm font-black tracking-wider uppercase text-white mb-2">
+              <h3 className="text-sm font-bold tracking-wide text-white mb-2">
                 {s.title}
               </h3>
               <p className="text-xs text-neutral-400 leading-relaxed font-normal">
@@ -60,7 +56,6 @@ export const HowToBook: React.FC = () => {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

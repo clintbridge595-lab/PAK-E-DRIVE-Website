@@ -6,10 +6,6 @@ export const Testimonials: React.FC = () => {
   return (
     <section 
       id="testimonials-section" 
-      style={{
-        fontFamily: 'Georgia, serif',
-        fontStyle: 'italic',
-      }}
       className="bg-white py-12 sm:py-16 lg:py-20 border-t border-neutral-200"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -38,17 +34,17 @@ export const Testimonials: React.FC = () => {
                 </div>
 
                 {/* Quote */}
-                <p className="text-xs text-neutral-700 italic leading-relaxed">
+                <p className="text-xs sm:text-sm text-neutral-700 italic leading-relaxed">
                   "{item.quote}"
                 </p>
               </div>
 
               {/* Author */}
               <div className="pt-4 mt-4 border-t border-neutral-200">
-                <div className="text-xs font-black uppercase text-neutral-900 tracking-wider">
+                <div className="text-xs font-bold uppercase text-neutral-900 tracking-wider">
                   {item.name}
                 </div>
-                <div className="text-[10px] text-neutral-500 mt-0.5 font-medium">
+                <div className="text-xs text-neutral-500 mt-0.5 font-medium">
                   {item.location}
                 </div>
               </div>

@@ -45,10 +45,6 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
       {/* If full page: Hero Banner matching video (00:08 - 00:12 of video 2) */}
       {isFullPage && (
         <div 
-          style={{
-            fontFamily: 'Georgia, serif',
-            fontStyle: 'italic',
-          }}
           className="bg-[#121316] text-white py-14 sm:py-20 border-b border-neutral-800"
         >
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -64,10 +60,6 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
 
       {/* Main Container */}
       <div 
-        style={{
-          fontFamily: 'Georgia, serif',
-          fontStyle: 'italic',
-        }}
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16"
       >
         
@@ -78,8 +70,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
               Tailored Car Rental Services in Pakistan
             </h2>
             <p 
-              style={{ fontSize: '12px' }}
-              className="text-neutral-500 mt-2 font-normal"
+              className="text-xs sm:text-sm text-neutral-500 mt-2 font-normal"
             >
               From wedding entrances to decorated roadsters to airport VIP pickups and long-distance intercity touring.
             </p>
@@ -115,14 +106,14 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                 </div>
 
                 <div className="mt-6 pt-4 border-t border-neutral-100 flex items-center justify-between">
-                  <span style={{ color: '#26221d' }} className="text-xs font-bold">
+                  <span className="text-xs font-bold text-neutral-800">
                     {serv.startingPrice}
                   </span>
                   <button
                     onClick={() => handleBookService(serv.title)}
-                    className="flex items-center text-xs font-black uppercase text-neutral-900 hover:text-amber-500 transition-colors cursor-pointer font-sans"
+                    className="inline-flex items-center justify-center text-xs font-bold uppercase tracking-wider text-neutral-950 bg-amber-400 hover:bg-amber-300 px-4 py-2 rounded-md transition-all cursor-pointer shadow-xs"
                   >
-                    <span>EXPLORE</span>
+                    <span>Explore</span>
                   </button>
                 </div>
               </div>
@@ -135,11 +126,6 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
               <div
                 key={serv.id}
                 id={`service-detail-${serv.id}`}
-                style={{
-                  fontFamily: 'Georgia, serif',
-                  fontStyle: 'italic',
-                  ...(serv.id === 'luxury-suv' ? { fontSize: '15px' } : {}),
-                }}
                 className="bg-white rounded-2xl border border-neutral-200 p-6 sm:p-8 lg:p-10 shadow-xs"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -230,10 +216,6 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
         {/* If Full Page: Frequently Asked Questions matching video (00:18 - 00:20 of video 2) */}
         {isFullPage && (
           <div 
-            style={{
-              fontFamily: 'Georgia, serif',
-              fontStyle: 'italic',
-            }}
             className="mt-16 pt-12 border-t border-neutral-200"
           >
             <div className="text-center max-w-3xl mx-auto mb-10">

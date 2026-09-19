@@ -41,17 +41,13 @@ export const Fleet3DShowroom: React.FC<Fleet3DShowroomProps> = ({ onSelectVehicl
   return (
     <section 
       id="fleet-3d-showroom-section" 
-      style={{
-        fontFamily: 'Georgia, serif',
-        fontStyle: 'italic',
-      }}
-      className="bg-[#0e1013] text-white py-12 sm:py-16 lg:py-20 border-y border-neutral-800 relative overflow-hidden"
+      className="bg-[#0e1013] text-white pt-8 sm:pt-10 pb-12 sm:pb-16 border-y border-neutral-800 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white mb-3">
+        <div className="text-center max-w-3xl mx-auto mb-8">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white mb-2">
             Inspect Our Fleet in 3D Showroom
           </h2>
           <p className="text-neutral-400 text-xs sm:text-sm leading-relaxed">
@@ -154,11 +150,27 @@ export const Fleet3DShowroom: React.FC<Fleet3DShowroomProps> = ({ onSelectVehicl
           </div>
         </div>
 
-        {/* Horizontal Vehicle Thumbnails Strip matching video (00:50 - 01:00) */}
+        {/* Horizontal Vehicle Thumbnails Carousel */}
         <div className="mt-8">
           <div className="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-neutral-400 mb-3 px-1">
-            <span>SCROLL &amp; SELECT ANY VEHICLE (ALL AVAILABLE IN PAKISTAN)</span>
-            <span style={{ color: '#ffffff' }} className="font-sans font-bold">{selectedIdx + 1} / {FLEET_VEHICLES.length}</span>
+            <span>Select Vehicle to Inspect</span>
+            <div className="flex items-center gap-2">
+              <span className="font-bold text-white mr-2">{selectedIdx + 1} of {FLEET_VEHICLES.length}</span>
+              <button
+                onClick={handlePrev}
+                aria-label="Previous vehicle"
+                className="p-1.5 rounded-lg bg-neutral-800 hover:bg-neutral-700 text-white transition-colors cursor-pointer"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+              <button
+                onClick={handleNext}
+                aria-label="Next vehicle"
+                className="p-1.5 rounded-lg bg-neutral-800 hover:bg-neutral-700 text-white transition-colors cursor-pointer"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
           </div>
 
           <div className="flex items-center gap-3 overflow-x-auto pb-4 pt-1 scrollbar-thin scrollbar-thumb-neutral-700">
@@ -168,13 +180,13 @@ export const Fleet3DShowroom: React.FC<Fleet3DShowroomProps> = ({ onSelectVehicl
                 <button
                   key={v.id}
                   onClick={() => setSelectedIdx(idx)}
-                  className={`shrink-0 w-44 sm:w-48 text-left rounded-lg overflow-hidden border transition-all duration-200 cursor-pointer ${
+                  className={`shrink-0 w-48 sm:w-56 text-left rounded-xl overflow-hidden border transition-all duration-200 cursor-pointer ${
                     isSelected
-                      ? 'border-amber-400 ring-2 ring-amber-400/50 bg-neutral-900 scale-102'
-                      : 'border-neutral-800 bg-neutral-950/70 hover:border-neutral-700 opacity-75 hover:opacity-100'
+                      ? 'border-amber-400 ring-2 ring-amber-400/50 bg-neutral-900 scale-[1.02]'
+                      : 'border-neutral-800 bg-neutral-950/80 hover:border-neutral-750 opacity-80 hover:opacity-100'
                   }`}
                 >
-                  <div className="h-24 w-full bg-neutral-900 overflow-hidden relative">
+                  <div className="h-28 w-full bg-neutral-900 overflow-hidden relative">
                     <img
                       src={v.image}
                       alt={v.name}
@@ -182,12 +194,12 @@ export const Fleet3DShowroom: React.FC<Fleet3DShowroomProps> = ({ onSelectVehicl
                       referrerPolicy="no-referrer"
                     />
                   </div>
-                  <div className="p-2.5">
+                  <div className="p-3">
                     <div className="text-xs font-bold text-white truncate">
                       {v.name.split(' (')[0]}
                     </div>
-                    <div className="text-[10px] text-neutral-400 truncate mt-0.5">
-                      {v.gear} • {v.fuel}
+                    <div className="text-xs text-neutral-400 truncate mt-1">
+                      {v.gear} • {v.fuel} • {v.seats} Seats
                     </div>
                   </div>
                 </button>

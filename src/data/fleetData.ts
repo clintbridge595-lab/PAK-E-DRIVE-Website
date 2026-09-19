@@ -4,9 +4,9 @@ export const FLEET_VEHICLES: Vehicle[] = [
   /* BULLETPROOF B6+ FLEET */
   {
     id: 'bulletproof-land-cruiser-v8-b6',
-    name: 'BULLET PROOF LANDCRUISER V8 B6+',
+    name: 'Bulletproof Land Cruiser V8 B6+',
     category: 'BULLETPROOF',
-    categoryLabel: 'BULLET PROOF B6+',
+    categoryLabel: 'Bulletproof B6+',
     subtitle: 'Presidency & Diplomatic Standard B6+ Armored Fortress (7.62x51mm & AK-47 Resistant)',
     seats: 7,
     gear: 'Auto',
@@ -44,9 +44,9 @@ export const FLEET_VEHICLES: Vehicle[] = [
   },
   {
     id: 'bulletproof-prado-b6',
-    name: 'BULLET PROOF PRADO B6+',
+    name: 'Bulletproof Prado B6+',
     category: 'BULLETPROOF',
-    categoryLabel: 'BULLET PROOF B6+',
+    categoryLabel: 'Bulletproof B6+',
     subtitle: 'Diplomatic Standard B6+ Ballistic Armored Executive 4WD SUV',
     seats: 7,
     gear: 'Auto',
@@ -84,9 +84,9 @@ export const FLEET_VEHICLES: Vehicle[] = [
   },
   {
     id: 'bulletproof-fortuner-b6',
-    name: 'BULLET PROOF FORTUNER B6+',
+    name: 'Bulletproof Fortuner B6+',
     category: 'BULLETPROOF',
-    categoryLabel: 'BULLET PROOF B6+',
+    categoryLabel: 'Bulletproof B6+',
     subtitle: 'High-Status B6+ Armored Luxury SUV for Dignitaries & Security Convoys',
     seats: 7,
     gear: 'Auto',
@@ -124,9 +124,9 @@ export const FLEET_VEHICLES: Vehicle[] = [
   },
   {
     id: 'bulletproof-hilux-revo-b6',
-    name: 'BULLET PROOF RIVO B6+ (HILUX REVO)',
+    name: 'Bulletproof Revo B6+ (Hilux Revo)',
     category: 'BULLETPROOF',
-    categoryLabel: 'BULLET PROOF B6+',
+    categoryLabel: 'Bulletproof B6+',
     subtitle: 'B6+ Heavy Armored 4x4 Double Cabin for High-Security Escorts & Convoys',
     seats: 5,
     gear: 'Auto',

@@ -15,12 +15,7 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({
     <div id="privacy-policy-page" className="animate-fadeIn bg-neutral-950 text-neutral-100 min-h-screen">
       {/* Hero Header Banner */}
       <div 
-        style={{
-          fontFamily: 'Georgia, serif',
-          fontStyle: 'italic',
-          backgroundColor: '#121418',
-        }}
-        className="py-14 sm:py-18 border-b border-neutral-800 text-white"
+        className="bg-neutral-900 py-14 sm:py-18 border-b border-neutral-800 text-white"
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-400 text-xs font-semibold uppercase tracking-wider font-sans">

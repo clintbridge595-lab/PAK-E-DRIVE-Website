@@ -17,7 +17,6 @@ export const RawalpindiRoutesSection: React.FC = () => {
   return (
     <section
       id="rawalpindi-fixed-routes-section"
-      style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}
       className="py-12 sm:py-16 bg-neutral-900 text-white border-y border-neutral-800"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -32,9 +31,9 @@ export const RawalpindiRoutesSection: React.FC = () => {
           <div className="flex items-center gap-3">
             <a
               href="tel:+923002512201"
-              className="inline-flex items-center bg-neutral-800 px-3.5 py-2 rounded-lg border border-neutral-700 hover:bg-neutral-700 transition-colors"
+              className="inline-flex items-center bg-neutral-800 px-4 py-2 rounded-lg border border-neutral-700 hover:bg-neutral-700 transition-colors"
             >
-              <span style={{ fontSize: '8px', color: '#fce5e5' }} className="font-bold tracking-wider uppercase">
+              <span className="text-xs font-bold text-neutral-100 tracking-wide">
                 Call Dispatch: 0300 2512201
               </span>
             </a>
@@ -106,11 +105,8 @@ export const RawalpindiRoutesSection: React.FC = () => {
                       )}
                     </div>
 
-                    <div className="text-right">
-                      <div 
-                        style={{ color: '#f5f6cf' }}
-                        className="text-sm font-bold bg-amber-400/10 border border-amber-400/30 px-2.5 py-1 rounded-md font-sans tracking-tight"
-                      >
+                    <div className="text-right flex flex-col items-end gap-1.5">
+                      <div className="text-xs font-bold text-amber-300 bg-amber-400/10 border border-amber-400/30 px-2.5 py-1 rounded-md tracking-tight">
                         {item.price}
                       </div>
                       <button
@@ -121,9 +117,9 @@ export const RawalpindiRoutesSection: React.FC = () => {
                             item.price
                           )
                         }
-                        className="text-[10px] font-bold text-neutral-400 group-hover:text-amber-400 mt-1 cursor-pointer transition-colors block ml-auto uppercase font-sans"
+                        className="bg-amber-400 hover:bg-amber-300 text-neutral-950 text-xs font-bold px-3 py-1.5 rounded-md transition-colors cursor-pointer shadow-xs"
                       >
-                        Book Now →
+                        Book Now
                       </button>
                     </div>
                   </div>

@@ -14,12 +14,12 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems: { id: NavPage; label: string }[] = [
-    { id: 'home', label: 'HOME' },
-    { id: 'about', label: 'ABOUT US' },
-    { id: 'services', label: 'SERVICES' },
-    { id: 'fleet', label: 'OUR FLEET' },
-    { id: 'routes', label: 'ROUTES' },
-    { id: 'contact', label: 'CONTACT' },
+    { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About Us' },
+    { id: 'services', label: 'Services' },
+    { id: 'fleet', label: 'Our Fleet' },
+    { id: 'routes', label: 'Routes' },
+    { id: 'contact', label: 'Contact' },
   ];
 
   const handleNavClick = (page: NavPage) => {
@@ -39,7 +39,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
           <Logo onClick={() => handleNavClick('home')} />
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center space-x-7 font-bold text-xs tracking-wider">
+          <nav className="hidden lg:flex items-center space-x-7 font-bold text-xs tracking-wide">
             {navItems.map((item) => {
               const isActive = currentPage === item.id;
               return (
@@ -47,8 +47,8 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
                   key={item.id}
                   id={`nav-${item.id}`}
                   onClick={() => handleNavClick(item.id)}
-                  className={`py-2 relative transition-colors duration-200 uppercase cursor-pointer ${
-                    isActive ? 'text-black font-extrabold' : 'text-neutral-600 hover:text-black font-semibold'
+                  className={`py-2 relative transition-colors duration-200 cursor-pointer ${
+                    isActive ? 'text-neutral-950 font-bold' : 'text-neutral-600 hover:text-neutral-950 font-medium'
                   }`}
                 >
                   {item.label}
@@ -65,11 +65,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
             <button
               id="header-book-rental-btn"
               onClick={onOpenBooking}
-              style={{ backgroundColor: '#d9ab3d' }}
-              className="flex items-center justify-center gap-2 hover:bg-amber-500 active:bg-amber-600 text-black font-extrabold uppercase px-6 py-2.5 rounded-lg shadow-sm text-xs tracking-wider transition-all duration-200 cursor-pointer"
+              className="flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-300 text-neutral-950 font-bold px-5 py-2.5 rounded-lg shadow-xs text-xs tracking-wide transition-colors cursor-pointer"
             >
-              <Calendar className="w-4 h-4 text-black" />
-              <span>BOOK A RENTAL</span>
+              <Calendar className="w-4 h-4 text-neutral-950" />
+              <span>Book a Rental</span>
             </button>
           </div>
 
@@ -77,9 +76,9 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
           <div className="flex lg:hidden items-center gap-2">
             <button
               onClick={onOpenBooking}
-              className="bg-amber-400 text-black text-xs font-black px-3 py-2 rounded-md sm:hidden"
+              className="bg-amber-400 text-neutral-950 text-xs font-bold px-3 py-2 rounded-md sm:hidden"
             >
-              BOOK
+              Book
             </button>
             <button
               id="mobile-menu-toggle"
@@ -96,19 +95,15 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
         <div 
-          style={{
-            fontFamily: 'Georgia',
-            fontStyle: 'italic',
-          }}
           className="lg:hidden border-t border-neutral-200 bg-white px-4 pt-3 pb-6 space-y-2 shadow-lg animate-fadeIn"
         >
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => handleNavClick(item.id)}
-              className={`block w-full text-left py-2.5 px-3 rounded-md text-sm font-bold tracking-wide uppercase transition-colors ${
+              className={`block w-full text-left py-2.5 px-3 rounded-md text-sm font-semibold tracking-wide transition-colors ${
                 currentPage === item.id 
-                  ? 'bg-amber-400/20 text-neutral-950 font-black border-l-4 border-amber-400' 
+                  ? 'bg-amber-400/20 text-neutral-950 font-bold border-l-4 border-amber-400' 
                   : 'text-neutral-700 hover:bg-neutral-100'
               }`}
             >
@@ -121,15 +116,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
                 setMobileMenuOpen(false);
                 onOpenBooking();
               }}
-              style={{
-                height: '41px',
-                width: '717.667px',
-                backgroundColor: '#d4a018',
-              }}
-              className="max-w-full flex items-center justify-center gap-2 hover:bg-amber-500 text-black font-extrabold text-sm py-3 rounded-lg shadow-xs uppercase tracking-wide"
+              className="w-full flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-300 text-neutral-950 font-bold text-sm py-3 rounded-lg shadow-xs tracking-wide transition-colors"
             >
               <Calendar className="w-4 h-4" />
-              <span>BOOK A RENTAL</span>
+              <span>Book a Rental</span>
             </button>
           </div>
         </div>

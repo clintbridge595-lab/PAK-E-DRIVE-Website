@@ -18,10 +18,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBooking }) => 
   return (
     <footer id="main-footer" className="bg-[#0c0d0e] text-white border-t border-neutral-800">
       <div 
-        style={{
-          fontFamily: 'Georgia, serif',
-          fontStyle: 'italic',
-        }}
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
@@ -48,43 +44,43 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBooking }) => 
 
           {/* Column 2: Navigation (2 cols) */}
           <div className="lg:col-span-2 space-y-3">
-            <h4 className="text-xs font-sans uppercase tracking-widest text-white font-bold mb-4">
-              NAVIGATION
-            </h4>
+            <h3 className="text-xs tracking-wider text-white font-bold mb-4 uppercase">
+              Navigation
+            </h3>
             <ul className="space-y-2 text-xs text-neutral-400 font-semibold">
               <li>
-                <button onClick={() => handleNav('home')} className="hover:text-amber-400 transition-colors uppercase">
-                  HOME
+                <button onClick={() => handleNav('home')} className="hover:text-amber-400 transition-colors">
+                  Home
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('about')} className="hover:text-amber-400 transition-colors uppercase">
-                  ABOUT US
+                <button onClick={() => handleNav('about')} className="hover:text-amber-400 transition-colors">
+                  About Us
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('fleet')} className="hover:text-amber-400 transition-colors uppercase">
-                  OUR FLEET &amp; RATES
+                <button onClick={() => handleNav('fleet')} className="hover:text-amber-400 transition-colors">
+                  Our Fleet &amp; Rates
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('services')} className="hover:text-amber-400 transition-colors uppercase">
-                  ALL SERVICES
+                <button onClick={() => handleNav('services')} className="hover:text-amber-400 transition-colors">
+                  All Services
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('routes')} className="hover:text-amber-400 transition-colors uppercase">
-                  INTERCITY ROUTES
+                <button onClick={() => handleNav('routes')} className="hover:text-amber-400 transition-colors">
+                  Intercity Routes
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('contact')} className="hover:text-amber-400 transition-colors uppercase">
-                  CONTACT &amp; LOCATION
+                <button onClick={() => handleNav('contact')} className="hover:text-amber-400 transition-colors">
+                  Contact &amp; Location
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('privacy')} className="hover:text-amber-400 transition-colors uppercase text-amber-400/90 font-bold">
-                  PRIVACY POLICY
+                <button onClick={() => handleNav('privacy')} className="hover:text-amber-400 transition-colors text-amber-400/90 font-bold">
+                  Privacy Policy
                 </button>
               </li>
             </ul>
@@ -92,9 +88,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBooking }) => 
 
           {/* Column 3: Rental Services (3 cols) */}
           <div className="lg:col-span-3 space-y-3">
-            <h4 className="text-xs font-sans uppercase tracking-widest text-white font-bold mb-4">
-              RENTAL SERVICES
-            </h4>
+            <h3 className="text-xs tracking-wider text-white font-bold mb-4 uppercase">
+              Rental Services
+            </h3>
             <ul className="space-y-2 text-xs text-neutral-400">
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
@@ -125,23 +121,23 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBooking }) => 
 
           {/* Column 4: Direct Contact Desk (3 cols) */}
           <div className="lg:col-span-3 space-y-3">
-            <h4 className="text-xs font-sans uppercase tracking-widest text-white font-bold mb-4">
-              DIRECT CONTACT DESK
-            </h4>
+            <h3 className="text-xs tracking-wider text-white font-bold mb-4 uppercase">
+              Direct Contact Desk
+            </h3>
 
             <div className="space-y-3 text-xs">
               <div>
                 <a href="tel:+923152292493" className="text-white font-bold hover:text-amber-400">
                   {WHATSAPP_DISPLAY}
                 </a>
-                <div className="text-[10px] text-neutral-400">Main Booking Hotline</div>
+                <div className="text-xs text-neutral-400 mt-0.5">Main Booking Hotline</div>
               </div>
 
               <div>
                 <a href={`tel:+92${PHONE_DISPATCH.replace(/[^0-9]/g, '')}`} className="text-white font-bold hover:text-amber-400">
                   {PHONE_DISPATCH}
                 </a>
-                <div className="text-[10px] text-neutral-400">Fleet Dispatch Desk</div>
+                <div className="text-xs text-neutral-400 mt-0.5">Fleet Dispatch Desk</div>
               </div>
 
               <div>
@@ -155,15 +151,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBooking }) => 
               <button
                 id="footer-quick-inquiry-btn"
                 onClick={onOpenBooking}
-                style={{
-                  backgroundColor: '#2a2828',
-                  height: '36.3333px',
-                  width: '226.333px',
-                  maxWidth: '100%',
-                }}
-                className="flex items-center justify-center text-amber-400 border border-neutral-700 font-extrabold text-xs uppercase py-1.5 rounded-lg tracking-wider transition-colors cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center text-amber-400 bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 font-bold text-xs px-5 py-2.5 rounded-lg tracking-wide transition-colors cursor-pointer"
               >
-                <span>QUICK INQUIRY / QUOTE</span>
+                <span>Quick Inquiry / Quote</span>
               </button>
             </div>
           </div>

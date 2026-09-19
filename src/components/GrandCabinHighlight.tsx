@@ -38,13 +38,7 @@ export const GrandCabinHighlight: React.FC<GrandCabinHighlightProps> = ({ onOpen
   return (
     <div id="grand-cabin-highlight-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
       <div 
-        style={{
-          backgroundColor: '#1b1717',
-          fontFamily: 'Georgia, serif',
-          fontStyle: 'italic',
-          fontSize: '15px',
-        }}
-        className="text-white rounded-2xl overflow-hidden border border-neutral-800 shadow-xl p-6 sm:p-10 lg:p-12"
+        className="bg-neutral-900 text-white rounded-2xl overflow-hidden border border-neutral-800 shadow-xl p-6 sm:p-10 lg:p-12"
       >
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
@@ -57,31 +51,27 @@ export const GrandCabinHighlight: React.FC<GrandCabinHighlightProps> = ({ onOpen
             </div>
 
             <p 
-              style={{
-                fontFamily: '"Times New Roman", Times, serif',
-                fontSize: '12px',
-              }}
-              className="text-neutral-300 leading-relaxed font-normal"
+              className="text-neutral-300 text-xs sm:text-sm leading-relaxed font-normal"
             >
               Travel across Pakistan's highways with total comfort and peace of mind. Our 14 passenger Toyota HiAce Grand Cabin offers walk-through cooling, individual reclining velvet seats, dual chiller AC, and licensed highway chauffeurs.
             </p>
 
             {/* Selectable Intercity Routes from Karachi */}
             <div className="pt-1">
-              <div style={{ color: '#d4d1c7' }} className="text-[11px] font-bold uppercase tracking-wider mb-2 font-sans">
+              <div className="text-xs font-bold uppercase tracking-wider mb-2 text-neutral-300">
                 Select Highway Destination from Karachi:
               </div>
-              <div className="flex flex-wrap gap-1.5 font-sans">
+              <div className="flex flex-wrap gap-1.5">
                 {GRAND_CABIN_ROUTES.map((route) => {
                   const isCur = route.id === activeRouteId;
                   return (
                     <button
                       key={route.id}
                       onClick={() => setActiveRouteId(route.id)}
-                      className={`text-xs px-2.5 py-1.5 rounded-md font-semibold transition-colors cursor-pointer ${
+                      className={`text-xs px-3 py-1.5 rounded-md font-semibold transition-colors cursor-pointer ${
                         isCur
-                          ? 'bg-amber-400 text-neutral-950 font-black shadow-sm'
-                          : 'bg-neutral-900 hover:bg-neutral-800 text-neutral-300 border border-neutral-800'
+                          ? 'bg-amber-400 text-neutral-950 font-bold shadow-xs'
+                          : 'bg-neutral-800 hover:bg-neutral-700 text-neutral-300 border border-neutral-700'
                       }`}
                     >
                       {route.name.replace('Karachi to ', '')}
@@ -96,18 +86,17 @@ export const GrandCabinHighlight: React.FC<GrandCabinHighlightProps> = ({ onOpen
               <button
                 id="reserve-grand-cabin-btn"
                 onClick={handleReserve}
-                style={{ backgroundColor: '#d5d530' }}
-                className="w-full sm:w-auto flex items-center justify-center text-neutral-950 font-black text-xs uppercase px-7 py-3.5 rounded-lg shadow-lg tracking-wider transition-all cursor-pointer font-sans"
+                className="w-full sm:w-auto flex items-center justify-center bg-amber-400 hover:bg-amber-300 text-neutral-950 font-bold text-xs uppercase px-7 py-3.5 rounded-lg shadow-sm tracking-wide transition-all cursor-pointer"
               >
-                <span>RESERVE GRAND CABIN</span>
+                <span>Reserve Grand Cabin</span>
               </button>
 
               <button
                 id="grand-cabin-whatsapp-inquiry-btn"
                 onClick={handleWhatsApp}
-                className="w-full sm:w-auto flex items-center justify-center bg-[#25D366] hover:bg-[#20bd5a] text-white font-extrabold text-xs uppercase px-7 py-3.5 rounded-lg shadow-md tracking-wider transition-all cursor-pointer font-sans"
+                className="w-full sm:w-auto flex items-center justify-center bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs uppercase px-7 py-3.5 rounded-lg shadow-sm tracking-wide transition-all cursor-pointer"
               >
-                <span>WHATSAPP INQUIRY</span>
+                <span>WhatsApp Inquiry</span>
               </button>
             </div>
           </div>
