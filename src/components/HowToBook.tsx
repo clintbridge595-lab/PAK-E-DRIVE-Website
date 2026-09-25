@@ -5,52 +5,69 @@ export const HowToBook: React.FC = () => {
     {
       num: '01',
       title: 'Choose Vehicle',
-      desc: 'Select from our fleet of sedans, luxury SUVs, Grand Cabins, or decorated wedding cars.',
+      desc: 'Select from our fleet of sedans, luxury SUVs, Grand Cabins, or wedding cars.',
     },
     {
       num: '02',
       title: 'Share Itinerary',
-      desc: 'Pick your date, pickup area in Karachi (DHA, Airport, Korangi), and destination.',
+      desc: 'Pick your travel date, pickup location in Karachi, and destination city.',
     },
     {
       num: '03',
-      title: 'Instant Quote',
-      desc: 'Receive transparent rate confirmation within 5 minutes via WhatsApp or direct phone.',
+      title: 'Instant Confirmation',
+      desc: 'Receive transparent rate confirmation within 5 minutes directly on WhatsApp.',
     },
     {
       num: '04',
       title: 'Chauffeur Arrives',
-      desc: 'Your sanitized, AC-equipped vehicle arrives promptly with a polite, licensed driver.',
+      desc: 'Your sanitized, air-conditioned vehicle arrives promptly with a polite, licensed driver.',
     },
   ];
 
   return (
     <section 
       id="how-to-book-section" 
-      className="bg-[#121316] text-white py-12 sm:py-16 lg:py-20 border-t border-neutral-800"
+      style={{
+        fontFamily: 'Georgia, serif',
+        fontStyle: 'italic',
+      }}
+      className="bg-white text-[#222222] py-12 sm:py-16"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white mb-3">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+          {/* Subtitle tag span removed as requested in Selector 20 */}
+          <h2 
+            style={{
+              fontFamily: 'Georgia, serif',
+              fontSize: '31px',
+            }}
+            className="font-extrabold tracking-tight text-[#111111] mb-2"
+          >
             How to Book Your Car in 4 Simple Steps
           </h2>
-          <p className="text-neutral-400 text-xs sm:text-sm font-normal">
-            No needless paperwork. Guaranteed vehicle dispatch directly to your doorstep.
+          <p 
+            style={{
+              fontSize: '12px',
+            }}
+            className="text-neutral-600 font-normal"
+          >
+            No complicated paperwork or hidden security deposits. Guaranteed vehicle dispatch to your doorstep.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        {/* 4 Step Cards: Numbers 1 2 3 4 removed 100% as requested */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map((s, idx) => (
             <div
               key={idx}
               id={`booking-step-${s.num}`}
-              className="bg-neutral-900/80 border border-neutral-800 p-6 rounded-xl relative group hover:border-amber-400/50 transition-colors"
+              className="bg-white border border-[#E5E5E5] p-6 rounded-xl relative shadow-2xs hover:shadow-xs transition-shadow flex flex-col justify-start"
             >
-              <h3 className="text-sm font-bold tracking-wide text-white mb-2">
+              <h3 className="text-base font-bold tracking-tight text-[#111111] mb-2">
                 {s.title}
               </h3>
-              <p className="text-xs text-neutral-400 leading-relaxed font-normal">
+              <p className="text-xs text-neutral-600 leading-relaxed font-normal">
                 {s.desc}
               </p>
             </div>

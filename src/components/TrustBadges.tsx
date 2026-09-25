@@ -5,45 +5,64 @@ export const TrustBadges: React.FC = () => {
     {
       metric: '100% Inspected',
       title: 'Fleet Condition',
-      desc: 'Serviced before every dispatch',
+      desc: 'Sanitized & inspected before dispatch',
+      metricColor: '#555151',
+      titleColor: '#40a091',
     },
     {
       metric: '5.0 ★ Google',
       title: 'Customer Rating',
-      desc: 'Verified traveller reviews',
+      desc: 'Verified traveller reviews in Pakistan',
+      metricColor: '#424040',
+      titleColor: '#10c8c4',
     },
     {
       metric: 'Across Pakistan',
       title: 'Service Coverage',
-      desc: 'Karachi to Northern Areas',
+      desc: 'Karachi to twin cities & north',
+      metricColor: '#413c3c',
+      titleColor: '#49d1c3',
     },
     {
       metric: '< 5 Minutes',
       title: 'Booking Response',
-      desc: 'Direct WhatsApp assistance',
+      desc: 'Direct WhatsApp booking desk',
+      metricColor: '#3e3c3c',
+      titleColor: '#10c1c8',
     },
   ];
 
   return (
     <div 
       id="trust-badges-section" 
-      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 border-b border-neutral-200/80 mb-4 sm:mb-6"
+      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 mb-4 sm:mb-6 bg-white"
     >
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 divide-y sm:divide-y-0 sm:divide-x divide-neutral-200 w-full">
+      <div 
+        style={{
+          fontFamily: 'Georgia, serif',
+          fontStyle: 'italic',
+          fontWeight: 'bold',
+        }}
+        className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 w-full"
+      >
         {badges.map((b, idx) => (
           <div 
             key={idx} 
-            className={`pt-3 sm:pt-0 ${idx > 0 ? 'sm:pl-6' : ''} text-left flex flex-col justify-center`}
+            className="pt-2 sm:pt-0 text-left flex flex-col justify-center"
           >
             <div 
-              className="text-xl sm:text-2xl font-black text-neutral-900 tracking-tight leading-tight"
+              style={{ color: b.metricColor }}
+              className="text-xl sm:text-2xl font-black tracking-tight leading-tight"
             >
               {b.metric}
             </div>
-            <div className="text-xs font-bold text-neutral-800 mt-1 uppercase tracking-wide">
+            <div 
+              style={{ color: b.titleColor }}
+              className="text-xs font-bold mt-1 uppercase tracking-wide"
+            >
               {b.title}
             </div>
-            <div className="text-xs text-neutral-500 mt-0.5 font-medium">
+            <div className="text-xs text-neutral-500 mt-0.5 font-normal">
               {b.desc}
             </div>
           </div>

@@ -1,251 +1,128 @@
 import React, { useState } from 'react';
 import { openWhatsApp } from '../utils/whatsapp';
-
-export type BookingServiceType = 'intercity' | 'daily' | 'wedding';
+import { Search } from 'lucide-react';
 
 interface BookingBarProps {
   onVehicleChange?: (vehicleName: string) => void;
+  onOpenModal?: () => void;
 }
 
-export const BookingBar: React.FC<BookingBarProps> = ({ onVehicleChange }) => {
-  const [activeTab, setActiveTab] = useState<BookingServiceType>('intercity');
-  const [pickup, setPickup] = useState('Jinnah Int. Airport (KHI)');
-  const [destination, setDestination] = useState('Hyderabad (M-9 Motorway, 160km)');
-  const [travelDate, setTravelDate] = useState(() => {
+export const BookingBar: React.FC<BookingBarProps> = ({ onOpenModal }) => {
+  const [pickup, setPickup] = useState('-Select Option-');
+  const [pickupDate, setPickupDate] = useState(() => {
     const today = new Date();
-    today.setDate(today.getDate() + 1);
     return today.toISOString().split('T')[0];
   });
-  const [vehicle, setVehicle] = useState('Toyota HiAce Grand Cabin (14-Passenger High Roof)');
+  const [returnDate, setReturnDate] = useState(() => {
+    const date = new Date();
+    date.setDate(date.getDate() + 2);
+    return date.toISOString().split('T')[0];
+  });
 
-  const vehicleOptions = [
-    { name: 'Toyota HiAce Grand Cabin (14-Passenger High Roof)', short: 'TOYOTA' },
-    { name: 'Changan Oshan X7 (FuturSense 7-Seat)', short: 'CHANGAN' },
-    { name: 'Toyota Corolla Altis (Grande 1.8 CVT)', short: 'COROLLA' },
-    { name: 'Honda Civic (RS Turbo / Oriel 11th Gen)', short: 'HONDA CIVIC' },
-    { name: 'Toyota Fortuner (Legender / Sigma 4 4x4)', short: 'FORTUNER' },
-    { name: 'Toyota Land Cruiser V8 (ZX 200 Series)', short: 'V8 LUXURY' },
-    { name: 'Toyota Land Cruiser Prado (TX / TZ Limited)', short: 'PRADO' },
-    { name: 'Toyota Noah (7-Seater Luxury MPV)', short: 'TOYOTA NOAH' },
-    { name: 'Honda BR-V (i-VTEC 7-Seater Crossover)', short: 'HONDA BR-V' },
-    { name: 'Daihatsu Copen (Convertible Barat Wedding Car)', short: 'WEDDING COPEN' },
-    { name: 'Audi A6 (Luxury Bridal Barat Sedan)', short: 'AUDI WEDDING' },
-    { name: 'Toyota Yaris (ATIV X CVT 1.5)', short: 'YARIS' },
-    { name: 'Suzuki Alto (VXL AGS 660cc)', short: 'ALTO' },
-  ];
-
-  const selectedShortName = vehicleOptions.find(v => v.name === vehicle)?.short || 'VEHICLE';
-
-  const handleVehicleSelect = (val: string) => {
-    setVehicle(val);
-    if (onVehicleChange) {
-      onVehicleChange(val);
-    }
-  };
-
-  const handleConfirmWhatsApp = () => {
-    const tabName = 
-      activeTab === 'intercity' 
-        ? 'Intercity Highway Transfer' 
-        : activeTab === 'daily' 
-          ? 'Daily City Chauffeur (10 Hours)' 
-          : 'Wedding & VIP Barat Protocol';
-
-    const message = `Assalam-o-Alaikum PAK E DRIVE, I would like to book a car:
-• Service: ${tabName}
-• Vehicle: ${vehicle}
-• Pickup: ${pickup}
-• Destination: ${destination}
-• Travel Date: ${travelDate}
-• Includes: Uniformed Professional Chauffeur
-
-Kindly confirm availability and share the best quotation.`;
-
-    openWhatsApp(message);
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    const loc = pickup === '-Select Option-' ? 'Karachi City (General)' : pickup;
+    const msg = `*PAK E DRIVE - Car Rental Inquiry*%0A%0A*Pickup Location:* ${loc}%0A*Pickup Date:* ${pickupDate}%0A*Return Date:* ${returnDate}%0A%0APlease share available cars with transparent daily and monthly rates.`;
+    openWhatsApp(decodeURIComponent(msg));
   };
 
   return (
-    <div id="booking-calculator-widget" className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-12 mb-8 sm:mb-12">
-      {/* Top Filter Tabs: responsive scrollable on mobile */}
-      {/* Top Filter Tabs: unified heights, consistent border treatment, seamless connection */}
-      <div className="flex items-center overflow-x-auto no-scrollbar gap-1.5 sm:gap-2 relative z-10">
-        <button
-          id="tab-intercity-transfer"
-          onClick={() => {
-            setActiveTab('intercity');
-            setDestination('Hyderabad (M-9 Motorway, 160km)');
-          }}
-          className={`font-bold px-4 sm:px-5 h-11 rounded-t-xl tracking-wide text-xs transition-all cursor-pointer shrink-0 flex items-center justify-center border ${
-            activeTab === 'intercity'
-              ? 'bg-white text-neutral-950 border-neutral-200 border-b-white -mb-px shadow-xs z-10'
-              : 'bg-neutral-100 hover:bg-neutral-200/80 text-neutral-600 border-transparent'
-          }`}
-        >
-          Intercity Highway Transfer
-        </button>
-
-        <button
-          id="tab-daily-city-chauffeur"
-          onClick={() => {
-            setActiveTab('daily');
-            setDestination('Karachi Local City (10 Hours Full Chauffeur)');
-          }}
-          className={`font-bold px-4 sm:px-5 h-11 rounded-t-xl tracking-wide text-xs transition-all cursor-pointer shrink-0 flex items-center justify-center border ${
-            activeTab === 'daily'
-              ? 'bg-white text-neutral-950 border-neutral-200 border-b-white -mb-px shadow-xs z-10'
-              : 'bg-neutral-100 hover:bg-neutral-200/80 text-neutral-600 border-transparent'
-          }`}
-        >
-          Daily City Chauffeur (10 Hrs)
-        </button>
-
-        <button
-          id="tab-wedding-barat"
-          onClick={() => {
-            setActiveTab('wedding');
-            setDestination('Karachi Wedding Banquet / Venue Event');
-            setVehicle('Daihatsu Copen (Convertible Barat Wedding Car)');
-          }}
-          className={`font-bold px-4 sm:px-5 h-11 rounded-t-xl tracking-wide text-xs transition-all cursor-pointer shrink-0 flex items-center justify-center border ${
-            activeTab === 'wedding'
-              ? 'bg-white text-neutral-950 border-neutral-200 border-b-white -mb-px shadow-xs z-10'
-              : 'bg-neutral-100 hover:bg-neutral-200/80 text-neutral-600 border-transparent'
-          }`}
-        >
-          Wedding &amp; VIP Barat Protocol
-        </button>
-      </div>
-
-      {/* Booking Form Box */}
-      <div 
-        className="w-full bg-white rounded-b-xl rounded-tr-xl sm:rounded-tr-none shadow-2xl border border-neutral-200 p-5 sm:p-7 flex flex-col justify-between"
-      >
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+    <div id="booking-calculator-widget" className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-2 sm:-mt-4 mb-8 sm:mb-12 font-['Plus_Jakarta_Sans',sans-serif]">
+      {/* Clean horizontal search bar */}
+      <div className="w-full bg-white rounded-xl shadow-lg border border-neutral-200 p-4 sm:p-5">
+        <form onSubmit={handleSearch} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3 sm:gap-4 items-end">
           
-          {/* Pickup Point */}
-          <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-neutral-600 mb-2">
-              Pickup Point
+          {/* 1. Pickup Location */}
+          <div className="lg:col-span-4">
+            <label className="block text-xs font-semibold text-neutral-800 mb-1.5 font-['Poppins',sans-serif]">
+              Pickup Location
             </label>
             <div className="relative">
               <select
-                id="pickup-point-select"
+                id="pickup-location-select"
                 value={pickup}
                 onChange={(e) => setPickup(e.target.value)}
-                className="w-full bg-neutral-50 border border-neutral-300 hover:border-neutral-400 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 text-xs sm:text-sm font-semibold rounded-lg p-3 text-neutral-900 cursor-pointer outline-hidden transition-colors"
+                className="w-full bg-white hover:bg-neutral-50 border border-neutral-300 focus:border-[#C8102E] focus:ring-1 focus:ring-[#C8102E] text-xs sm:text-sm font-medium rounded-[6px] py-2 px-3 text-[#111111] cursor-pointer outline-hidden transition-colors"
               >
+                <option value="-Select Option-">-Select Option-</option>
                 <option value="Jinnah Int. Airport (KHI)">Jinnah Int. Airport (KHI)</option>
                 <option value="DHA (Defence) Karachi">DHA (Defence) Karachi</option>
-                <option value="Clifton & Bath Island">Clifton & Bath Island</option>
-                <option value="Gulshan-e-Iqbal & PECHS">Gulshan-e-Iqbal & PECHS</option>
+                <option value="Clifton & Bath Island">Clifton &amp; Bath Island</option>
+                <option value="Gulshan-e-Iqbal & PECHS">Gulshan-e-Iqbal &amp; PECHS</option>
                 <option value="Korangi Industrial Area">Korangi Industrial Area</option>
                 <option value="Bahria Town Karachi">Bahria Town Karachi</option>
                 <option value="North Nazimabad / Buffer Zone">North Nazimabad / Buffer Zone</option>
                 <option value="Malir Cantt / Scheme 33">Malir Cantt / Scheme 33</option>
-                <option value="Direct Doorstep Pickup (Karachi)">Direct Doorstep Pickup (Karachi)</option>
+                <option value="Direct Doorstep Delivery (Karachi)">Doorstep Delivery (Karachi)</option>
               </select>
             </div>
           </div>
 
-          {/* Destination City */}
-          <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-neutral-600 mb-2">
-              Destination City
+          {/* 2. Pickup Date */}
+          <div className="lg:col-span-3">
+            <label className="block text-xs font-semibold text-neutral-800 mb-1.5 font-['Poppins',sans-serif]">
+              Pickup Date
             </label>
             <div className="relative">
-              <select
-                id="destination-city-select"
-                value={destination}
-                onChange={(e) => setDestination(e.target.value)}
-                className="w-full bg-neutral-50 border border-neutral-300 hover:border-neutral-400 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 text-xs sm:text-sm font-semibold rounded-lg p-3 text-neutral-900 cursor-pointer outline-hidden transition-colors"
-              >
-                {activeTab === 'intercity' ? (
-                  <>
-                    <option value="Hyderabad (M-9 Motorway, 160km)">Hyderabad (M-9 Motorway, 160km)</option>
-                    <option value="Thatta & Keenjhar Lake (105km)">Thatta & Keenjhar Lake (105km)</option>
-                    <option value="Sukkur (M-5 Motorway, 480km)">Sukkur (M-5 Motorway, 480km)</option>
-                    <option value="Lahore (M-5 & M-3 Motorway, 1215km)">Lahore (M-5 & M-3 Motorway, 1215km)</option>
-                    <option value="Islamabad & Rawalpindi (1410km)">Islamabad & Rawalpindi (1410km)</option>
-                    <option value="Northern Areas (Hunza, Swat, Skardu)">Northern Areas (Hunza, Swat, Skardu)</option>
-                    <option value="Mirpurkhas & Interior Sindh">Mirpurkhas & Interior Sindh</option>
-                  </>
-                ) : activeTab === 'wedding' ? (
-                  <>
-                    <option value="Karachi Wedding Banquet / Venue Event">Karachi Wedding Banquet / Venue Event</option>
-                    <option value="DHA to Korangi Creek Club Barat">DHA to Korangi Creek Club Barat</option>
-                    <option value="Mohatta Palace / Beach Photoshoot + Barat">Mohatta Palace / Beach Photoshoot + Barat</option>
-                    <option value="Avari Towers / Marriott Hotel Event">Avari Towers / Marriott Hotel Event</option>
-                  </>
-                ) : (
-                  <>
-                    <option value="Karachi Local City (10 Hours Full Chauffeur)">Karachi Local City (10 Hours Full Chauffeur)</option>
-                    <option value="Corporate Full Day Meetings (DHA / Clifton / Korangi)">Corporate Full Day Meetings (DHA / Clifton / Korangi)</option>
-                    <option value="Airport Pick & Multi-Stop City Tour">Airport Pick & Multi-Stop City Tour</option>
-                  </>
-                )}
-              </select>
+              <input
+                id="pickup-date-input"
+                type="date"
+                required
+                value={pickupDate}
+                onChange={(e) => setPickupDate(e.target.value)}
+                className="w-full bg-white hover:bg-neutral-50 border border-neutral-300 focus:border-[#C8102E] focus:ring-1 focus:ring-[#C8102E] text-xs sm:text-sm font-medium rounded-[6px] py-2 px-3 text-[#111111] cursor-pointer outline-hidden transition-colors"
+              />
             </div>
           </div>
 
-          {/* Travel Date */}
-          <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-neutral-600 mb-2">
-              Travel Date
+          {/* 3. Return Date */}
+          <div className="lg:col-span-3">
+            <label className="block text-xs font-semibold text-neutral-800 mb-1.5 font-['Poppins',sans-serif]">
+              Return Date
             </label>
-            <input
-              id="travel-date-input"
-              type="date"
-              value={travelDate}
-              onChange={(e) => setTravelDate(e.target.value)}
-              className="w-full bg-neutral-50 border border-neutral-300 hover:border-neutral-400 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 text-xs sm:text-sm font-semibold rounded-lg p-3 text-neutral-900 cursor-pointer outline-hidden transition-colors"
-            />
+            <div className="relative">
+              <input
+                id="return-date-input"
+                type="date"
+                required
+                value={returnDate}
+                onChange={(e) => setReturnDate(e.target.value)}
+                className="w-full bg-white hover:bg-neutral-50 border border-neutral-300 focus:border-[#C8102E] focus:ring-1 focus:ring-[#C8102E] text-xs sm:text-sm font-medium rounded-[6px] py-2 px-3 text-[#111111] cursor-pointer outline-hidden transition-colors"
+              />
+            </div>
           </div>
 
-          {/* Vehicle Selection */}
-          <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-neutral-600 mb-2">
-              Vehicle Selection
-            </label>
-            <select
-              id="vehicle-select"
-              value={vehicle}
-              onChange={(e) => handleVehicleSelect(e.target.value)}
-              className="w-full bg-neutral-50 border border-neutral-300 hover:border-neutral-400 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 text-xs sm:text-sm font-semibold rounded-lg p-3 text-neutral-900 cursor-pointer outline-hidden transition-colors"
+          {/* 4. Red Search Button */}
+          <div className="lg:col-span-2">
+            <button
+              id="search-cars-btn"
+              type="submit"
+              className="w-full inline-flex items-center justify-center gap-2 bg-[#C8102E] hover:bg-[#A80D25] text-white font-bold text-xs sm:text-sm h-10 px-5 rounded-[6px] shadow-xs transition-colors cursor-pointer whitespace-nowrap font-['Poppins',sans-serif]"
             >
-              {vehicleOptions.map((opt) => (
-                <option key={opt.name} value={opt.name}>
-                  {opt.name}
-                </option>
-              ))}
-            </select>
+              <Search className="w-4 h-4" />
+              <span>Search</span>
+            </button>
           </div>
 
-        </div>
+        </form>
 
-        {/* Bottom Banner inside Booking Box */}
-        <div className="mt-6 pt-5 border-t border-neutral-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <div>
-              <div className="text-xs font-semibold uppercase tracking-wider text-neutral-500">
-                Vehicle Package (Includes Uniformed Chauffeur)
-              </div>
-              <div className="text-sm text-neutral-900 font-bold mt-0.5">
-                Direct Quote on WhatsApp
-              </div>
-            </div>
+        {/* Quick Tags below search bar (divider line removed) */}
+        <div className="mt-3 pt-2 flex flex-wrap items-center justify-between text-xs text-neutral-500 gap-2">
+          <div className="flex flex-wrap items-center gap-3">
+            <span>• Self-Drive or Chauffeur Driven</span>
+            <span>• 100% Inspected &amp; Sanitized</span>
+            <span>• Doorstep Delivery Across Karachi</span>
           </div>
 
-          <button
-            id="confirm-on-whatsapp-btn"
-            onClick={handleConfirmWhatsApp}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 btn-gold px-6 py-3 text-xs font-bold tracking-wide transition-all cursor-pointer"
-          >
-            {/* WhatsApp SVG Icon */}
-            <svg className="w-4 h-4 fill-current text-neutral-950" viewBox="0 0 24 24">
-              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-            </svg>
-            <span>Confirm Booking via WhatsApp</span>
-          </button>
+          {onOpenModal && (
+            <button
+              type="button"
+              onClick={onOpenModal}
+              className="text-[#C8102E] hover:underline font-bold cursor-pointer"
+            >
+              Custom Rental Inquiry &rarr;
+            </button>
+          )}
         </div>
       </div>
     </div>

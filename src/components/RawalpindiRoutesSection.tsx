@@ -1,132 +1,230 @@
 import React, { useState } from 'react';
-import { RAWALPINDI_FIXED_ROUTES } from '../data/fleetData';
 import { openWhatsApp } from '../utils/whatsapp';
 
+interface FixedRateRoute {
+  destination: string;
+  distance: string;
+  time: string;
+  corollaRate: string;
+  grandCabinRate: string;
+  pradoRate: string;
+}
+
+const KARACHI_INTERCITY_FARES: FixedRateRoute[] = [
+  {
+    destination: 'Karachi to Hyderabad (M-9)',
+    distance: '160 km',
+    time: '2.5 Hrs',
+    corollaRate: 'Rs. 9,500',
+    grandCabinRate: 'Rs. 18,000',
+    pradoRate: 'Rs. 25,000',
+  },
+  {
+    destination: 'Karachi to Sukkur (M-5)',
+    distance: '480 km',
+    time: '6 Hrs',
+    corollaRate: 'Rs. 24,000',
+    grandCabinRate: 'Rs. 38,000',
+    pradoRate: 'Rs. 55,000',
+  },
+  {
+    destination: 'Karachi to Multan (M-5)',
+    distance: '890 km',
+    time: '10-11 Hrs',
+    corollaRate: 'Rs. 38,000',
+    grandCabinRate: 'Rs. 58,000',
+    pradoRate: 'Rs. 85,000',
+  },
+  {
+    destination: 'Karachi to Faisalabad (M-4)',
+    distance: '1,100 km',
+    time: '13-14 Hrs',
+    corollaRate: 'Rs. 46,000',
+    grandCabinRate: 'Rs. 68,000',
+    pradoRate: 'Rs. 98,000',
+  },
+  {
+    destination: 'Karachi to Lahore (M-5 & M-3)',
+    distance: '1,215 km',
+    time: '14-16 Hrs',
+    corollaRate: 'Rs. 50,000',
+    grandCabinRate: 'Rs. 75,000',
+    pradoRate: 'Rs. 110,000',
+  },
+  {
+    destination: 'Karachi to Rawalpindi & Islamabad (M-2)',
+    distance: '1,410 km',
+    time: '16-18 Hrs',
+    corollaRate: 'Rs. 58,000',
+    grandCabinRate: 'Rs. 85,000',
+    pradoRate: 'Rs. 130,000',
+  },
+];
+
+const ROUTE_HEADING_STYLES: React.CSSProperties[] = [
+  { fontFamily: 'Georgia, serif', fontSize: '16px' },
+  { fontFamily: 'Times New Roman, serif', fontSize: '18px' },
+  { fontFamily: 'Times New Roman, serif', fontSize: '18px' },
+  { fontFamily: 'Times New Roman, serif', fontSize: '17px' },
+  { fontFamily: 'Times New Roman, serif', fontSize: '17px' },
+  { fontFamily: 'Georgia, serif', fontSize: '16px' },
+];
+
 export const RawalpindiRoutesSection: React.FC = () => {
-  const [selectedGroupId, setSelectedGroupId] = useState<string>('corolla-pindi');
+  const [selectedVehicleType, setSelectedVehicleType] = useState<'corolla' | 'grandCabin' | 'prado'>('corolla');
 
-  const currentGroup =
-    RAWALPINDI_FIXED_ROUTES.find((g) => g.id === selectedGroupId) || RAWALPINDI_FIXED_ROUTES[0];
+  const handleBookFixedRate = (destination: string, rate: string) => {
+    const vName = 
+      selectedVehicleType === 'corolla' 
+        ? 'Toyota Corolla Altis Grande' 
+        : selectedVehicleType === 'grandCabin' 
+          ? 'Toyota HiAce Grand Cabin 14-Seater' 
+          : 'Toyota Land Cruiser Prado TX';
 
-  const handleBookFixedRate = (vehicleName: string, destination: string, price: string) => {
     openWhatsApp(
-      `Assalam-o-Alaikum PAK E DRIVE, I want to book: ${vehicleName} from Rawalpindi/Islamabad to ${destination} for ${price}. Please confirm availability and driver dispatch.`
+      `Assalam-o-Alaikum PAK E DRIVE, I would like to book a trip for ${destination} in ${vName} for ${rate} (Includes verified chauffeur). Please confirm driver dispatch.`
     );
   };
 
   return (
     <section
-      id="rawalpindi-fixed-routes-section"
-      style={{ backgroundColor: '#524949', fontFamily: 'Georgia, serif' }}
-      className="py-12 sm:py-16 text-white border-y border-neutral-700 italic"
+      id="karachi-fixed-routes-section"
+      style={{
+        fontFamily: 'Georgia, serif',
+        fontStyle: 'italic',
+      }}
+      className="py-12 sm:py-16 bg-neutral-50/70 text-[#222222]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
           <div>
-            <h2 style={{ fontFamily: 'Georgia, serif', fontSize: '30px', color: '#ffeded' }} className="font-black tracking-tight">
-              Rawalpindi / Islamabad Fixed Intercity Routes
+            <h2 
+              style={{
+                fontFamily: 'Georgia, serif',
+              }}
+              className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-[#111111]"
+            >
+              Karachi Intercity Motorway Fares
             </h2>
+            <p 
+              style={{
+                fontFamily: 'Times New Roman, serif',
+                fontSize: '12px',
+              }}
+              className="text-neutral-600 mt-1.5 max-w-xl font-normal"
+            >
+              Fixed rate fares from Karachi to Sindh and Punjab cities. Includes professional highway chauffeur and air-conditioned vehicle.
+            </p>
           </div>
 
-          <div className="flex items-center gap-3 not-italic font-sans">
-            <a
-              href="tel:+923002512201"
-              className="inline-flex items-center bg-black/40 px-4 py-2 rounded-lg border border-white/20 hover:bg-black/60 transition-colors"
+          {/* Vehicle Tab Switcher */}
+          <div 
+            style={{
+              fontFamily: 'Times New Roman, serif',
+            }}
+            className="flex items-center gap-1.5 p-1 bg-white rounded-lg border border-[#E5E5E5] shadow-2xs self-start md:self-auto"
+          >
+            <button
+              onClick={() => setSelectedVehicleType('corolla')}
+              style={{
+                fontFamily: 'Times New Roman, serif',
+                backgroundColor: selectedVehicleType === 'corolla' ? '#3ca19a' : undefined,
+              }}
+              className={`text-xs px-3 py-1.5 rounded-[5px] font-bold transition-colors cursor-pointer ${
+                selectedVehicleType === 'corolla'
+                  ? 'text-white shadow-xs'
+                  : 'text-[#222222] hover:text-[#3ca19a]'
+              }`}
             >
-              <span className="text-xs font-bold text-white tracking-wide">
-                Call Dispatch: 0300 2512201
-              </span>
-            </a>
+              Corolla Sedan
+            </button>
+            <button
+              onClick={() => setSelectedVehicleType('grandCabin')}
+              style={{
+                backgroundColor: selectedVehicleType === 'grandCabin' ? '#3ca19a' : undefined,
+              }}
+              className={`text-xs px-3 py-1.5 rounded-[5px] font-bold transition-colors cursor-pointer ${
+                selectedVehicleType === 'grandCabin'
+                  ? 'text-white shadow-xs'
+                  : 'text-[#222222] hover:text-[#3ca19a]'
+              }`}
+            >
+              14-Seat Grand Cabin
+            </button>
+            <button
+              onClick={() => setSelectedVehicleType('prado')}
+              style={{
+                backgroundColor: selectedVehicleType === 'prado' ? '#3ca19a' : undefined,
+              }}
+              className={`text-xs px-3 py-1.5 rounded-[5px] font-bold transition-colors cursor-pointer ${
+                selectedVehicleType === 'prado'
+                  ? 'text-white shadow-xs'
+                  : 'text-[#222222] hover:text-[#3ca19a]'
+              }`}
+            >
+              Prado SUV
+            </button>
           </div>
         </div>
 
-        {/* Active Group Details Card */}
-        <div className="bg-[#232323] rounded-2xl border border-neutral-700/80 overflow-hidden shadow-2xl grid grid-cols-1 lg:grid-cols-12 not-italic">
-          {/* Left Column: Vehicle Visual & Highlights */}
-          <div className="lg:col-span-4 p-6 sm:p-8 border-b lg:border-b-0 lg:border-r border-neutral-700/80 flex flex-col justify-start gap-4 bg-[#1c1c1f]">
-            <div>
-              <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '25px' }} className="font-black text-white leading-tight">
-                {currentGroup.vehicleName}
-              </h3>
-              <p className="text-xs text-neutral-300 mt-2 font-normal font-sans leading-relaxed">
-                Clean interior, seasoned highway chauffeur, high-output AC chillers, and fully serviced for smooth intercity cruising.
-              </p>
+        {/* 6 Route Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {KARACHI_INTERCITY_FARES.map((item, idx) => {
+            const currentRate = 
+              selectedVehicleType === 'corolla' 
+                ? item.corollaRate 
+                : selectedVehicleType === 'grandCabin' 
+                  ? item.grandCabinRate 
+                  : item.pradoRate;
 
-              <div className="mt-4 rounded-xl overflow-hidden border border-neutral-700 bg-black/40">
-                <img
-                  src={currentGroup.image}
-                  alt={currentGroup.vehicleName}
-                  className="w-full h-44 object-cover"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-            </div>
-
-            <div className="pt-2 font-sans">
-              <button
-                onClick={() =>
-                  openWhatsApp(
-                    `Assalam-o-Alaikum PAK E DRIVE, I would like to book ${currentGroup.vehicleName} from Rawalpindi. Please share driver and booking confirmation.`
-                  )
-                }
-                className="w-full btn-whatsapp h-11 text-xs font-bold tracking-wide transition-colors cursor-pointer text-center flex items-center justify-center gap-2"
+            return (
+              <div
+                key={idx}
+                className="bg-white rounded-xl border border-[#E5E5E5] p-5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between space-y-4 group"
               >
-                <span>Book Vehicle on WhatsApp</span>
-              </button>
-            </div>
-          </div>
-
-          {/* Right Column: Destination Rate Cards */}
-          <div className="lg:col-span-8 p-6 sm:p-8 bg-[#232323] flex flex-col justify-between font-sans">
-            <div>
-              <div className="flex items-center justify-between pb-3 border-b border-neutral-700/80 mb-4 font-sans">
-                <span className="text-xs font-bold uppercase tracking-wider text-neutral-300">
-                  Destination &amp; Fixed Rates
-                </span>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {currentGroup.rates.map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="bg-[#1c1c1f] p-4 rounded-xl border border-neutral-700/80 hover:border-amber-400/50 transition-colors flex items-center justify-between group"
-                  >
-                    <div className="pr-2">
-                      <span className="font-extrabold text-sm text-white block leading-tight">
-                        {item.destination}
-                      </span>
-                      {(item.distance || item.time) && (
-                        <span className="text-xs text-neutral-300 font-medium block mt-1">
-                          {item.distance} {item.time ? `• ${item.time}` : ''}
-                        </span>
-                      )}
-                    </div>
-
-                    <div className="text-right flex flex-col items-end gap-2 shrink-0">
-                      {/* Price color set to white as requested */}
-                      <span style={{ color: '#ffffff' }} className="text-sm font-extrabold text-white tracking-tight">
-                        {item.price}
-                      </span>
-                      <button
-                        onClick={() =>
-                          handleBookFixedRate(
-                            currentGroup.vehicleName,
-                            item.destination,
-                            item.price
-                          )
-                        }
-                        style={{ backgroundColor: '#cba542' }}
-                        className="text-white hover:opacity-90 text-xs font-bold px-3.5 py-2 rounded-lg cursor-pointer transition-colors shadow-2xs"
-                      >
-                        Book Now
-                      </button>
-                    </div>
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-2">
+                    <span 
+                      style={{ backgroundColor: '#ffffff' }}
+                      className="text-[10px] font-bold uppercase tracking-wider text-[#3ca19a] px-2 py-0.5 rounded-[4px] border border-[#E5E5E5]"
+                    >
+                      From Karachi
+                    </span>
+                    <span className="text-xs text-neutral-500 font-medium">
+                      {item.distance} • {item.time}
+                    </span>
                   </div>
-                ))}
+
+                  <h3 
+                    style={ROUTE_HEADING_STYLES[idx] || {}}
+                    className="font-bold text-[#111111] tracking-tight group-hover:text-[#3ca19a] transition-colors"
+                  >
+                    {item.destination}
+                  </h3>
+
+                  <div className="mt-3 pt-3 border-t border-[#E5E5E5] flex items-center justify-between">
+                    <div>
+                      <span className="text-[10px] uppercase font-bold text-neutral-500 block">
+                        Estimated Fare
+                      </span>
+                      <span className="text-lg font-black text-[#111111]">
+                        {currentRate}
+                      </span>
+                    </div>
+
+                    <button
+                      onClick={() => handleBookFixedRate(item.destination, currentRate)}
+                      style={{ backgroundColor: '#3ca19a' }}
+                      className="hover:bg-[#328e88] text-white text-xs font-bold px-4 py-2 rounded-[7px] transition-colors cursor-pointer shadow-xs whitespace-nowrap"
+                    >
+                      Book Fare
+                    </button>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
+            );
+          })}
         </div>
       </div>
     </section>

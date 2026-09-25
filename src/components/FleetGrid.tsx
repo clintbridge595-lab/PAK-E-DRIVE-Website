@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { FLEET_VEHICLES } from '../data/fleetData';
 import { Vehicle, VehicleCategory } from '../types';
 import { openWhatsApp } from '../utils/whatsapp';
+import { ArrowRight } from 'lucide-react';
 
 interface FleetGridProps {
   limit?: number;
@@ -22,12 +23,12 @@ export const FleetGrid: React.FC<FleetGridProps> = ({
 
   const categories = [
     { id: 'ALL', label: showSearchAndSort ? 'All Cars' : 'All Vehicles' },
-    { id: 'BULLETPROOF', label: 'Bulletproof B6+' },
     { id: 'SEDAN', label: 'Sedans' },
     { id: 'SUV', label: 'SUVs' },
     { id: 'LUXURY', label: 'Luxury' },
     { id: 'VANS', label: 'Vans' },
     { id: 'WEDDING', label: 'Wedding' },
+    { id: 'BULLETPROOF', label: 'Bulletproof B6+' },
   ];
 
   const filteredVehicles = useMemo(() => {
@@ -35,6 +36,11 @@ export const FleetGrid: React.FC<FleetGridProps> = ({
 
     if (selectedCategory !== 'ALL') {
       list = list.filter((v) => v.category === (selectedCategory as VehicleCategory));
+    } else {
+      // In ALL preview mode, prioritize commercial Pak E Drive cars first
+      const commercial = list.filter((v) => !v.isBulletproof);
+      const bulletproof = list.filter((v) => v.isBulletproof);
+      list = [...commercial, ...bulletproof];
     }
 
     if (searchQuery.trim()) {
@@ -60,43 +66,70 @@ export const FleetGrid: React.FC<FleetGridProps> = ({
     return list;
   }, [selectedCategory, searchQuery, sortBy, limit]);
 
-  const handleWhatsAppBooking = (vehicle: Vehicle) => {
+  const handleBookNow = (vehicle: Vehicle) => {
     openWhatsApp(
-      `Assalam-o-Alaikum PAK E DRIVE, I would like to check availability and book the ${vehicle.name} with chauffeur.`
+      `Assalam-o-Alaikum PAK E DRIVE, I would like to book the ${vehicle.name} (${vehicle.category}) with chauffeur. Please share availability and confirm the booking.`
     );
   };
 
   return (
     <section 
       id="fleet-rates-grid-section" 
+      style={{
+        fontFamily: 'Georgia, serif',
+        fontStyle: 'italic',
+        fontWeight: 'bold',
+      }}
       className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16"
     >
       {/* Header Area */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
         <div>
-          <h2 style={{ fontFamily: 'Georgia, serif' }} className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-neutral-950">
-            {showSearchAndSort ? 'Our Premium Vehicle Collection & Rates' : 'Our Verified Fleet & Transparent Rates'}
+          <h2 
+            style={{
+              fontFamily: 'Georgia, serif',
+              fontSize: '30px',
+              backgroundColor: '#ffffff',
+              color: '#4d7a7d',
+            }}
+            className="tracking-tight"
+          >
+            {showSearchAndSort ? 'Our Vehicle Collection & Rates' : 'Our Verified Fleet & Transparent Rates'}
           </h2>
-          <p className="text-neutral-500 text-xs sm:text-sm mt-1.5 max-w-2xl font-normal font-sans">
-            {showSearchAndSort
-              ? 'Every vehicle in our showroom is 100% genuine, maintained to showroom standards, and piloted by courteous, background-verified chauffeurs. Transparent rates with zero unexpected surcharges.'
-              : 'Fixed 10-Hour & Daily packages including our licensed, verified chauffeurs.'}
+          <p 
+            style={{
+              fontSize: '12px',
+              fontWeight: 'normal',
+            }}
+            className="text-neutral-600 mt-1.5 max-w-2xl"
+          >
+            Every vehicle is mechanically tested before dispatch, immaculately sanitized, and operated by seasoned licensed chauffeurs.
           </p>
         </div>
 
         {onViewAllFleet && (
           <button
             onClick={onViewAllFleet}
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-neutral-800 bg-neutral-100 hover:bg-neutral-200 border border-neutral-300 px-4 py-2 rounded-lg transition-colors self-start md:self-auto cursor-pointer"
+            style={{
+              fontFamily: 'Times New Roman, serif',
+              fontSize: '11px',
+            }}
+            className="inline-flex items-center gap-1.5 font-bold text-[#111111] hover:text-[#3ca19a] bg-white hover:bg-neutral-50 border border-[#E5E5E5] px-4 py-2.5 rounded-[7px] transition-colors self-start md:self-auto cursor-pointer shadow-2xs"
           >
-            <span>View Full Fleet Showroom</span>
-            <span className="text-amber-600 font-bold">&rarr;</span>
+            <span>View All Fleet</span>
+            <ArrowRight className="w-3.5 h-3.5" />
           </button>
         )}
       </div>
 
       {/* Filter Tabs & Search Bar */}
-      <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 mb-8">
+      <div 
+        style={{
+          fontFamily: 'Times New Roman, serif',
+          fontSize: '15px',
+        }}
+        className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 mb-8"
+      >
         {/* Category Tabs */}
         <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
           {categories.map((cat) => {
@@ -106,10 +139,10 @@ export const FleetGrid: React.FC<FleetGridProps> = ({
                 key={cat.id}
                 id={`filter-tab-${cat.id.toLowerCase()}`}
                 onClick={() => setSelectedCategory(cat.id)}
-                className={`text-xs font-bold px-4 py-2 rounded-full tracking-normal transition-colors cursor-pointer ${
+                className={`text-xs font-bold px-4 py-2 rounded-[7px] tracking-normal transition-colors cursor-pointer ${
                   isActive
-                    ? 'bg-neutral-950 text-white shadow-xs'
-                    : 'bg-neutral-100 hover:bg-neutral-200 text-neutral-700'
+                    ? 'bg-[#3ca19a] text-white shadow-xs'
+                    : 'bg-neutral-100 hover:bg-neutral-200 text-[#222222]'
                 }`}
               >
                 {cat.label}
@@ -118,23 +151,23 @@ export const FleetGrid: React.FC<FleetGridProps> = ({
           })}
         </div>
 
-        {/* Search & Sort on Fleet Page */}
+        {/* Search & Sort if enabled */}
         {showSearchAndSort && (
-          <div className="flex flex-wrap items-center gap-3">
-            <div className="min-w-[220px]">
+          <div className="flex flex-col sm:flex-row items-center gap-2.5">
+            <div className="relative w-full sm:w-60">
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search Honda, Prado, V8..."
-                className="w-full px-3 py-2 text-xs font-medium bg-neutral-50 border border-neutral-300 rounded-lg focus:outline-hidden focus:border-amber-400"
+                placeholder="Search Fortuner, Prado, V8..."
+                className="w-full px-3 py-2 text-xs font-medium bg-white border border-[#E5E5E5] rounded-[7px] focus:outline-hidden focus:border-[#3ca19a]"
               />
             </div>
 
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="text-xs font-bold tracking-wide bg-neutral-50 border border-neutral-300 rounded-lg px-3 py-2 text-neutral-800 cursor-pointer focus:outline-hidden"
+              className="text-xs font-bold tracking-wide bg-white border border-[#E5E5E5] rounded-[7px] px-3 py-2 text-[#222222] cursor-pointer focus:outline-hidden"
             >
               <option value="featured">Featured Order</option>
               <option value="seats">Seat Capacity (High to Low)</option>
@@ -146,104 +179,106 @@ export const FleetGrid: React.FC<FleetGridProps> = ({
 
       {/* Grid of Vehicle Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-        {filteredVehicles.map((vehicle) => (
-          <div
-            key={vehicle.id}
-            id={`vehicle-card-${vehicle.id}`}
-            className="bg-white rounded-xl border border-neutral-200 shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col overflow-hidden group"
-          >
-            {/* Top Image Box */}
-            <div className="relative h-52 sm:h-56 w-full bg-neutral-900 overflow-hidden">
-              <img
-                src={vehicle.image}
-                alt={vehicle.name}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                referrerPolicy="no-referrer"
-              />
-            </div>
+        {filteredVehicles.map((vehicle) => {
+          const displayPrice = vehicle.rates?.tenHoursCity || 'Custom Quote';
 
-            {/* Content Area */}
-            <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
-              <div>
-                <h3 className="text-lg font-extrabold text-neutral-950 tracking-tight leading-snug min-h-[3rem] flex items-center">
+          return (
+            <div
+              key={vehicle.id}
+              id={`vehicle-card-${vehicle.id}`}
+              className="bg-white rounded-xl border border-[#E5E5E5] shadow-xs hover:shadow-md transition-all duration-300 flex flex-col overflow-hidden group font-sans"
+            >
+              {/* Car image on top */}
+              <div className="relative h-52 sm:h-56 w-full bg-neutral-100 overflow-hidden">
+                <img
+                  src={vehicle.image}
+                  alt={vehicle.name}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+
+              {/* Header Bar matching Book Now color #3ca19a - Category span removed as requested in Selector 2 */}
+              <div className="bg-[#3ca19a] text-white px-4 py-2.5 flex items-center justify-between">
+                <h3 
+                  style={{
+                    fontFamily: 'Times New Roman, serif',
+                    fontSize: '15px',
+                    color: '#000000',
+                  }}
+                  className="font-bold tracking-tight truncate"
+                >
                   {vehicle.name}
                 </h3>
-
-                {/* Specs Row */}
-                <div className="grid grid-cols-3 sm:grid-cols-4 gap-2 my-4 py-3 border-y border-neutral-100 text-center">
-                  <div className="flex flex-col items-center justify-center">
-                    <span className="text-xs uppercase font-bold text-neutral-600 mb-0.5">Seats</span>
-                    <div className="text-xs font-bold text-neutral-900">
-                      <span>{vehicle.seats}</span>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col items-center justify-center">
-                    <span className="text-xs uppercase font-bold text-neutral-600 mb-0.5">Gear</span>
-                    <div className="text-xs font-bold text-neutral-900">
-                      <span>{vehicle.gear}</span>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col items-center justify-center">
-                    <span className="text-xs uppercase font-bold text-neutral-600 mb-0.5">Fuel</span>
-                    <div className="text-xs font-bold text-neutral-900">
-                      <span>{vehicle.fuel}</span>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col items-center justify-center">
-                    <span className="text-xs uppercase font-bold text-neutral-600 mb-0.5">Bags</span>
-                    <div className="text-xs font-bold text-neutral-900">
-                      <span>{vehicle.bags}</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Bullet highlights */}
-                {vehicle.highlights && vehicle.highlights.length > 0 && (
-                  <div className="space-y-1 mb-4">
-                    {vehicle.highlights.map((h, i) => (
-                      <div key={i} className="flex items-center gap-1.5 text-xs text-neutral-600 font-medium">
-                        <span className="text-neutral-400 font-bold select-none">•</span>
-                        <span className="truncate">{h}</span>
-                      </div>
-                    ))}
-                  </div>
-                )}
               </div>
 
-              {/* Service & Action Buttons */}
-              <div className="pt-2 border-t border-neutral-100">
-                <div className="flex items-center gap-2 text-xs mb-3">
-                  <span className="font-semibold text-neutral-500">Service:</span>
-                  <span className="inline-flex items-center gap-1.5 font-bold text-emerald-600">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-                    Available for Rental
-                  </span>
+              {/* Content Area */}
+              <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
+                {/* 2x2 grid of specs - Icons removed 100% as requested */}
+                <div className="grid grid-cols-2 gap-3 py-3 border-b border-[#E5E5E5] text-xs">
+                  {/* Seats */}
+                  <div>
+                    <span className="text-[10px] uppercase text-neutral-500 font-semibold block">Seats</span>
+                    <span className="font-bold text-[#111111]">{vehicle.seats} Seats</span>
+                  </div>
+
+                  {/* Gear */}
+                  <div>
+                    <span className="text-[10px] uppercase text-neutral-500 font-semibold block">Gear</span>
+                    <span className="font-bold text-[#111111]">{vehicle.gear}</span>
+                  </div>
+
+                  {/* Fuel */}
+                  <div>
+                    <span className="text-[10px] uppercase text-neutral-500 font-semibold block">Fuel</span>
+                    <span className="font-bold text-[#111111]">{vehicle.fuel}</span>
+                  </div>
+
+                  {/* Capacity / Bags */}
+                  <div>
+                    <span className="text-[10px] uppercase text-neutral-500 font-semibold block">Luggage</span>
+                    <span className="font-bold text-[#111111]">{vehicle.bags} Bags</span>
+                  </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-2.5">
-                  <button
-                    id={`specs-btn-${vehicle.id}`}
-                    onClick={() => onOpenSpecs(vehicle)}
-                    className="w-full bg-white hover:bg-neutral-100 text-neutral-900 border border-neutral-300 font-bold text-xs py-2.5 rounded-lg transition-colors cursor-pointer text-center"
-                  >
-                    Specs
-                  </button>
+                {/* Subtitle / Key Highlights */}
+                <p className="text-xs text-neutral-600 line-clamp-2 leading-relaxed font-normal">
+                  {vehicle.subtitle}
+                </p>
 
-                  <button
-                    id={`whatsapp-btn-${vehicle.id}`}
-                    onClick={() => handleWhatsAppBooking(vehicle)}
-                    className="w-full flex items-center justify-center btn-whatsapp text-xs py-2.5 rounded-lg transition-colors cursor-pointer shadow-xs"
-                  >
-                    <span>WhatsApp</span>
-                  </button>
+                {/* Price & Book Now button */}
+                <div className="pt-2 border-t border-[#E5E5E5] flex items-center justify-between gap-3">
+                  <div>
+                    <span className="text-[10px] uppercase font-bold text-neutral-500 block">
+                      Daily Rate (Chauffeur)
+                    </span>
+                    <span className="text-sm sm:text-base font-extrabold text-[#111111]">
+                      {displayPrice}
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <button
+                      id={`specs-btn-${vehicle.id}`}
+                      onClick={() => onOpenSpecs(vehicle)}
+                      className="bg-white hover:bg-neutral-100 text-[#222222] border border-[#E5E5E5] text-xs font-semibold px-3 py-2.5 rounded-[7px] transition-colors cursor-pointer"
+                    >
+                      Specs
+                    </button>
+                    <button
+                      id={`book-now-btn-${vehicle.id}`}
+                      onClick={() => handleBookNow(vehicle)}
+                      style={{ backgroundColor: '#3ca19a' }}
+                      className="hover:bg-[#328e88] text-white font-bold text-xs px-4 py-2.5 rounded-[7px] transition-colors cursor-pointer shadow-xs whitespace-nowrap"
+                    >
+                      Book Now
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

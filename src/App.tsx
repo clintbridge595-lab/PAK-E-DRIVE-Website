@@ -21,6 +21,7 @@ import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { SpecsModal } from './components/SpecsModal';
 import { BookingModal } from './components/BookingModal';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
+import { SectionHeader } from './components/SectionHeader';
 import { Vehicle } from './types';
 
 export default function App() {
@@ -115,7 +116,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-neutral-900 font-sans flex flex-col selection:bg-amber-400 selection:text-black">
+    <div className="min-h-screen bg-white text-[#222222] font-sans flex flex-col selection:bg-[#0D919C] selection:text-white">
       {/* Top Navigation Bar */}
       <Navbar
         currentPage={currentPage}
@@ -140,54 +141,30 @@ export default function App() {
             {/* 3. Trust Metrics Badges */}
             <TrustBadges />
 
-            {/* 4. Dedicated BULLET PROOF B6+ Ballistic Fleet Section */}
-            <BulletproofSection
-              onOpenSpecs={handleOpenSpecs}
-              onOpenBooking={handleOpenBooking}
-            />
-
-            {/* 5. Changan Oshan X7 Exclusive Multi-Angle Carousel Showcase */}
-            <ChanganOshanShowcase onOpenBooking={handleOpenBooking} />
-
-            {/* 6. 3D Fleet Showroom */}
-            <Fleet3DShowroom
-              onSelectVehicle={(vehicle) => handleOpenBooking(vehicle.name)}
-              onOpenSpecs={handleOpenSpecs}
-            />
-
-            {/* 6. Grand Cabin Karachi to Hyderabad Highlight */}
-            <GrandCabinHighlight onOpenBooking={() => handleOpenBooking('Toyota HiAce Grand Cabin (High Roof 14-Seater)')} />
-
-            {/* 7. Verified Fleet & Rates Grid (preview) */}
+            {/* 4. Verified Fleet & Rates Grid (preview) */}
             <FleetGrid
               limit={6}
               onOpenSpecs={handleOpenSpecs}
               onViewAllFleet={() => handleNavigate('fleet')}
             />
 
-            {/* 8. Rawalpindi / Islamabad Fixed Routes (پنڈی سے ریٹس) */}
+            {/* 5. Karachi Intercity Motorway Fares */}
             <RawalpindiRoutesSection />
 
-            {/* 9. Tailored Services Section (grid) */}
-            <ServicesSection
-              isFullPage={false}
-              onOpenBooking={() => handleOpenBooking()}
-            />
-
-            {/* 10. Express Highway Routes Section */}
+            {/* 6. Express Highway Routes Section */}
             <RoutesSection
               isFullPage={false}
               onViewAllRoutes={() => handleNavigate('routes')}
               onOpenBooking={() => handleOpenBooking()}
             />
 
-            {/* 11. 4-Step Booking Guide */}
+            {/* 7. 4-Step Booking Guide */}
             <HowToBook />
 
-            {/* 12. Verified Testimonials & Google Rating */}
+            {/* 8. Verified Testimonials & Google Rating */}
             <Testimonials />
 
-            {/* 13. Final Call To Action Banner */}
+            {/* 9. Final Call To Action Banner */}
             <CallToAction onOpenBooking={() => handleOpenBooking()} />
           </div>
         )}
@@ -198,13 +175,16 @@ export default function App() {
 
         {currentPage === 'fleet' && (
           <div className="animate-fadeIn">
-            <BulletproofSection
-              onOpenSpecs={handleOpenSpecs}
-              onOpenBooking={handleOpenBooking}
-            />
+            {/* Reusable Section Header Component */}
+            <SectionHeader title="Our Fleet" currentPageName="Our Fleet" />
+
             <FleetGrid
               showSearchAndSort={true}
               onOpenSpecs={handleOpenSpecs}
+            />
+            <BulletproofSection
+              onOpenSpecs={handleOpenSpecs}
+              onOpenBooking={handleOpenBooking}
             />
             <Fleet3DShowroom
               onSelectVehicle={(vehicle) => handleOpenBooking(vehicle.name)}
@@ -227,11 +207,11 @@ export default function App() {
 
         {currentPage === 'routes' && (
           <div className="animate-fadeIn">
-            <RawalpindiRoutesSection />
             <RoutesSection
               isFullPage={true}
               onOpenBooking={() => handleOpenBooking()}
             />
+            <RawalpindiRoutesSection />
             <CallToAction onOpenBooking={() => handleOpenBooking()} />
           </div>
         )}

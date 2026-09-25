@@ -1,7 +1,8 @@
 import React from 'react';
 import { FLEET_VEHICLES } from '../data/fleetData';
 import { Vehicle } from '../types';
-import { openWhatsApp } from '../utils/whatsapp';
+import { openWhatsApp, PHONE_DISPATCH } from '../utils/whatsapp';
+import { ShieldCheck, Phone } from 'lucide-react';
 
 interface BulletproofSectionProps {
   onOpenSpecs: (vehicle: Vehicle) => void;
@@ -23,94 +24,98 @@ export const BulletproofSection: React.FC<BulletproofSectionProps> = ({
   return (
     <section
       id="bulletproof-b6-section"
-      className="bg-gradient-to-b from-[#111215] via-[#1a1b20] to-[#111215] text-white py-14 sm:py-20 border-y border-neutral-800 relative overflow-hidden"
+      className="bg-neutral-50/70 text-[#222222] py-12 sm:py-16 border-y border-[#E5E5E5] relative overflow-hidden"
     >
-      {/* Background Tactical Grid Pattern */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="text-center max-w-4xl mx-auto mb-10 sm:mb-16">
-          <h2 style={{ fontFamily: 'Georgia, serif' }} className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight uppercase mb-2 sm:mb-3 leading-tight text-neutral-100">
-            Bulletproof <span className="text-white font-black">B6+</span>
-          </h2>
-
-          <div className="mt-1 sm:mt-2 text-sm sm:text-lg lg:text-xl font-bold tracking-wide uppercase text-neutral-200">
-            Contact to Rent Armored & Luxury Vehicles
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+          <div className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0D919C] uppercase tracking-wider mb-2">
+            <ShieldCheck className="w-4 h-4 text-[#0D919C]" />
+            <span>Diplomatic &amp; Ballistic Protection</span>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mt-5 sm:mt-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-[#111111] leading-tight">
+            Bulletproof <span className="text-[#0D919C]">B6+ Armored Fleet</span>
+          </h2>
+
+          <p className="mt-2 text-xs sm:text-sm text-neutral-600 font-normal max-w-xl mx-auto">
+            Certified ballistic protection against high-caliber assault rifles. Accompanied by tactically trained protocol chauffeurs for delegations, VIPs, and intercity transit.
+          </p>
+
+          <div className="flex flex-wrap items-center justify-center gap-3 mt-5">
             <a
               href="tel:+923002512201"
-              style={{ backgroundColor: '#aa842b' }}
-              className="inline-flex items-center justify-center text-white hover:opacity-90 font-bold text-xs px-5 py-2.5 rounded-lg transition-colors cursor-pointer shadow-xs"
+              className="inline-flex items-center justify-center gap-2 bg-[#111111] hover:bg-[#252525] text-white font-bold text-xs sm:text-sm px-5 py-2.5 rounded-[7px] transition-colors cursor-pointer shadow-xs"
             >
+              <Phone className="w-3.5 h-3.5" />
               <span>Call 0300 2512201</span>
             </a>
             <button
               onClick={() => openWhatsApp('Assalam-o-Alaikum, I am inquiring to rent Bulletproof B6+ armored vehicles in Pakistan. Please share rates and details.')}
-              className="btn-whatsapp"
+              className="btn-whatsapp text-xs sm:text-sm py-2.5 px-5"
             >
               <span>WhatsApp Security Desk</span>
             </button>
           </div>
         </div>
 
-        {/* 4 Bulletproof Cards Grid */}
+        {/* 4 Bulletproof Cards Grid: White card with thin light-grey border #E5E5E5 */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {bulletproofVehicles.map((vehicle) => (
             <div
               key={vehicle.id}
               id={`bulletproof-card-${vehicle.id}`}
-              className="bg-[#232323] rounded-xl border border-neutral-700/80 hover:border-amber-400/60 shadow-xl transition-all duration-300 flex flex-col overflow-hidden group hover:-translate-y-1"
+              className="bg-white rounded-xl border border-[#E5E5E5] shadow-xs hover:shadow-md transition-all duration-300 flex flex-col overflow-hidden group hover:-translate-y-1"
             >
               {/* Image Box */}
-              <div className="relative h-48 w-full bg-[#1c1c1f] overflow-hidden">
+              <div className="relative h-48 w-full bg-neutral-100 overflow-hidden">
                 <img
                   src={vehicle.image}
                   alt={vehicle.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
                 />
+                <span className="absolute top-2.5 left-2.5 bg-[#0D919C] text-white text-[11px] font-bold px-2.5 py-0.5 rounded-[4px] shadow-xs">
+                  B6+ Armored
+                </span>
               </div>
 
               {/* Card Details */}
               <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-base sm:text-lg font-black text-white tracking-tight leading-tight min-h-[2.5rem] flex items-center">
+                  <h3 className="text-base font-bold text-[#111111] tracking-tight leading-snug min-h-[2.5rem] flex items-center">
                     {vehicle.name}
                   </h3>
 
                   {/* Specs Row */}
-                  <div className="grid grid-cols-3 gap-2 my-3 py-2.5 border-y border-neutral-700/80 bg-[#1c1c1f]/80 rounded-md text-center">
+                  <div className="grid grid-cols-3 gap-2 my-3 py-2.5 border-y border-[#E5E5E5] bg-neutral-50/80 rounded-md text-center">
                     <div className="flex flex-col items-center justify-center">
-                      <span className="text-xs uppercase font-bold text-neutral-400 mb-0.5">Seats</span>
-                      <span className="text-xs font-bold text-white">{vehicle.seats}</span>
+                      <span className="text-[10px] uppercase font-bold text-neutral-500 mb-0.5">Seats</span>
+                      <span className="text-xs font-bold text-[#111111]">{vehicle.seats}</span>
                     </div>
                     <div className="flex flex-col items-center justify-center">
-                      <span className="text-xs uppercase font-bold text-neutral-400 mb-0.5">Armor</span>
-                      <span className="text-xs font-bold text-white">B6 / B7</span>
+                      <span className="text-[10px] uppercase font-bold text-neutral-500 mb-0.5">Armor</span>
+                      <span className="text-xs font-bold text-[#0D919C]">B6 / B7</span>
                     </div>
                     <div className="flex flex-col items-center justify-center">
-                      <span className="text-xs uppercase font-bold text-neutral-400 mb-0.5">Gear</span>
-                      <span className="text-xs font-bold text-white">{vehicle.gear}</span>
+                      <span className="text-[10px] uppercase font-bold text-neutral-500 mb-0.5">Gear</span>
+                      <span className="text-xs font-bold text-[#111111]">{vehicle.gear}</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Buttons */}
-                <div className="pt-2 border-t border-neutral-700/80">
+                <div className="pt-2 border-t border-[#E5E5E5]">
                   <div className="grid grid-cols-2 gap-2">
                     <button
                       onClick={() => onOpenSpecs(vehicle)}
-                      style={{ backgroundColor: '#c8c8c8' }}
-                      className="text-neutral-950 hover:bg-white text-xs font-bold py-2 rounded-lg tracking-wide transition-colors cursor-pointer text-center"
+                      className="bg-neutral-100 hover:bg-neutral-200 text-[#222222] text-xs font-bold py-2 rounded-[7px] tracking-wide transition-colors cursor-pointer text-center"
                     >
                       Specs
                     </button>
                     <button
                       onClick={() => handleWhatsAppInquiry(vehicle)}
-                      className="btn-whatsapp text-white text-xs font-bold py-2 rounded-lg tracking-wide transition-colors cursor-pointer text-center"
+                      className="bg-[#111111] hover:bg-[#252525] text-white text-xs font-bold py-2 rounded-[7px] tracking-wide transition-colors cursor-pointer text-center"
                     >
                       <span>Book B6+</span>
                     </button>
@@ -122,23 +127,21 @@ export const BulletproofSection: React.FC<BulletproofSectionProps> = ({
         </div>
 
         {/* Security Specifications Guarantee Banner */}
-        <div 
-          className="mt-10 sm:mt-12 bg-neutral-900/60 rounded-xl p-5 sm:px-6 border border-neutral-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
-        >
+        <div className="mt-8 bg-white rounded-xl p-5 sm:px-6 border border-[#E5E5E5] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-2xs">
           <div>
-            <h4 className="text-sm font-bold text-white leading-tight">
-              Certified Anti-Ambush & High-Risk Escort Drivers
+            <h4 className="text-sm font-bold text-[#111111] leading-tight">
+              Certified Anti-Ambush &amp; Security Protocol Drivers
             </h4>
-            <p className="text-xs text-neutral-400 mt-1 max-w-xl">
-              All bulletproof vehicles are piloted by vetted, tactically trained chauffeurs with clean security clearances.
+            <p className="text-xs text-neutral-500 mt-1 max-w-xl">
+              All bulletproof vehicles are operated by vetted, tactically trained chauffeurs with official security clearances.
             </p>
           </div>
 
           <button
             onClick={() => onOpenBooking('Bulletproof B6+ Vehicle')}
-            className="w-full sm:w-auto whitespace-nowrap bg-neutral-100 hover:bg-white text-neutral-950 font-bold text-xs px-5 py-2.5 rounded-lg tracking-wide transition-all cursor-pointer shrink-0 text-center"
+            className="w-full sm:w-auto whitespace-nowrap bg-[#0D919C] hover:bg-[#0B7D86] text-white font-bold text-xs sm:text-sm px-5 py-2.5 rounded-[7px] tracking-wide transition-all cursor-pointer shrink-0 text-center"
           >
-            Request Protocol Quote
+            Inquire Security Escort
           </button>
         </div>
       </div>

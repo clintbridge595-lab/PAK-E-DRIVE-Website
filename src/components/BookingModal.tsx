@@ -17,7 +17,11 @@ export const BookingModal: React.FC<BookingModalProps> = ({
   const [vehicle, setVehicle] = useState(initialVehicle || FLEET_VEHICLES[0].name);
   const [pickupCity, setPickupCity] = useState('Karachi (DHA / Clifton)');
   const [dropoffCity, setDropoffCity] = useState('Karachi (City Tour 10-Hrs)');
-  const [pickupDate, setPickupDate] = useState('2026-09-10');
+  const [pickupDate, setPickupDate] = useState(() => {
+    const today = new Date();
+    today.setDate(today.getDate() + 1);
+    return today.toISOString().split('T')[0];
+  });
   const [pickupTime, setPickupTime] = useState('09:00 AM');
   const [customerName, setCustomerName] = useState('');
   const [customerPhone, setCustomerPhone] = useState('');
@@ -34,28 +38,28 @@ export const BookingModal: React.FC<BookingModalProps> = ({
   return (
     <div
       id="booking-modal-overlay"
-      className="fixed inset-0 z-50 bg-black/80 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto"
+      className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto"
       onClick={onClose}
     >
       <div
         id="booking-modal-container"
-        className="relative w-full max-w-xl bg-white rounded-2xl shadow-2xl overflow-hidden border border-neutral-200 text-neutral-900 animate-scaleIn"
+        className="relative w-full max-w-lg bg-white rounded-2xl shadow-xl overflow-hidden border border-[#E5E5E5] text-[#222222] animate-scaleIn"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Modal Header */}
-        <div className="bg-[#121316] text-white p-5 sm:p-6 flex items-center justify-between">
+        {/* Modal Header: Solid Teal #0D919C Bar */}
+        <div className="bg-[#0D919C] text-white p-5 sm:p-6 flex items-center justify-between">
           <div>
-            <span className="text-xs text-amber-400 font-bold uppercase tracking-wider block">
+            <span className="text-xs text-teal-100 font-bold uppercase tracking-wider block">
               Reservation Desk
             </span>
             <h3 className="text-xl font-extrabold text-white">
-              Reserve Your Chauffeur Driven Vehicle
+              Reserve Your Chauffeur Vehicle
             </h3>
           </div>
           <button
             onClick={onClose}
             aria-label="Close booking modal"
-            className="w-8 h-8 rounded-full bg-neutral-800 hover:bg-neutral-700 text-white flex items-center justify-center cursor-pointer transition-colors"
+            className="w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 text-white flex items-center justify-center cursor-pointer transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
@@ -64,7 +68,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
         {/* Modal Form */}
         <form onSubmit={handleSubmit} className="p-5 sm:p-6 space-y-4">
           <div>
-            <label className="block text-xs font-semibold text-neutral-700 mb-1">
+            <label className="block text-xs font-bold text-[#111111] mb-1.5 uppercase tracking-wider">
               Select Vehicle
             </label>
             <div className="relative">
@@ -72,11 +76,11 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               <select
                 value={vehicle}
                 onChange={(e) => setVehicle(e.target.value)}
-                className="w-full text-xs font-semibold pl-9 pr-3 py-2.5 bg-neutral-50 border border-neutral-300 rounded-lg focus:outline-hidden focus:border-amber-400 cursor-pointer"
+                className="w-full text-xs font-semibold pl-9 pr-3 py-2.5 bg-white border border-[#E5E5E5] rounded-[7px] focus:outline-hidden focus:border-[#0D919C] cursor-pointer"
               >
                 {FLEET_VEHICLES.map((v) => (
                   <option key={v.id} value={v.name}>
-                    {v.name} ({v.category}) — {v.rates.tenHoursCity}
+                    {v.name} ({v.category}) — {v.rates?.tenHoursCity || 'Quote on WhatsApp'}
                   </option>
                 ))}
               </select>
@@ -85,7 +89,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-neutral-700 mb-1">
+              <label className="block text-xs font-bold text-[#111111] mb-1.5 uppercase tracking-wider">
                 Pickup Location
               </label>
               <div className="relative">
@@ -96,14 +100,14 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                   value={pickupCity}
                   onChange={(e) => setPickupCity(e.target.value)}
                   placeholder="e.g. DHA, Karachi Airport"
-                  className="w-full text-xs pl-9 pr-3 py-2.5 bg-neutral-50 border border-neutral-300 rounded-lg focus:outline-hidden focus:border-amber-400"
+                  className="w-full text-xs pl-9 pr-3 py-2.5 bg-white border border-[#E5E5E5] rounded-[7px] focus:outline-hidden focus:border-[#0D919C]"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-neutral-700 mb-1">
-                Destination / Drop-off
+              <label className="block text-xs font-bold text-[#111111] mb-1.5 uppercase tracking-wider">
+                Destination / Dropoff
               </label>
               <div className="relative">
                 <MapPin className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400" />
@@ -112,8 +116,8 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                   required
                   value={dropoffCity}
                   onChange={(e) => setDropoffCity(e.target.value)}
-                  placeholder="e.g. Hyderabad, Clifton, Thatta"
-                  className="w-full text-xs pl-9 pr-3 py-2.5 bg-neutral-50 border border-neutral-300 rounded-lg focus:outline-hidden focus:border-amber-400"
+                  placeholder="e.g. Hyderabad, City 10-Hrs"
+                  className="w-full text-xs pl-9 pr-3 py-2.5 bg-white border border-[#E5E5E5] rounded-[7px] focus:outline-hidden focus:border-[#0D919C]"
                 />
               </div>
             </div>
@@ -121,8 +125,8 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-neutral-700 mb-1">
-                Pickup Date
+              <label className="block text-xs font-bold text-[#111111] mb-1.5 uppercase tracking-wider">
+                Travel Date
               </label>
               <div className="relative">
                 <Calendar className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400" />
@@ -131,13 +135,13 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                   required
                   value={pickupDate}
                   onChange={(e) => setPickupDate(e.target.value)}
-                  className="w-full text-xs pl-9 pr-3 py-2.5 bg-neutral-50 border border-neutral-300 rounded-lg focus:outline-hidden focus:border-amber-400 cursor-pointer"
+                  className="w-full text-xs pl-9 pr-3 py-2.5 bg-white border border-[#E5E5E5] rounded-[7px] focus:outline-hidden focus:border-[#0D919C] cursor-pointer"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-neutral-700 mb-1">
+              <label className="block text-xs font-bold text-[#111111] mb-1.5 uppercase tracking-wider">
                 Pickup Time
               </label>
               <div className="relative">
@@ -147,8 +151,8 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                   required
                   value={pickupTime}
                   onChange={(e) => setPickupTime(e.target.value)}
-                  placeholder="e.g. 09:00 AM"
-                  className="w-full text-xs pl-9 pr-3 py-2.5 bg-neutral-50 border border-neutral-300 rounded-lg focus:outline-hidden focus:border-amber-400"
+                  placeholder="09:00 AM"
+                  className="w-full text-xs pl-9 pr-3 py-2.5 bg-white border border-[#E5E5E5] rounded-[7px] focus:outline-hidden focus:border-[#0D919C]"
                 />
               </div>
             </div>
@@ -156,48 +160,43 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-neutral-700 mb-1">
-                Your Name *
+              <label className="block text-xs font-bold text-[#111111] mb-1.5 uppercase tracking-wider">
+                Your Full Name *
               </label>
               <input
                 type="text"
                 required
                 value={customerName}
                 onChange={(e) => setCustomerName(e.target.value)}
-                placeholder="Full Name"
-                className="w-full text-xs px-3 py-2.5 bg-neutral-50 border border-neutral-300 rounded-lg focus:outline-hidden focus:border-amber-400"
+                placeholder="e.g. Asad Khan"
+                className="w-full text-xs p-2.5 bg-white border border-[#E5E5E5] rounded-[7px] focus:outline-hidden focus:border-[#0D919C]"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-neutral-700 mb-1">
-                Phone Number *
+              <label className="block text-xs font-bold text-[#111111] mb-1.5 uppercase tracking-wider">
+                WhatsApp Phone Number *
               </label>
-              <div className="relative">
-                <Phone className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400" />
-                <input
-                  type="tel"
-                  required
-                  value={customerPhone}
-                  onChange={(e) => setCustomerPhone(e.target.value)}
-                  placeholder="0300 1234567"
-                  className="w-full text-xs pl-9 pr-3 py-2.5 bg-neutral-50 border border-neutral-300 rounded-lg focus:outline-hidden focus:border-amber-400"
-                />
-              </div>
+              <input
+                type="tel"
+                required
+                value={customerPhone}
+                onChange={(e) => setCustomerPhone(e.target.value)}
+                placeholder="0300 1234567"
+                className="w-full text-xs p-2.5 bg-white border border-[#E5E5E5] rounded-[7px] focus:outline-hidden focus:border-[#0D919C]"
+              />
             </div>
           </div>
 
           <div className="pt-2">
             <button
               type="submit"
-              className="w-full flex items-center justify-center gap-2 btn-whatsapp font-bold text-xs py-3.5 rounded-lg shadow-sm tracking-wide transition-colors cursor-pointer"
+              style={{ backgroundColor: '#3ca19a' }}
+              className="w-full inline-flex items-center justify-center gap-2 hover:bg-[#328e88] text-white font-bold text-xs sm:text-sm py-3 rounded-[7px] transition-colors cursor-pointer shadow-xs"
             >
-              <Send className="w-4 h-4" />
-              <span>Send Booking Details via WhatsApp</span>
+              <Send className="w-4 h-4 text-white" />
+              <span>Confirm Reservation on WhatsApp</span>
             </button>
-            <p className="text-xs text-neutral-500 text-center mt-2 font-normal">
-              We never charge advance fees before verifying driver and car dispatch.
-            </p>
           </div>
         </form>
       </div>
