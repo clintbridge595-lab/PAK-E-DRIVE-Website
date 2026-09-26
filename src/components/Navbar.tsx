@@ -26,7 +26,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between bg-white">
         
         {/* Brand Logo on Left */}
-        <Logo onClick={() => handleNavClick('home')} />
+        <Logo onClick={() => handleNavClick('home')} eColor="#9a9c48" />
 
         {/* Desktop Navigation Links with Dropdowns (DEINFA Style) */}
         <nav className="hidden lg:flex items-center space-x-6 text-[13px] font-semibold text-[#111111]">
@@ -34,6 +34,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
           {/* Home */}
           <button
             onClick={() => handleNavClick('home')}
+            style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}
             className={`py-2 transition-colors cursor-pointer ${
               currentPage === 'home' ? 'text-[#B91C1C] font-bold' : 'hover:text-[#B91C1C]'
             }`}
@@ -49,6 +50,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
           >
             <button
               onClick={() => handleNavClick('about')}
+              style={{ fontFamily: 'Times New Roman, serif', fontStyle: 'italic' }}
               className={`flex items-center gap-1 transition-colors cursor-pointer ${
                 currentPage === 'about' ? 'text-[#B91C1C] font-bold' : 'hover:text-[#B91C1C]'
               }`}
@@ -89,6 +91,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
           >
             <button
               onClick={() => handleNavClick('services')}
+              style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}
               className={`flex items-center gap-1 transition-colors cursor-pointer ${
                 currentPage === 'services' ? 'text-[#B91C1C] font-bold' : 'hover:text-[#B91C1C]'
               }`}
@@ -135,6 +138,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
           >
             <button
               onClick={() => handleNavClick('fleet')}
+              style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}
               className={`flex items-center gap-1 transition-colors cursor-pointer ${
                 currentPage === 'fleet' ? 'text-[#B91C1C] font-bold' : 'hover:text-[#B91C1C]'
               }`}
@@ -176,6 +180,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
           {/* Routes */}
           <button
             onClick={() => handleNavClick('routes')}
+            style={{ fontFamily: 'Times New Roman, serif', fontStyle: 'italic' }}
             className={`py-2 transition-colors cursor-pointer ${
               currentPage === 'routes' ? 'text-[#C8102E] font-bold' : 'hover:text-[#C8102E]'
             }`}
@@ -236,6 +241,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
           {/* Contact Us */}
           <button
             onClick={() => handleNavClick('contact')}
+            style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}
             className={`py-2 transition-colors cursor-pointer ${
               currentPage === 'contact' ? 'text-[#C8102E] font-bold' : 'hover:text-[#C8102E]'
             }`}
@@ -287,16 +293,17 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
       {mobileMenuOpen && (
         <div className="lg:hidden border-t border-neutral-200 bg-white px-4 pt-3 pb-6 space-y-2 shadow-lg animate-fadeIn text-sm">
           {[
-            { id: 'home' as NavPage, label: 'Home' },
-            { id: 'about' as NavPage, label: 'About Us' },
-            { id: 'services' as NavPage, label: 'Services' },
-            { id: 'fleet' as NavPage, label: 'Vehicles & Fleet' },
-            { id: 'routes' as NavPage, label: 'Intercity Routes' },
-            { id: 'contact' as NavPage, label: 'Contact Us' },
+            { id: 'home' as NavPage, label: 'Home', style: { fontFamily: 'Georgia, serif', fontStyle: 'italic' } },
+            { id: 'about' as NavPage, label: 'About Us', style: { fontFamily: 'Times New Roman, serif', fontStyle: 'italic' } },
+            { id: 'services' as NavPage, label: 'Services', style: { fontFamily: 'Georgia, serif', fontStyle: 'italic' } },
+            { id: 'fleet' as NavPage, label: 'Vehicles & Fleet', style: { fontFamily: 'Georgia, serif', fontStyle: 'italic' } },
+            { id: 'routes' as NavPage, label: 'Intercity Routes', style: { fontFamily: 'Times New Roman, serif', fontStyle: 'italic' } },
+            { id: 'contact' as NavPage, label: 'Contact Us', style: { fontFamily: 'Georgia, serif', fontStyle: 'italic' } },
           ].map((item) => (
             <button
               key={item.id}
               onClick={() => handleNavClick(item.id)}
+              style={item.style}
               className={`block w-full text-left py-2.5 px-3 rounded-md font-semibold transition-colors ${
                 currentPage === item.id
                   ? 'bg-red-50 text-[#B91C1C] font-bold border-l-4 border-[#B91C1C]'

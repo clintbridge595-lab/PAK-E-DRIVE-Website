@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { INTERCITY_ROUTES } from '../data/fleetData';
-import { RouteInfo } from '../types';
+import { RouteItem } from '../types';
 import { openWhatsApp } from '../utils/whatsapp';
 import { SectionHeader } from './SectionHeader';
 import { Clock, ShieldCheck, MapPin, CheckCircle, ArrowRight } from 'lucide-react';
@@ -20,10 +20,10 @@ export const RoutesSection: React.FC<RoutesSectionProps> = ({
 }) => {
   const [selectedRouteId, setSelectedRouteId] = useState<string>('karachi-hyderabad');
 
-  const selectedRoute: RouteInfo =
+  const selectedRoute: RouteItem =
     INTERCITY_ROUTES.find((r) => r.id === selectedRouteId) || INTERCITY_ROUTES[0];
 
-  const handleBookRoute = (route: RouteInfo) => {
+  const handleBookRoute = (route: RouteItem) => {
     openWhatsApp(
       `Assalam-o-Alaikum PAK E DRIVE, I want to book a trip for ${route.name} (${route.distance}). Please share available vehicles and rates.`
     );
@@ -215,7 +215,7 @@ export const RoutesSection: React.FC<RoutesSectionProps> = ({
                     Key Transit Stops &amp; Rest Areas
                   </span>
                   <div className="flex flex-wrap gap-2">
-                    {selectedRoute.keyStops.map((stop, i) => (
+                    {(selectedRoute.waypoints || []).map((stop, i) => (
                       <span
                         key={i}
                         className="inline-flex items-center gap-1 text-xs bg-neutral-100 text-neutral-800 px-3 py-1 rounded-[5px] font-medium"
@@ -236,7 +236,7 @@ export const RoutesSection: React.FC<RoutesSectionProps> = ({
                         Chauffeur Highway Protocols
                       </span>
                       <span className="text-xs text-neutral-600">
-                        {selectedRoute.safetyNote}
+                        24/7 Roadside Assistance &amp; Motorway Speed Compliant
                       </span>
                     </div>
                   </div>

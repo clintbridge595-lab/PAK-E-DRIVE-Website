@@ -254,9 +254,9 @@ export const FLEET_VEHICLES: Vehicle[] = [
       interior: '/cars/corolla_altis.jpg',
     },
     rates: {
-      tenHoursCity: 'Rs. 6,500 / 10 Hrs',
+      tenHoursCity: 'Rs. 6,000 / 10 Hrs',
       intercityPerKm: 'Rs. 42 / km',
-      dailyOrEvent: 'Rs. 7,500 / 12 Hrs',
+      dailyOrEvent: 'Rs. 7,000 / 12 Hrs',
     },
     specs: {
       engine: '1.8L Dual VVT-i Petrol',
@@ -328,9 +328,9 @@ export const FLEET_VEHICLES: Vehicle[] = [
       interior: '/cars/honda_civic.jpg',
     },
     rates: {
-      tenHoursCity: 'Rs. 9,500 / 10 Hrs',
+      tenHoursCity: 'Rs. 12,000 / 10 Hrs',
       intercityPerKm: 'Rs. 52 / km',
-      dailyOrEvent: 'Rs. 12,000 / Event',
+      dailyOrEvent: 'Rs. 14,000 / Event',
     },
     specs: {
       engine: '1.5L VTEC DOHC Turbocharged',
@@ -365,9 +365,9 @@ export const FLEET_VEHICLES: Vehicle[] = [
       interior: '/cars/hilux_revo.jpg',
     },
     rates: {
-      tenHoursCity: 'Rs. 10,000 / 10 Hrs',
-      intercityPerKm: 'Rs. 70 / km',
-      dailyOrEvent: 'Rs. 14,000 / Day',
+      tenHoursCity: 'Rs. 22,000 / 10 Hrs',
+      intercityPerKm: 'Rs. 75 / km',
+      dailyOrEvent: 'Rs. 25,000 / Day',
     },
     specs: {
       engine: '2.8L Diesel Turbo Intercooled (500 Nm Torque)',
@@ -440,9 +440,9 @@ export const FLEET_VEHICLES: Vehicle[] = [
       interior: '/cars/oshan_x7_front.jpg',
     },
     rates: {
-      tenHoursCity: 'Rs. 10,500 / 10 Hrs',
+      tenHoursCity: 'Rs. 8,000 / 10 Hrs',
       intercityPerKm: 'Rs. 58 / km',
-      dailyOrEvent: 'Rs. 13,500 / Day',
+      dailyOrEvent: 'Rs. 10,500 / Day',
     },
     specs: {
       engine: '1.5L BlueCore TGDI Turbocharged (185 hp)',
@@ -477,9 +477,9 @@ export const FLEET_VEHICLES: Vehicle[] = [
       interior: '/cars/audi_wedding.jpg',
     },
     rates: {
-      tenHoursCity: 'Rs. 25,000 / Event',
+      tenHoursCity: 'Depending on Ride',
       intercityPerKm: 'Rs. 120 / km',
-      dailyOrEvent: 'Rs. 25,000 / Barat with Floral Decor',
+      dailyOrEvent: 'Depending on Ride',
     },
     specs: {
       engine: '2.0L TFSI Turbocharged German Engine',
@@ -514,9 +514,9 @@ export const FLEET_VEHICLES: Vehicle[] = [
       interior: '/cars/copen_convertible.jpg',
     },
     rates: {
-      tenHoursCity: 'Rs. 15,000 / Barat Event',
+      tenHoursCity: 'Depending on Ride',
       intercityPerKm: 'Custom Quote',
-      dailyOrEvent: 'Rs. 15,000 / Event (Full Decor Included)',
+      dailyOrEvent: 'Depending on Ride',
     },
     specs: {
       engine: '660cc Turbocharged Intercooled Engine',
@@ -551,9 +551,9 @@ export const FLEET_VEHICLES: Vehicle[] = [
       interior: '/cars/toyota_noah.jpg',
     },
     rates: {
-      tenHoursCity: 'Rs. 9,000 / 10 Hrs',
+      tenHoursCity: 'Rs. 8,000 / 10 Hrs',
       intercityPerKm: 'Rs. 50 / km',
-      dailyOrEvent: 'Rs. 12,000 / Day',
+      dailyOrEvent: 'Rs. 10,000 / Day',
     },
     specs: {
       engine: '1.8L Hybrid Synergy Drive',
@@ -588,9 +588,9 @@ export const FLEET_VEHICLES: Vehicle[] = [
       interior: '/cars/toyota_yaris.jpg',
     },
     rates: {
-      tenHoursCity: 'Rs. 5,500 / 10 Hrs',
+      tenHoursCity: 'Rs. 6,000 / 10 Hrs',
       intercityPerKm: 'Rs. 38 / km',
-      dailyOrEvent: 'Rs. 6,500 / Day',
+      dailyOrEvent: 'Rs. 7,000 / Day',
     },
     specs: {
       engine: '1.5L 2NR-FE Dual VVT-i 4-Cylinder',
@@ -662,9 +662,9 @@ export const FLEET_VEHICLES: Vehicle[] = [
       interior: '/cars/honda_brv.jpg',
     },
     rates: {
-      tenHoursCity: 'Rs. 7,000 / 10 Hrs',
+      tenHoursCity: 'Rs. 8,000 / 10 Hrs',
       intercityPerKm: 'Rs. 45 / km',
-      dailyOrEvent: 'Rs. 8,500 / Day',
+      dailyOrEvent: 'Rs. 9,500 / Day',
     },
     specs: {
       engine: '1.5L i-VTEC SOHC 4-Cylinder 16-Valve (118 hp)',
@@ -699,9 +699,9 @@ export const FLEET_VEHICLES: Vehicle[] = [
       interior: '/cars/changan_karvaan.jpg',
     },
     rates: {
-      tenHoursCity: 'Rs. 6,500 / 10 Hrs',
+      tenHoursCity: 'Rs. 6,000 / 10 Hrs',
       intercityPerKm: 'Rs. 40 / km',
-      dailyOrEvent: 'Rs. 7,500 / Day',
+      dailyOrEvent: 'Rs. 7,000 / Day',
     },
     specs: {
       engine: '1.2L 4-Cylinder High-Efficiency Multi-Point Injection (C10 Engine)',

@@ -17,12 +17,18 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBooking }) => 
 
   return (
     <footer id="main-footer" className="bg-white text-[#222222] border-t border-[#E5E5E5]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <div 
+        style={{
+          fontFamily: 'Georgia, serif',
+          fontStyle: 'italic',
+        }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16"
+      >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
           
           {/* Column 1: Brand & Bio (4 cols) */}
           <div className="lg:col-span-4 space-y-4">
-            <Logo onClick={() => handleNav('home')} />
+            <Logo onClick={() => handleNav('home')} eColor="#c1cf5c" />
             
             <p className="text-xs text-neutral-600 leading-relaxed font-normal pt-1">
               Pakistan's trusted car rental, wedding car, and intercity chauffeur service. Serving travellers, corporate executives, and families from Karachi to Hyderabad, Sukkur, Multan, Lahore, and Islamabad.
@@ -162,7 +168,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBooking }) => 
               <button
                 id="footer-quick-inquiry-btn"
                 onClick={onOpenBooking}
-                className="w-full inline-flex items-center justify-center bg-[#111111] hover:bg-[#252525] text-white text-xs font-bold px-4 py-2.5 rounded-[7px] transition-colors cursor-pointer shadow-xs"
+                style={{ backgroundColor: '#2ca3b5' }}
+                className="w-full inline-flex items-center justify-center hover:opacity-90 text-white text-xs font-bold px-4 py-2.5 rounded-[7px] transition-colors cursor-pointer shadow-xs"
               >
                 <span>Book a Rental</span>
               </button>

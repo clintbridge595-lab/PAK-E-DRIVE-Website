@@ -30,19 +30,34 @@ export const ContactPage: React.FC = () => {
       <SectionHeader title="Contact Us" currentPageName="Contact" />
 
       {/* Main Content Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <div 
+        style={{
+          fontFamily: 'Georgia, serif',
+          fontStyle: 'italic',
+        }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16"
+      >
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
           
           {/* Left Column: Contact info blocks with solid teal filled circle icon (phone/email/location icon in white) next to text, on white card with #E5E5E5 border */}
           <div className="lg:col-span-5 space-y-6">
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-[#0D919C] block mb-1">
-                Direct Communication
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#111111]">
+              <h2 
+                style={{
+                  fontFamily: 'Georgia, serif',
+                  fontSize: '31px',
+                }}
+                className="font-extrabold text-[#111111]"
+              >
                 Always Ready to Assist You
               </h2>
-              <p className="text-xs sm:text-sm text-neutral-600 mt-2 font-normal">
+              <p 
+                style={{
+                  fontFamily: 'Times New Roman, serif',
+                  fontSize: '13px',
+                }}
+                className="text-neutral-600 mt-2 font-normal"
+              >
                 Our fleet managers and dispatch coordinators are available 24/7 for immediate bookings, flight arrivals, and wedding protocols.
               </p>
             </div>
@@ -241,7 +256,8 @@ export const ContactPage: React.FC = () => {
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full inline-flex items-center justify-center gap-2 bg-[#111111] hover:bg-[#252525] text-white font-bold text-xs sm:text-sm py-3.5 rounded-[7px] shadow-xs tracking-wide transition-colors cursor-pointer"
+                  style={{ backgroundColor: '#42813c' }}
+                  className="w-full inline-flex items-center justify-center gap-2 hover:opacity-90 text-white font-bold text-xs sm:text-sm py-3.5 rounded-[7px] shadow-xs tracking-wide transition-colors cursor-pointer"
                 >
                   <Send className="w-4 h-4 text-white" />
                   <span>Send Booking Request on WhatsApp</span>

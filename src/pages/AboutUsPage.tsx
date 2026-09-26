@@ -1,6 +1,4 @@
 import React from 'react';
-import { openWhatsApp, WHATSAPP_DISPLAY, PHONE_DISPATCH } from '../utils/whatsapp';
-import { ShieldCheck, Award, HeartHandshake, CheckCircle2 } from 'lucide-react';
 import { SectionHeader } from '../components/SectionHeader';
 
 interface AboutUsPageProps {
@@ -14,27 +12,41 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onOpenBooking }) => {
       <SectionHeader title="About Us" currentPageName="About Us" />
 
       {/* Philosophy Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <section 
+        style={{
+          fontFamily: 'Georgia, serif',
+          fontStyle: 'italic',
+        }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16"
+      >
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
           {/* Left Text */}
           <div className="lg:col-span-6 space-y-5">
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-[#0D919C] block mb-1">
-                Setting the Standard
-              </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#111111] leading-tight">
+              {/* Span removed as requested in Selector 4 */}
+              <h2 
+                style={{
+                  fontFamily: 'Georgia, serif',
+                  fontSize: '31px',
+                }}
+                className="font-extrabold text-[#111111] leading-tight"
+              >
                 Punctuality, Hygiene &amp; Professional Service
               </h2>
             </div>
 
-            <p className="text-neutral-600 leading-relaxed font-normal text-xs sm:text-sm">
+            <p 
+              style={{
+                fontFamily: 'Times New Roman, serif',
+                fontSize: '13px',
+              }}
+              className="text-neutral-600 leading-relaxed font-normal"
+            >
               PAK E DRIVE was established in Karachi to provide reliable, professional chauffeur mobility across Pakistan. We believe in treating every customer journey as our own family's journey.
             </p>
 
-            <p className="text-neutral-600 leading-relaxed font-normal text-xs sm:text-sm">
-              Our fleet is inspected before every dispatch. Every car features sanitized interiors, strong AC chillers for Pakistani summers, and courteous, licensed drivers.
-            </p>
+            {/* Second paragraph removed as requested in Selector 8 */}
 
             {/* Badges Grid in White Card */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
@@ -64,7 +76,8 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onOpenBooking }) => {
             <div className="pt-2">
               <button
                 onClick={onOpenBooking}
-                className="inline-flex items-center justify-center bg-[#111111] hover:bg-[#252525] text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-[7px] transition-colors cursor-pointer shadow-xs"
+                style={{ backgroundColor: '#3ca19a' }}
+                className="inline-flex items-center justify-center hover:bg-[#328e88] text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-[7px] transition-colors cursor-pointer shadow-xs"
               >
                 Book a Rental with Us
               </button>
@@ -95,45 +108,71 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onOpenBooking }) => {
         </div>
       </section>
 
-      {/* 3 Core Commitments: White card with thin light-grey border #E5E5E5 */}
-      <section className="bg-neutral-50/60 py-12 sm:py-16 border-t border-[#E5E5E5]">
+      {/* 3 Core Commitments */}
+      <section 
+        style={{
+          fontFamily: 'Georgia, serif',
+          fontStyle: 'italic',
+        }}
+        className="bg-neutral-50/60 py-12 sm:py-16"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#0D919C] block mb-1">
-              Why Choose Us
-            </span>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-[#111111]">
+            {/* Span removed as requested in Selector 11 */}
+            <h3 
+              style={{
+                fontFamily: 'Georgia, serif',
+                fontSize: '32px',
+              }}
+              className="font-extrabold text-[#111111]"
+            >
               Our Three Golden Promises
             </h3>
           </div>
 
+          {/* Icons removed 100% as requested */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white p-6 rounded-xl border border-[#E5E5E5] shadow-2xs">
-              <div className="w-10 h-10 rounded-full bg-[#0D919C] text-white flex items-center justify-center mb-4">
-                <ShieldCheck className="w-5 h-5 text-white" />
-              </div>
-              <h4 className="text-base font-bold text-[#111111] mb-2">Safe &amp; Licensed Drivers</h4>
-              <p className="text-xs text-neutral-600 leading-relaxed font-normal">
+            <div className="bg-white p-6 rounded-xl border border-[#E5E5E5] shadow-2xs flex flex-col justify-start">
+              <h4 
+                style={{ fontFamily: 'Georgia, serif' }}
+                className="text-base font-bold text-[#111111] mb-2"
+              >
+                Safe &amp; Licensed Drivers
+              </h4>
+              <p 
+                style={{ fontSize: '11px' }}
+                className="text-neutral-600 leading-relaxed font-normal"
+              >
                 Every chauffeur holds an active commercial driving license with years of highway and city navigation experience.
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-xl border border-[#E5E5E5] shadow-2xs">
-              <div className="w-10 h-10 rounded-full bg-[#0D919C] text-white flex items-center justify-center mb-4">
-                <Award className="w-5 h-5 text-white" />
-              </div>
-              <h4 className="text-base font-bold text-[#111111] mb-2">Spotless Showroom Vehicles</h4>
-              <p className="text-xs text-neutral-600 leading-relaxed font-normal">
+            <div className="bg-white p-6 rounded-xl border border-[#E5E5E5] shadow-2xs flex flex-col justify-start">
+              <h4 
+                style={{ fontFamily: 'Georgia, serif' }}
+                className="text-base font-bold text-[#111111] mb-2"
+              >
+                Spotless Showroom Vehicles
+              </h4>
+              <p 
+                style={{ fontSize: '11px' }}
+                className="text-neutral-600 leading-relaxed font-normal"
+              >
                 Vehicles are washed, vacuumed, and mechanically checked before arriving at your doorstep.
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-xl border border-[#E5E5E5] shadow-2xs">
-              <div className="w-10 h-10 rounded-full bg-[#0D919C] text-white flex items-center justify-center mb-4">
-                <HeartHandshake className="w-5 h-5 text-white" />
-              </div>
-              <h4 className="text-base font-bold text-[#111111] mb-2">Zero Hidden Surcharges</h4>
-              <p className="text-xs text-neutral-600 leading-relaxed font-normal">
+            <div className="bg-white p-6 rounded-xl border border-[#E5E5E5] shadow-2xs flex flex-col justify-start">
+              <h4 
+                style={{ fontFamily: 'Georgia, serif' }}
+                className="text-base font-bold text-[#111111] mb-2"
+              >
+                Zero Hidden Surcharges
+              </h4>
+              <p 
+                style={{ fontSize: '11px' }}
+                className="text-neutral-600 leading-relaxed font-normal"
+              >
                 What we quote on WhatsApp is exactly what you pay. No surprises or unexpected fuel demands.
               </p>
             </div>

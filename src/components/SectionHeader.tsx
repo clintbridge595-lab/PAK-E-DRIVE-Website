@@ -19,7 +19,14 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
   return (
     <div className={`bg-[#0D919C] text-white py-12 sm:py-16 text-center ${className}`}>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-2 font-['Poppins',sans-serif]">
+        <h1 
+          style={{
+            fontFamily: 'Georgia, serif',
+            fontStyle: 'italic',
+            fontSize: '40px',
+          }}
+          className="font-extrabold tracking-tight text-white mb-2"
+        >
           {title}
         </h1>
         {subtitle && (
@@ -27,7 +34,14 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
             {subtitle}
           </p>
         )}
-        <div className="text-xs sm:text-sm text-teal-100 font-medium flex items-center justify-center gap-1.5">
+        <div 
+          style={{
+            fontFamily: 'Times New Roman, serif',
+            fontStyle: 'italic',
+            fontSize: '17px',
+          }}
+          className="text-teal-100 font-medium flex items-center justify-center gap-1.5"
+        >
           <span>Home</span>
           <span className="mx-1 text-teal-200">/</span>
           <span className="text-white font-bold">{currentPageName}</span>

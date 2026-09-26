@@ -1,19 +1,16 @@
 import React, { useState } from 'react';
 import { FLEET_VEHICLES } from '../data/fleetData';
 import { Vehicle } from '../types';
-import { ChevronLeft, ChevronRight, Eye, Sun, Moon, Sparkles } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { openWhatsApp } from '../utils/whatsapp';
 
 interface Fleet3DShowroomProps {
-  onSelectVehicle?: (vehicle) => void;
+  onSelectVehicle?: (vehicle: Vehicle) => void;
   onOpenSpecs?: (vehicle: Vehicle) => void;
 }
 
-export const Fleet3DShowroom: React.FC<Fleet3DShowroomProps> = ({ onSelectVehicle, onOpenSpecs }) => {
+export const Fleet3DShowroom: React.FC<Fleet3DShowroomProps> = ({ onOpenSpecs }) => {
   const [selectedIdx, setSelectedIdx] = useState(0);
-  const [angle, setAngle] = useState<'threeQuarter' | 'front' | 'side' | 'interior'>('threeQuarter');
-  const [lighting, setLighting] = useState<'day' | 'studio' | 'night'>('studio');
-  const [activeCategory, setActiveCategory] = useState<string>('ALL');
 
   const currentVehicle = FLEET_VEHICLES[selectedIdx];
 
@@ -32,50 +29,73 @@ export const Fleet3DShowroom: React.FC<Fleet3DShowroomProps> = ({ onSelectVehicl
   };
 
   const getDisplayImage = () => {
-    if (currentVehicle.imagesByAngle && currentVehicle.imagesByAngle[angle]) {
-      return currentVehicle.imagesByAngle[angle];
-    }
     return currentVehicle.image;
   };
 
   return (
     <section 
       id="fleet-3d-showroom-section" 
+      style={{
+        fontFamily: 'Georgia, serif',
+        fontStyle: 'italic',
+      }}
       className="bg-white text-[#222222] py-12 sm:py-16 border-y border-[#E5E5E5] relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
+        {/* Section Header - Tag span and Eye icon removed as requested in Selectors 19 & 23 */}
         <div className="text-center max-w-3xl mx-auto mb-8">
-          <div className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0D919C] uppercase tracking-wider mb-1.5">
-            <Eye className="w-4 h-4 text-[#0D919C]" />
-            <span>Interactive Visualizer</span>
-          </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-[#111111] mb-2">
+          <h2 
+            style={{
+              fontFamily: 'Georgia, serif',
+              fontSize: '31px',
+            }}
+            className="font-extrabold tracking-tight text-[#111111] mb-2"
+          >
             Inspect Our Fleet in Multi-Angle View
           </h2>
-          <p className="text-neutral-600 text-xs sm:text-sm leading-relaxed font-normal">
+          <p 
+            style={{
+              fontFamily: 'Times New Roman, serif',
+              fontSize: '13px',
+            }}
+            className="text-neutral-600 leading-relaxed font-normal"
+          >
             Switch perspectives and lighting environments to view interior details and exterior stance across our executive fleet.
           </p>
         </div>
 
-        {/* Selected Vehicle Showcase Card: White card with thin light-grey border #E5E5E5 */}
-        <div className="bg-white rounded-2xl border border-[#E5E5E5] p-5 sm:p-8 shadow-xs overflow-hidden">
+        {/* Selected Vehicle Showcase Card */}
+        <div className="bg-white rounded-2xl border border-[#E5E5E5] p-5 sm:p-8 shadow-xs overflow-hidden font-sans">
           {/* Vehicle Title & Details */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-[#E5E5E5]">
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-[#0D919C]">
                 {currentVehicle.categoryLabel || currentVehicle.category}
               </span>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#111111] tracking-tight mt-0.5">
+              <h3 
+                style={{
+                  fontFamily: 'Georgia, serif',
+                }}
+                className="text-2xl sm:text-3xl font-extrabold text-[#111111] tracking-tight mt-0.5"
+              >
                 {currentVehicle.name}
               </h3>
-              <p className="text-neutral-500 text-xs sm:text-sm mt-0.5 font-normal">
+              <p 
+                style={{
+                  fontFamily: 'Times New Roman, serif',
+                  fontSize: '13px',
+                }}
+                className="text-neutral-500 mt-0.5 font-normal"
+              >
                 {currentVehicle.subtitle}
               </p>
             </div>
 
-            <div className="text-left sm:text-right">
+            <div 
+              style={{ fontSize: '16px' }}
+              className="text-left sm:text-right"
+            >
               <span className="text-xs text-neutral-500 block">Daily / 10-Hr Rate</span>
               <span className="text-lg sm:text-xl font-black text-[#111111]">
                 {currentVehicle.rates?.tenHoursCity || 'Custom Quote'}
@@ -85,14 +105,6 @@ export const Fleet3DShowroom: React.FC<Fleet3DShowroomProps> = ({ onSelectVehicl
 
           {/* Main Visual Display Frame */}
           <div className="relative w-full h-72 sm:h-96 lg:h-[420px] rounded-xl overflow-hidden bg-neutral-900 flex items-center justify-center">
-            {/* Ambient Lighting Overlay */}
-            {lighting === 'studio' && (
-              <div className="absolute inset-0 bg-radial from-[#0D919C]/15 via-transparent to-black/60 pointer-events-none" />
-            )}
-            {lighting === 'night' && (
-              <div className="absolute inset-0 bg-radial from-blue-900/25 via-transparent to-black/80 pointer-events-none" />
-            )}
-
             <img
               src={getDisplayImage()}
               alt={currentVehicle.name}
@@ -103,7 +115,7 @@ export const Fleet3DShowroom: React.FC<Fleet3DShowroomProps> = ({ onSelectVehicl
             {/* Left & Right Car Cycler Buttons */}
             <button
               onClick={handlePrev}
-              className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-black text-white flex items-center justify-center transition-all cursor-pointer border border-white/20"
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-black text-white flex items-center justify-center transition-all cursor-pointer border border-white/20 shadow-md"
               aria-label="Previous Vehicle"
             >
               <ChevronLeft className="w-5 h-5" />
@@ -111,70 +123,11 @@ export const Fleet3DShowroom: React.FC<Fleet3DShowroomProps> = ({ onSelectVehicl
 
             <button
               onClick={handleNext}
-              className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-black text-white flex items-center justify-center transition-all cursor-pointer border border-white/20"
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-black text-white flex items-center justify-center transition-all cursor-pointer border border-white/20 shadow-md"
               aria-label="Next Vehicle"
             >
               <ChevronRight className="w-5 h-5" />
             </button>
-
-            {/* View Angle Pill Switcher */}
-            <div className="absolute bottom-4 left-4 flex flex-wrap items-center gap-1.5 bg-black/70 backdrop-blur-xs p-1 rounded-lg border border-white/20">
-              <button
-                onClick={() => setAngle('threeQuarter')}
-                className={`text-xs px-2.5 py-1 rounded-[5px] font-semibold transition-colors cursor-pointer ${
-                  angle === 'threeQuarter' ? 'bg-[#0D919C] text-white' : 'text-neutral-300 hover:text-white'
-                }`}
-              >
-                3/4 View
-              </button>
-              <button
-                onClick={() => setAngle('front')}
-                className={`text-xs px-2.5 py-1 rounded-[5px] font-semibold transition-colors cursor-pointer ${
-                  angle === 'front' ? 'bg-[#0D919C] text-white' : 'text-neutral-300 hover:text-white'
-                }`}
-              >
-                Front
-              </button>
-              <button
-                onClick={() => setAngle('side')}
-                className={`text-xs px-2.5 py-1 rounded-[5px] font-semibold transition-colors cursor-pointer ${
-                  angle === 'side' ? 'bg-[#0D919C] text-white' : 'text-neutral-300 hover:text-white'
-                }`}
-              >
-                Profile
-              </button>
-            </div>
-
-            {/* Lighting Environment Switcher */}
-            <div className="absolute bottom-4 right-4 flex items-center gap-1 bg-black/70 backdrop-blur-xs p-1 rounded-lg border border-white/20">
-              <button
-                onClick={() => setLighting('day')}
-                className={`p-1.5 rounded-[5px] transition-colors cursor-pointer ${
-                  lighting === 'day' ? 'bg-white text-[#111111]' : 'text-neutral-300 hover:text-white'
-                }`}
-                title="Natural Daylight"
-              >
-                <Sun className="w-3.5 h-3.5" />
-              </button>
-              <button
-                onClick={() => setLighting('studio')}
-                className={`p-1.5 rounded-[5px] transition-colors cursor-pointer ${
-                  lighting === 'studio' ? 'bg-[#0D919C] text-white' : 'text-neutral-300 hover:text-white'
-                }`}
-                title="Studio Glow"
-              >
-                <Sparkles className="w-3.5 h-3.5" />
-              </button>
-              <button
-                onClick={() => setLighting('night')}
-                className={`p-1.5 rounded-[5px] transition-colors cursor-pointer ${
-                  lighting === 'night' ? 'bg-white text-[#111111]' : 'text-neutral-300 hover:text-white'
-                }`}
-                title="Evening Mode"
-              >
-                <Moon className="w-3.5 h-3.5" />
-              </button>
-            </div>
           </div>
 
           {/* Action Row */}
@@ -200,7 +153,8 @@ export const Fleet3DShowroom: React.FC<Fleet3DShowroomProps> = ({ onSelectVehicl
               )}
               <button
                 onClick={handleWhatsAppInquiry}
-                className="w-full sm:w-auto inline-flex items-center justify-center bg-[#111111] hover:bg-[#252525] text-white font-bold text-xs sm:text-sm px-6 py-2.5 rounded-[7px] transition-colors cursor-pointer shadow-xs"
+                style={{ backgroundColor: '#12b5ae' }}
+                className="w-full sm:w-auto inline-flex items-center justify-center hover:opacity-90 text-white font-bold text-xs sm:text-sm px-6 py-2.5 rounded-[7px] transition-colors cursor-pointer shadow-xs"
               >
                 <span>Book Now</span>
               </button>
@@ -209,7 +163,7 @@ export const Fleet3DShowroom: React.FC<Fleet3DShowroomProps> = ({ onSelectVehicl
         </div>
 
         {/* Thumbnail Selector Strip */}
-        <div className="mt-6 flex items-center gap-2.5 overflow-x-auto pb-2 no-scrollbar">
+        <div className="mt-6 flex items-center gap-2.5 overflow-x-auto pb-2 no-scrollbar font-sans">
           {FLEET_VEHICLES.map((vehicle, idx) => {
             const isSelected = idx === selectedIdx;
             return (
