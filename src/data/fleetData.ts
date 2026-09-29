@@ -291,9 +291,9 @@ export const FLEET_VEHICLES: Vehicle[] = [
       interior: '/cars/fortuner_legender.jpg',
     },
     rates: {
-      tenHoursCity: 'Rs. 14,000 / 10 Hrs',
+      tenHoursCity: 'Rs. 18,000 / 10 Hrs',
       intercityPerKm: 'Rs. 75 / km',
-      dailyOrEvent: 'Rs. 18,000 / Protocol',
+      dailyOrEvent: 'Rs. 20,000 / Protocol',
     },
     specs: {
       engine: '2.8L 1GD-FTV High-Torque Turbo Diesel',
@@ -365,9 +365,9 @@ export const FLEET_VEHICLES: Vehicle[] = [
       interior: '/cars/hilux_revo.jpg',
     },
     rates: {
-      tenHoursCity: 'Rs. 22,000 / 10 Hrs',
+      tenHoursCity: 'Rs. 12,000 / 10 Hrs',
       intercityPerKm: 'Rs. 75 / km',
-      dailyOrEvent: 'Rs. 25,000 / Day',
+      dailyOrEvent: 'Rs. 15,000 / Day',
     },
     specs: {
       engine: '2.8L Diesel Turbo Intercooled (500 Nm Torque)',

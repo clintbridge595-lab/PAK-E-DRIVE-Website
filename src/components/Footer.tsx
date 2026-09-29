@@ -30,7 +30,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBooking }) => 
           <div className="lg:col-span-4 space-y-4">
             <Logo onClick={() => handleNav('home')} eColor="#c1cf5c" />
             
-            <p className="text-xs text-neutral-600 leading-relaxed font-normal pt-1">
+            <p 
+              style={{
+                fontFamily: 'Times New Roman, serif',
+                fontSize: '11px',
+              }}
+              className="text-neutral-600 leading-relaxed font-normal pt-1"
+            >
               Pakistan's trusted car rental, wedding car, and intercity chauffeur service. Serving travellers, corporate executives, and families from Karachi to Hyderabad, Sukkur, Multan, Lahore, and Islamabad.
             </p>
 
