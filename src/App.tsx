@@ -90,14 +90,22 @@ export default function App() {
 
   const handleNavigate = (page: NavPage) => {
     setCurrentPage(page);
-    if (page === 'privacy') {
-      window.history.pushState(null, '', '/privacy-policy');
-    } else if (page === 'home') {
-      window.history.pushState(null, '', '/');
-    } else {
-      window.history.pushState(null, '', `/${page}`);
+    try {
+      if (page === 'privacy') {
+        window.history.pushState(null, '', '/privacy-policy');
+      } else if (page === 'home') {
+        window.history.pushState(null, '', '/');
+      } else {
+        window.history.pushState(null, '', `/${page}`);
+      }
+    } catch {
+      // In sandboxed iframes or cross-origin environments, pushState can fail safely
     }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    try {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch {
+      // ignore
+    }
   };
 
   const handleOpenBooking = (vehicleName?: string) => {

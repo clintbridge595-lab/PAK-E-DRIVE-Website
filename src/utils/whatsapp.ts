@@ -10,5 +10,16 @@ export function getWhatsAppLink(message: string): string {
 
 export function openWhatsApp(message: string) {
   const url = getWhatsAppLink(message);
-  window.open(url, '_blank', 'noopener,noreferrer');
+  try {
+    const win = window.open(url, '_blank', 'noopener,noreferrer');
+    if (!win) {
+      window.location.assign(url);
+    }
+  } catch {
+    try {
+      window.location.assign(url);
+    } catch {
+      // ignore
+    }
+  }
 }
