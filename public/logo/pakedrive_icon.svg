@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Rounded Rect Squircle Background -->
+  <rect x="32" y="32" width="448" height="448" rx="112" ry="112" fill="#101b2b"/>
+  
+  <!-- Monogram P with Highway Road Arch -->
+  <g fill="#ffffff">
+    <!-- Upper Body & Bowl of P -->
+    <path d="
+      M 132 140 
+      L 290 140 
+      C 362 140 404 182 404 246 
+      C 404 310 362 352 290 352 
+      L 220 352 
+      L 220 294 
+      L 282 294 
+      C 324 294 346 274 346 246 
+      C 346 218 324 198 282 198 
+      L 186 198 
+      L 186 280 
+      C 162 298 144 322 132 350 
+      Z
+    "/>
+    
+    <!-- Dynamic Ascending Road Swoosh -->
+    <path d="
+      M 132 404 
+      C 132 356 156 312 206 270 
+      C 246 236 294 224 330 220 
+      C 334 220 336 224 332 228 
+      C 286 248 244 280 212 322 
+      C 188 354 176 386 172 404 
+      Z
+    "/>
+
+    <!-- Lower Stem Base Column -->
+    <path d="
+      M 132 404 
+      L 172 404 
+      C 174 380 184 354 200 330 
+      C 176 348 152 374 132 404 
+      Z
+    "/>
+  </g>
+</svg>
